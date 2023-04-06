@@ -1,0 +1,7 @@
+key_list:
+- Hotel California
+- Hotel Amelia
+key_int: 2
+key_dict:
+  stars: 1★
+  price: 1222₽

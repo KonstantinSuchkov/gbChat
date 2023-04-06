@@ -1,0 +1,32 @@
+{
+    "orders": [
+        {
+            "item": "pizza",
+            "quantity": 3,
+            "price": 223,
+            "buyer": "Amelia",
+            "date": "05.04.2023"
+        },
+        {
+            "item": "кофе раф",
+            "quantity": 3,
+            "price": 112,
+            "buyer": "Amelia",
+            "date": "05.04.2023"
+        },
+        {
+            "item": "pizza",
+            "quantity": 3,
+            "price": 223,
+            "buyer": "Amelia",
+            "date": "05.04.2023"
+        },
+        {
+            "item": "кофе раф",
+            "quantity": 3,
+            "price": 112,
+            "buyer": "Amelia",
+            "date": "05.04.2023"
+        }
+    ]
+}
