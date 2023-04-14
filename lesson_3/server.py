@@ -15,32 +15,39 @@ def get_addr_port():
     return parser.parse_args()
 
 
+def create_socket_server(addr, port):
+    print(f'server params = addr: {addr}, port {port}')
+    s = socket(AF_INET, SOCK_STREAM)  # Создаем сокет TCP
+    s.bind((addr, port))  # Присваиваем адрес, порт
+    s.listen(5)
+    return s
+
+
+def msg_to_client(d, client):
+    if d['action'] == 'presence':
+        print('Получено presence-сообщение от клиента')
+        msg = {
+            "response": 200,
+            "time": datetime.timestamp(datetime.now()),
+            "alert": "Code 200!!! Code 200"
+        }
+        msg = json.dumps(msg, indent=4).encode('utf-8')
+        client.send(msg)
+        print('Сообщение: ', msg.decode('utf-8'), ', было отправлено клиенту')
+
+
 def main():
     print('server.py start...')
     args = get_addr_port()  # получаем параметры из командной строки -p -a
     addr = args.addr
     port = args.port
-    print(f'server params = addr: {addr}, port {port}')
-    s = socket(AF_INET, SOCK_STREAM)  # Создаем сокет TCP
-    s.bind((addr, port))  # Присваиваем порт
-    s.listen(5)  # Переходим в режим ожидания запросов;
+    s = create_socket_server(addr, port)
 
     while True:
         client, addr = s.accept()
         data = client.recv(1000000)
         d = json.loads(data.decode('utf-8'))
-        if d['action'] == 'presence':
-            print('Получено presence-сообщение от клиента')
-            print(d)
-            msg_to_client = {
-                "response": 200,
-                "time": datetime.timestamp(datetime.now()),
-                "alert": "Code 200!!! Code 200"
-            }
-            msg = json.dumps(msg_to_client, indent=4).encode('utf-8')
-            client.send(msg)
-            print('Сообщение: ', msg.decode('utf-8'), ', было отправлено клиенту: ', addr, port)
-
+        msg_to_client(d, client)
         client.close()
 
 

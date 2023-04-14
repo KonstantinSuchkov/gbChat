@@ -29,6 +29,16 @@ def get_addr_port():
     return parser.parse_args()
 
 
+def create_socket_client(addr, port):
+    s = socket(AF_INET, SOCK_STREAM)  # Создаем сокет TCP
+    s.connect((addr, port))  # Соединяемся с сервером
+    return s
+
+
+def read_answer(dict_from_server):
+    return dict_from_server['response'], dict_from_server['alert']
+
+
 def main():
     print('client.py start...')
     args = get_addr_port()  # получаем параметры из командной строки -p -a
@@ -37,14 +47,13 @@ def main():
     user = args.user
     status = args.status
     print(f'params = {addr}, {port}, {user}, {status}')
-    s = socket(AF_INET, SOCK_STREAM)  # Создаем сокет TCP
-    s.connect((addr, port))  # Соединяемся с сервером
+    s = create_socket_client(addr, port)
     presence_msg = presence(user, status)  # создаем presence-сообщение
     s.send(json.dumps(presence_msg, indent=4).encode('utf-8'))
     try:
         data = s.recv(1000000)
         d = json.loads(data.decode('utf-8'))
-        print('Сообщение от сервера: ', d['response'], d['alert'])
+        print('Сообщение от сервера: ', read_answer(d))
     except:
         print('Сообщений нет')
 
