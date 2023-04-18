@@ -1,11 +1,13 @@
 import argparse
 import json
+import logging
 from socket import *
 from datetime import datetime
-import logging
+
 import log.server_log_config
 
 server_log = logging.getLogger('server')
+print(server_log)
 
 
 # функция для получения параметров из командной строки
@@ -21,7 +23,7 @@ def get_addr_port():
 
 def create_socket_server(addr, port):
     print(f'server params = addr: {addr}, port {port}')
-    server_log.info(f'server params = addr: {addr}, port {port}')
+    server_log.info(f'Create socket server. Server params -- addr: {addr}, port {port}')
     s = socket(AF_INET, SOCK_STREAM)  # Создаем сокет TCP
     s.bind((addr, port))  # Присваиваем адрес, порт
     s.listen(5)
@@ -30,21 +32,17 @@ def create_socket_server(addr, port):
 
 def msg_to_client(d, client):
     if d['action'] == 'presence':
-        server_log.info('Получено presence-сообщение от клиента')
-        print('Получено presence-сообщение от клиента')
         msg = {
             "response": 200,
             "time": datetime.timestamp(datetime.now()),
-            "alert": "Code 200!!! Code 200"
+            "alert": "200 OK"
         }
         msg = json.dumps(msg, indent=4).encode('utf-8')
         client.send(msg)
-        print('Сообщение: ', msg.decode('utf-8'), ', было отправлено клиенту')
-        server_log.info('Сообщение: ', msg.decode('utf-8'), ', было отправлено клиенту')
+        server_log.info('Сообщение было отправлено клиенту. "response": 200')
 
 
 def main():
-    print('server.py start...')
     server_log.info('server.py start...')
     args = get_addr_port()  # получаем параметры из командной строки -p -a
     addr = args.addr
@@ -56,11 +54,14 @@ def main():
         try:
             data = client.recv(1000000)
             d = json.loads(data.decode('utf-8'))
+            server_log.info('Получено presence-сообщение от клиента')
             msg_to_client(d, client)
             client.close()
         except Exception as err:
-            print('Wrong data!:', err)
+            print('Error:', err)
+            server_log.error('Wrong data from client')
             client.close()
+
 
 if __name__ == '__main__':
     main()

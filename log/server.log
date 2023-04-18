@@ -1,0 +1,8 @@
+2023-04-18 08:22:34,758 INFO server.py  server.py start...
+2023-04-18 08:22:34,766 INFO server.py  Create socket server. Server params -- addr: , port 7777
+2023-04-18 08:22:40,139 INFO server.py  Получено presence-сообщение от клиента
+2023-04-18 08:22:40,139 INFO server.py  Сообщение было отправлено клиенту. "response": 200
+2023-04-18 08:23:15,287 INFO server.py  server.py start...
+2023-04-18 08:23:15,295 INFO server.py  Create socket server. Server params -- addr: , port 8888
+2023-04-18 08:23:33,573 INFO server.py  Получено presence-сообщение от клиента
+2023-04-18 08:23:33,573 INFO server.py  Сообщение было отправлено клиенту. "response": 200
