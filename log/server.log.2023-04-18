@@ -1,0 +1,23 @@
+2023-04-18 08:22:34,758 INFO server.py  server.py start...
+2023-04-18 08:22:34,766 INFO server.py  Create socket server. Server params -- addr: , port 7777
+2023-04-18 08:22:40,139 INFO server.py  Получено presence-сообщение от клиента
+2023-04-18 08:22:40,139 INFO server.py  Сообщение было отправлено клиенту. "response": 200
+2023-04-18 08:23:15,287 INFO server.py  server.py start...
+2023-04-18 08:23:15,295 INFO server.py  Create socket server. Server params -- addr: , port 8888
+2023-04-18 08:23:33,573 INFO server.py  Получено presence-сообщение от клиента
+2023-04-18 08:23:33,573 INFO server.py  Сообщение было отправлено клиенту. "response": 200
+2023-04-18 12:58:34,971 INFO server.py  server.py start...
+2023-04-18 12:58:34,979 INFO server.py  Create socket server. Server params -- addr: , port 7777
+2023-04-18 12:58:39,770 INFO server.py  Получено presence-сообщение от клиента
+2023-04-18 12:58:39,770 INFO server.py  Сообщение было отправлено клиенту. "response": 200
+2023-04-18 13:05:37,131 INFO server.py  server.py start...
+2023-04-18 13:05:37,140 INFO server.py  Create socket server. Server params -- addr: , port 7777
+2023-04-18 13:05:38,882 INFO server.py  Получено presence-сообщение от клиента
+2023-04-18 13:05:38,882 INFO server.py  Сообщение было отправлено клиенту. "response": 200
+2023-04-18 13:10:52,077 INFO server.py  server.py start...
+2023-04-18 13:10:52,097 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
+2023-04-18 13:10:52,106 DEBUG log_decorator.py Функция __main__.create_socket_server вызвана из функции main
+2023-04-18 13:10:52,106 INFO server.py  Create socket server. Server params -- addr: , port 7777
+2023-04-18 13:10:53,551 INFO server.py  Получено presence-сообщение от клиента
+2023-04-18 13:10:53,552 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции main
+2023-04-18 13:10:53,552 INFO server.py  Сообщение было отправлено клиенту. "response": 200

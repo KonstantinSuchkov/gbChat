@@ -3,8 +3,9 @@ import json
 import logging
 from socket import *
 from datetime import datetime
-
 import log.server_log_config
+from log.log_decorator import log
+
 
 server_log = logging.getLogger('server')
 print(server_log)
@@ -14,6 +15,7 @@ print(server_log)
 # параметры командной строки:
 # -p <port> — TCP-порт для работы (по умолчанию использует 7777); -a <addr> — IP-адрес для прослушивания (по
 # умолчанию слушает все доступные адреса).
+@log
 def get_addr_port():
     parser = argparse.ArgumentParser()
     parser.add_argument("-a", action="store", dest="addr", type=str, default='')
@@ -21,6 +23,7 @@ def get_addr_port():
     return parser.parse_args()
 
 
+@log
 def create_socket_server(addr, port):
     print(f'server params = addr: {addr}, port {port}')
     server_log.info(f'Create socket server. Server params -- addr: {addr}, port {port}')
@@ -30,6 +33,7 @@ def create_socket_server(addr, port):
     return s
 
 
+@log
 def msg_to_client(d, client):
     if d['action'] == 'presence':
         msg = {

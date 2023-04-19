@@ -5,12 +5,15 @@ from socket import *
 from datetime import datetime
 import json
 import log.client_log_config
+from log.log_decorator import log
+
 
 client_log = logging.getLogger('client')
 print(client_log)
 
 
 # функция для формирования presence-сообщения
+@log
 def presence(account_name, status):
     data = {
         "action": "presence",
@@ -27,6 +30,7 @@ def presence(account_name, status):
 
 
 # функция для получения параметров из командной строки
+@log
 def get_addr_port():
     parser = argparse.ArgumentParser()
     parser.add_argument("-a", action="store", dest="addr", type=str, default='localhost')
@@ -37,6 +41,7 @@ def get_addr_port():
     return parser.parse_args()
 
 
+@log
 def create_socket_client(addr, port):
     s = socket(AF_INET, SOCK_STREAM)  # Создаем сокет TCP
     try:
@@ -48,6 +53,7 @@ def create_socket_client(addr, port):
         exit(1)
 
 
+@log
 def read_answer(dict_from_server):
     client_log.info('Reading answer from server(func read_answer)')
     return dict_from_server['response'], dict_from_server['alert']
