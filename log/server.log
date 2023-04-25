@@ -1,27 +1,215 @@
-2023-04-19 08:48:01,416 INFO server.py  server.py start...
-2023-04-19 08:48:01,438 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-19 08:48:01,446 DEBUG log_decorator.py Функция __main__.create_socket_server вызвана из функции main
-2023-04-19 08:48:01,447 INFO server.py  Create socket server. Server params -- addr: , port 7777
-2023-04-19 08:48:06,747 INFO server.py  Получено presence-сообщение от клиента
-2023-04-19 08:48:06,748 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции main
-2023-04-19 08:48:06,748 INFO server.py  Сообщение было отправлено клиенту. "response": 200
-2023-04-19 08:51:29,261 INFO server.py  server.py start...
-2023-04-19 08:51:29,281 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-19 08:51:29,290 DEBUG log_decorator.py Функция __main__.create_socket_server вызвана из функции main
-2023-04-19 08:51:29,290 INFO server.py  Create socket server. Server params -- addr: , port 7777
-2023-04-19 08:51:31,120 INFO server.py  Получено presence-сообщение от клиента
-2023-04-19 08:51:31,121 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции main
-2023-04-19 08:51:31,122 INFO server.py  Сообщение было отправлено клиенту. "response": 200
-2023-04-19 08:51:36,283 INFO server.py  Получено presence-сообщение от клиента
-2023-04-19 08:51:36,284 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции main
-2023-04-19 08:51:36,284 INFO server.py  Сообщение было отправлено клиенту. "response": 200
-2023-04-19 08:54:48,204 INFO server.py  server.py start...
-2023-04-19 08:54:48,224 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-19 08:54:48,233 DEBUG log_decorator.py Функция __main__.create_socket_server вызвана из функции main
-2023-04-19 08:54:48,233 INFO server.py  Create socket server. Server params -- addr: , port 7777
-2023-04-19 08:54:49,977 INFO server.py  Получено presence-сообщение от клиента
-2023-04-19 08:54:49,977 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции main
-2023-04-19 08:54:49,978 INFO server.py  Сообщение было отправлено клиенту. "response": 200
-2023-04-19 08:54:52,083 INFO server.py  Получено presence-сообщение от клиента
-2023-04-19 08:54:52,084 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции main
-2023-04-19 08:54:52,084 INFO server.py  Сообщение было отправлено клиенту. "response": 200
+2023-04-25 08:22:09,483 INFO server.py  server.py start...
+2023-04-25 08:22:09,508 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
+2023-04-25 08:22:09,525 DEBUG log_decorator.py Функция __main__.create_socket_server вызвана из функции main
+2023-04-25 08:22:09,525 INFO server.py  Create socket server. Server params -- addr: , port 7777
+2023-04-25 08:22:11,038 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:12,541 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:14,051 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:15,562 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:17,078 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:18,583 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:19,445 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:20,019 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:20,020 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:22:20,022 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:22:20,447 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:20,448 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:22:20,449 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:22:21,952 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:21,953 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:22:21,955 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:22:23,470 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:24,980 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:26,497 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:28,011 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:29,529 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:31,047 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:32,559 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:34,076 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:34,080 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:22:34,087 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:22:35,598 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:37,114 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:38,624 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:40,129 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:41,648 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:43,158 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:44,673 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:46,185 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:47,689 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:49,204 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:50,721 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:52,226 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:52,227 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:22:52,230 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:22:53,736 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:55,249 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:56,763 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:58,265 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:22:59,766 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:23:01,272 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:23:02,789 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:23:04,290 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:23:05,806 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:23:07,316 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:23:08,822 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:23:10,328 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:23:11,833 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:23:13,344 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:19,792 INFO server.py  server.py start...
+2023-04-25 08:37:19,815 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
+2023-04-25 08:37:19,827 DEBUG log_decorator.py Функция __main__.create_socket_server вызвана из функции main
+2023-04-25 08:37:19,827 INFO server.py  Create socket server. Server params -- addr: , port 7777
+2023-04-25 08:37:21,342 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:22,848 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:24,349 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:24,962 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:25,553 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:25,554 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:37:25,556 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:37:26,039 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:26,042 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:37:26,043 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:37:27,557 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:27,557 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:37:27,558 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:37:29,068 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:30,574 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:32,085 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:33,590 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:35,092 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:36,596 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:36,597 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:37:36,599 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:37:36,600 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 08:37:36,601 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 08:37:36,602 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 08:37:38,117 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:39,626 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:41,138 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:41,139 INFO server.py  Клиент 464 ('127.0.0.1', 57440) отключился
+2023-04-25 08:37:41,139 INFO server.py  Клиент 468 ('127.0.0.1', 57441) отключился
+2023-04-25 08:37:41,139 INFO server.py  Клиент 476 ('127.0.0.1', 57442) отключился
+2023-04-25 08:37:42,656 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:44,170 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:45,685 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:47,201 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:48,718 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:50,230 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:51,736 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:37:53,251 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:34,413 INFO server.py  server.py start...
+2023-04-25 08:50:34,435 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
+2023-04-25 08:50:34,444 DEBUG log_decorator.py Функция __main__.create_socket_server вызвана из функции main
+2023-04-25 08:50:34,444 INFO server.py  Create socket server. Server params -- addr: , port 7777
+2023-04-25 08:50:35,954 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:37,464 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:38,978 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:39,224 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:39,741 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:39,742 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:50:39,745 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:50:40,265 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:40,266 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:50:40,267 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:50:41,771 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:41,772 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:50:41,773 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:50:43,287 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:44,805 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:46,307 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:47,823 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:49,331 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:50,838 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:50,839 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:50:50,840 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:50:50,841 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 08:50:50,842 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 08:50:50,843 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 08:50:52,355 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:53,862 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:55,370 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:56,886 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:58,404 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:59,909 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:50:59,912 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 08:50:59,913 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 08:50:59,914 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 08:50:59,915 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 08:50:59,916 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 08:51:01,430 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:51:02,939 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:51:04,454 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:51:05,965 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:51:07,475 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:51:07,476 INFO server.py  Клиент 472 ('127.0.0.1', 64503) отключился
+2023-04-25 08:51:07,476 INFO server.py  Клиент 380 ('127.0.0.1', 64504) отключился
+2023-04-25 08:51:07,477 INFO server.py  Клиент 436 ('127.0.0.1', 64505) отключился
+2023-04-25 08:51:08,984 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 08:51:10,492 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:36,136 INFO server.py  server.py start...
+2023-04-25 09:47:36,156 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
+2023-04-25 09:47:36,165 DEBUG log_decorator.py Функция __main__.create_socket_server вызвана из функции main
+2023-04-25 09:47:36,166 INFO server.py  Create socket server. Server params -- addr: , port 7777
+2023-04-25 09:47:37,675 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:39,182 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:40,686 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:41,355 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:41,883 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:41,884 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 09:47:41,886 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 09:47:42,525 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:42,525 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 09:47:42,527 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 09:47:44,035 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:44,036 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 09:47:44,037 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 09:47:45,547 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:47,055 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:48,562 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:50,072 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:51,581 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:51,585 DEBUG log_decorator.py Функция __main__.write_responses вызвана из функции main
+2023-04-25 09:47:51,590 DEBUG log_decorator.py Функция __main__.msg_to_client вызвана из функции write_responses
+2023-04-25 09:47:51,594 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 09:47:51,597 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 09:47:51,600 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-25 09:47:53,106 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:54,625 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:56,138 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:57,649 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:47:59,165 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:00,670 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:02,181 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:03,696 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:05,205 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:06,710 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:08,227 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:09,734 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:11,248 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:12,761 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:14,278 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:15,788 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:17,306 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:18,816 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:20,330 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:21,842 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:23,357 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:24,867 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:26,380 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:27,895 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:29,407 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:30,917 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:32,436 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:33,950 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:35,468 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:36,972 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:38,478 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:39,984 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:39,985 INFO server.py  Клиент 460 ('127.0.0.1', 61394) отключился
+2023-04-25 09:48:39,985 INFO server.py  Клиент 484 ('127.0.0.1', 59341) отключился
+2023-04-25 09:48:39,985 INFO server.py  Клиент 468 ('127.0.0.1', 59342) отключился
+2023-04-25 09:48:41,490 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:43,005 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:44,508 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
+2023-04-25 09:48:46,014 DEBUG log_decorator.py Функция __main__.read_requests вызвана из функции main
