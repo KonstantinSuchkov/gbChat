@@ -1,222 +1,64 @@
-2023-04-25 08:22:19,363 INFO client.py  client.py start...
-2023-04-25 08:22:19,403 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 08:22:19,431 DEBUG client.py  Func get_addr_port start...
-2023-04-25 08:22:19,432 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Postman, 2 years
-2023-04-25 08:22:19,436 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 08:22:19,444 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 08:22:19,445 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 08:22:19,445 INFO client.py  Presence message sending...
-2023-04-25 08:22:19,446 INFO client.py  Presence message sending...DONE
-2023-04-25 08:22:19,447 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:22:19,956 INFO client.py  client.py start...
-2023-04-25 08:22:19,991 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 08:22:20,011 DEBUG client.py  Func get_addr_port start...
-2023-04-25 08:22:20,011 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
-2023-04-25 08:22:20,012 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 08:22:20,019 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 08:22:20,019 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 08:22:20,019 INFO client.py  Presence message sending...
-2023-04-25 08:22:20,020 INFO client.py  Presence message sending...DONE
-2023-04-25 08:22:20,020 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:22:20,024 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:22:20,024 INFO client.py  Response status OK
-2023-04-25 08:22:20,024 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:22:20,409 INFO client.py  client.py start...
-2023-04-25 08:22:20,429 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 08:22:20,438 DEBUG client.py  Func get_addr_port start...
-2023-04-25 08:22:20,438 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
-2023-04-25 08:22:20,439 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 08:22:20,446 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 08:22:20,447 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 08:22:20,447 INFO client.py  Presence message sending...
-2023-04-25 08:22:20,447 INFO client.py  Presence message sending...DONE
-2023-04-25 08:22:20,448 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:22:20,451 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:22:20,451 INFO client.py  Response status OK
-2023-04-25 08:22:20,451 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:22:20,452 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:22:21,956 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:22:21,957 INFO client.py  Response status OK
-2023-04-25 08:22:21,957 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:22:21,958 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:22:33,099 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции main
-2023-04-25 08:22:34,094 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:22:34,094 INFO client.py  Response status OK
-2023-04-25 08:22:34,094 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:22:34,095 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:22:34,095 INFO client.py  Response status OK
-2023-04-25 08:22:34,095 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:22:34,097 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:22:34,097 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:22:51,576 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции main
-2023-04-25 08:22:52,232 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:22:52,232 INFO client.py  Response status OK
-2023-04-25 08:22:52,232 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:22:52,232 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:22:52,232 INFO client.py  Response status OK
-2023-04-25 08:22:52,232 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:22:52,233 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:22:52,233 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:37:24,927 INFO client.py  client.py start...
-2023-04-25 08:37:24,947 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 08:37:24,955 DEBUG client.py  Func get_addr_port start...
-2023-04-25 08:37:24,956 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Postman, 2 years
-2023-04-25 08:37:24,956 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 08:37:24,961 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 08:37:24,962 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 08:37:24,962 INFO client.py  Presence message sending...
-2023-04-25 08:37:24,962 INFO client.py  Presence message sending...DONE
-2023-04-25 08:37:24,963 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:37:25,495 INFO client.py  client.py start...
-2023-04-25 08:37:25,535 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 08:37:25,545 DEBUG client.py  Func get_addr_port start...
-2023-04-25 08:37:25,545 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
-2023-04-25 08:37:25,546 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 08:37:25,551 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 08:37:25,553 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 08:37:25,553 INFO client.py  Presence message sending...
-2023-04-25 08:37:25,553 INFO client.py  Presence message sending...DONE
-2023-04-25 08:37:25,554 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:37:25,558 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:37:25,559 INFO client.py  Response status OK
-2023-04-25 08:37:25,559 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:37:26,002 INFO client.py  client.py start...
-2023-04-25 08:37:26,024 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 08:37:26,032 DEBUG client.py  Func get_addr_port start...
-2023-04-25 08:37:26,032 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
-2023-04-25 08:37:26,033 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 08:37:26,038 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 08:37:26,038 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 08:37:26,038 INFO client.py  Presence message sending...
-2023-04-25 08:37:26,039 INFO client.py  Presence message sending...DONE
-2023-04-25 08:37:26,039 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:37:26,046 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:37:26,046 INFO client.py  Response status OK
-2023-04-25 08:37:26,046 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:37:26,047 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:37:27,560 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:37:27,560 INFO client.py  Response status OK
-2023-04-25 08:37:27,560 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:37:27,561 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:37:35,703 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции main
-2023-04-25 08:37:36,603 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:37:36,603 INFO client.py  Response status OK
-2023-04-25 08:37:36,603 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:37:36,604 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:37:36,604 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:37:36,604 INFO client.py  Response status OK
-2023-04-25 08:37:36,604 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:37:36,605 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:50:39,164 INFO client.py  client.py start...
-2023-04-25 08:50:39,195 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 08:50:39,217 DEBUG client.py  Func get_addr_port start...
-2023-04-25 08:50:39,218 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Postman, 2 years
-2023-04-25 08:50:39,218 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 08:50:39,223 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 08:50:39,224 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 08:50:39,224 INFO client.py  Presence message sending...
-2023-04-25 08:50:39,224 INFO client.py  Presence message sending...DONE
-2023-04-25 08:50:39,225 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:50:39,675 INFO client.py  client.py start...
-2023-04-25 08:50:39,707 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 08:50:39,720 DEBUG client.py  Func get_addr_port start...
-2023-04-25 08:50:39,720 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
-2023-04-25 08:50:39,721 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 08:50:39,740 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 08:50:39,741 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 08:50:39,742 INFO client.py  Presence message sending...
-2023-04-25 08:50:39,742 INFO client.py  Presence message sending...DONE
-2023-04-25 08:50:39,743 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:50:39,752 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:50:39,752 INFO client.py  Response status OK
-2023-04-25 08:50:39,753 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:50:40,221 INFO client.py  client.py start...
-2023-04-25 08:50:40,247 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 08:50:40,259 DEBUG client.py  Func get_addr_port start...
-2023-04-25 08:50:40,259 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
-2023-04-25 08:50:40,260 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 08:50:40,264 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 08:50:40,265 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 08:50:40,265 INFO client.py  Presence message sending...
-2023-04-25 08:50:40,265 INFO client.py  Presence message sending...DONE
-2023-04-25 08:50:40,266 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:50:40,269 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:50:40,269 INFO client.py  Response status OK
-2023-04-25 08:50:40,269 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:50:40,270 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:50:41,774 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:50:41,774 INFO client.py  Response status OK
-2023-04-25 08:50:41,774 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:50:41,775 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:50:49,491 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции main
-2023-04-25 08:50:50,843 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:50:50,844 INFO client.py  Response status OK
-2023-04-25 08:50:50,844 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:50:50,844 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:50:50,844 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:50:50,844 INFO client.py  Response status OK
-2023-04-25 08:50:50,844 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:50:50,845 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:50:59,715 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции main
-2023-04-25 08:50:59,916 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:50:59,916 INFO client.py  Response status OK
-2023-04-25 08:50:59,916 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:50:59,917 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 08:50:59,917 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 08:50:59,917 INFO client.py  Response status OK
-2023-04-25 08:50:59,918 INFO client.py  Message(answer) from server received: 
-2023-04-25 08:50:59,918 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 09:47:41,317 INFO client.py  client.py start...
-2023-04-25 09:47:41,338 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 09:47:41,347 DEBUG client.py  Func get_addr_port start...
-2023-04-25 09:47:41,348 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Postman, 2 years
-2023-04-25 09:47:41,348 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 09:47:41,354 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 09:47:41,355 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 09:47:41,356 INFO client.py  Presence message sending...
-2023-04-25 09:47:41,356 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
-2023-04-25 09:47:41,356 INFO client.py  Presence message sending...DONE
-2023-04-25 09:47:41,357 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 09:47:41,829 INFO client.py  client.py start...
-2023-04-25 09:47:41,852 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 09:47:41,875 DEBUG client.py  Func get_addr_port start...
-2023-04-25 09:47:41,876 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
-2023-04-25 09:47:41,876 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 09:47:41,882 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 09:47:41,883 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 09:47:41,883 INFO client.py  Presence message sending...
-2023-04-25 09:47:41,884 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
-2023-04-25 09:47:41,884 INFO client.py  Presence message sending...DONE
-2023-04-25 09:47:41,885 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 09:47:41,889 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 09:47:41,890 INFO client.py  Response status OK
-2023-04-25 09:47:41,890 INFO client.py  Message(answer) from server received: 
-2023-04-25 09:47:42,486 INFO client.py  client.py start...
-2023-04-25 09:47:42,509 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
-2023-04-25 09:47:42,518 DEBUG client.py  Func get_addr_port start...
-2023-04-25 09:47:42,519 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
-2023-04-25 09:47:42,519 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-04-25 09:47:42,524 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-04-25 09:47:42,525 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
-2023-04-25 09:47:42,525 INFO client.py  Presence message sending...
-2023-04-25 09:47:42,525 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
-2023-04-25 09:47:42,526 INFO client.py  Presence message sending...DONE
-2023-04-25 09:47:42,526 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 09:47:42,529 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 09:47:42,529 INFO client.py  Response status OK
-2023-04-25 09:47:42,529 INFO client.py  Message(answer) from server received: 
-2023-04-25 09:47:42,530 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 09:47:44,039 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 09:47:44,039 INFO client.py  Response status OK
-2023-04-25 09:47:44,039 INFO client.py  Message(answer) from server received: 
-2023-04-25 09:47:44,040 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 09:47:50,332 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции main
-2023-04-25 09:47:50,333 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
-2023-04-25 09:47:51,602 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 09:47:51,602 INFO client.py  Response status OK
-2023-04-25 09:47:51,602 INFO client.py  Varvara - Message(answer) from server received: 
-2023-04-25 09:47:51,604 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
-2023-04-25 09:47:51,604 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
-2023-04-25 09:47:51,604 INFO client.py  Response status OK
-2023-04-25 09:47:51,605 INFO client.py  Amelia - Message(answer) from server received: 
-2023-04-25 09:47:51,606 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
+2023-04-28 08:44:18,219 INFO client.py  client.py start...
+2023-04-28 08:44:18,245 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
+2023-04-28 08:44:18,255 DEBUG client.py  Func get_addr_port start...
+2023-04-28 08:44:18,256 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 5years
+2023-04-28 08:44:18,256 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-04-28 08:44:18,262 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-04-28 08:44:18,263 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
+2023-04-28 08:44:18,263 INFO client.py  Presence message sending...
+2023-04-28 08:44:18,264 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-28 08:44:18,265 INFO client.py  Presence message sending...DONE
+2023-04-28 08:44:18,265 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
+2023-04-28 08:44:18,730 INFO client.py  client.py start...
+2023-04-28 08:44:18,750 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции main
+2023-04-28 08:44:18,759 DEBUG client.py  Func get_addr_port start...
+2023-04-28 08:44:18,760 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-04-28 08:44:18,761 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-04-28 08:44:18,774 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-04-28 08:44:18,776 DEBUG log_decorator.py Функция __main__.presence вызвана из функции main
+2023-04-28 08:44:18,776 INFO client.py  Presence message sending...
+2023-04-28 08:44:18,777 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции main
+2023-04-28 08:44:18,777 INFO client.py  Presence message sending...DONE
+2023-04-28 08:44:18,778 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции main
+2023-04-28 08:44:18,781 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
+2023-04-28 08:44:18,781 INFO client.py  Response status OK
+2023-04-28 08:44:18,788 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции chat_r_message
+2023-04-28 08:44:20,295 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции main
+2023-04-28 08:44:20,295 INFO client.py  Response status OK
+2023-04-28 08:44:20,298 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции chat_r_message
+2023-04-28 08:44:29,269 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции chat_w_message
+2023-04-28 08:44:29,270 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции chat_w_message
+2023-04-28 08:44:29,355 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции chat_r_message
+2023-04-28 08:44:29,355 INFO client.py  Response status OK
+2023-04-28 08:44:29,355 INFO client.py  Message received: >>>Amelia: Hi 
+2023-04-28 08:44:29,356 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции chat_r_message
+2023-04-28 08:44:42,523 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции chat_w_message
+2023-04-28 08:44:42,524 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции chat_w_message
+2023-04-28 08:44:42,948 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции chat_r_message
+2023-04-28 08:44:42,948 INFO client.py  Response status OK
+2023-04-28 08:44:42,949 INFO client.py  Message received: >>>Varvara: Hello 
+2023-04-28 08:44:42,950 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции chat_r_message
+2023-04-28 08:44:51,322 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции chat_w_message
+2023-04-28 08:44:51,323 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции chat_w_message
+2023-04-28 08:44:52,026 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции chat_r_message
+2023-04-28 08:44:52,026 INFO client.py  Response status OK
+2023-04-28 08:44:52,026 INFO client.py  Message received: >>>Amelia: Where you are? 
+2023-04-28 08:44:52,028 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции chat_r_message
+2023-04-28 08:45:05,387 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции chat_w_message
+2023-04-28 08:45:05,388 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции chat_w_message
+2023-04-28 08:45:05,624 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции chat_r_message
+2023-04-28 08:45:05,624 INFO client.py  Response status OK
+2023-04-28 08:45:05,624 INFO client.py  Message received: >>>Varvara: I am at home 
+2023-04-28 08:45:05,625 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции chat_r_message
+2023-04-28 08:45:11,778 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции chat_w_message
+2023-04-28 08:45:11,779 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции chat_w_message
+2023-04-28 08:45:13,179 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции chat_r_message
+2023-04-28 08:45:13,179 INFO client.py  Response status OK
+2023-04-28 08:45:13,179 INFO client.py  Message received: >>>Amelia: bb 
+2023-04-28 08:45:13,180 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции chat_r_message
+2023-04-28 08:45:15,090 DEBUG log_decorator.py Функция __main__.message_to_server вызвана из функции chat_w_message
+2023-04-28 08:45:15,091 DEBUG log_decorator.py Функция __main__.send_data вызвана из функции chat_w_message
+2023-04-28 08:45:16,194 DEBUG log_decorator.py Функция __main__.read_answer вызвана из функции chat_r_message
+2023-04-28 08:45:16,195 INFO client.py  Response status OK
+2023-04-28 08:45:16,195 INFO client.py  Message received: >>>Varvara: bb 
+2023-04-28 08:45:16,196 DEBUG log_decorator.py Функция __main__.data_from_server вызвана из функции chat_r_message

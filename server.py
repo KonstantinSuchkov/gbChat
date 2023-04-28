@@ -11,12 +11,13 @@ server_log = logging.getLogger('server')
 print(server_log)
 
 
-# функция для получения параметров из командной строки
-# параметры командной строки:
-# -p <port> — TCP-порт для работы (по умолчанию использует 7777); -a <addr> — IP-адрес для прослушивания (по
-# умолчанию слушает все доступные адреса).
 @log
 def get_addr_port():
+    """ получение (парсинг) аргументов
+    -a -> addr
+    -p -> port
+    :return ArgumentParser()
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("-a", action="store", dest="addr", type=str, default='')
     parser.add_argument("-p", action="store", dest="port", type=int, default=7777)
@@ -25,6 +26,10 @@ def get_addr_port():
 
 @log
 def create_socket_server(addr, port):
+    """ функция создания сокета сервера
+    :params: server port and address
+    :return: s:socket
+    """
     print(f'server params = addr: {addr}, port {port}')
     server_log.info(f'Create socket server. Server params -- addr: {addr}, port {port}')
     s = socket(AF_INET, SOCK_STREAM)  # Создаем сокет TCP
@@ -37,6 +42,8 @@ def create_socket_server(addr, port):
 @log
 def read_requests(r_clients, all_clients):
     """ Чтение запросов из списка клиентов
+    :params: clients (get from select)
+    :return: dict {socket: data}
     """
     responses = {}  # Словарь ответов сервера вида {сокет: запрос}
     for sock in r_clients:
@@ -50,56 +57,63 @@ def read_requests(r_clients, all_clients):
 
 
 @log
-def msg_to_client(d):
-    if d['action'] == 'presence':
-        msg = {
-            "response": 200,
-            "time": datetime.timestamp(datetime.now()),
-            "alert": "OK"
-        }
-        msg = json.dumps(msg, indent=4).encode('utf-8')
-        return msg
-    else:
-        print(f"message: {d['text']} from {d['user']['account_name']}")
-        data = {
-            "response": 200,
-            "action": "message",
-            "time": datetime.timestamp(datetime.now()),
-            "text": d['text'],
-            "user": {
-                "account_name": d['user']['account_name'],
-            }
-        }
-        msg = json.dumps(data, indent=4).encode('utf-8')
-        return msg
+def presence_answer(d):
+    """ формирование ответа клиенту на presense сообщение
+    :params: dict
+    :return: message bytes
+    """
+    msg = {
+        "response": 200,
+        "time": datetime.timestamp(datetime.now()),
+        "alert": "OK"
+    }
+    msg = json.dumps(msg, indent=4).encode('utf-8')
+    return msg
 
 
 @log
 def write_responses(requests, w_clients, all_clients, chat):
     """ ответ сервера клиентам
+    :params: clients requests, clients, chat(list of messages)
+    result: send message to clients or presence answer
     """
     for client in w_clients:
         if client in requests:
             resp = requests[client].encode('utf-8')
+            recipients = all_clients.copy()  # создаем список получателей
+            recipients.remove(client)  # исключаем из получателей клиента-отправителя
             if resp != b'':
                 d = json.loads(resp.decode('utf-8'))
                 try:
-                    if d['text']:
-                        chat.append([d['text'], d['user']['account_name']])  # добавляем сообщение и пользователя
+                    if d['action'] == 'presence':  # если сообщение presence, то отправляем соответствующий ответ
+                        client.send(presence_answer(d))
+                    if d['text']:  # если в сообщении есть текст
+                        chat.append([d['text'], d['user']['account_name']])  # в "чат" добавляем текст и пользователя
+                        for clnt in recipients:  # циклом идем по списку получателей и отправляем сообщение
+                            data = {
+                                "response": 200,
+                                "action": "message",
+                                "time": datetime.timestamp(datetime.now()),
+                                "text": chat[0],
+                            }
+                            try:
+                                send_data(data, clnt)
+
+                            except:
+                                # Сокет недоступен, клиент отключился
+                                print('Клиент {} {} отключился'.format(client.fileno(), client.getpeername()))
+                                client.close()
+                        del chat[0]  # удаляем сообщение
                 except:
                     pass
-                try:
-                    client.send(msg_to_client(d))
-                    print('sending')
-                except:
-                    # Сокет недоступен, клиент отключился
-                    print('Клиент {} {} отключился'.format(client.fileno(), client.getpeername()))
-                    client.close()
-                    all_clients.remove(client)
 
 
 @log
 def send_data(data, sock):
+    """функция отправки данных
+    :param sock: socket
+    :param data: dict
+    """
     result_data = json.dumps(data).encode('utf-8')
     sock.send(result_data)
 
@@ -133,16 +147,6 @@ def main():
             requests = read_requests(r, clients)  # Сохраним запросы клиентов
             if requests:
                 write_responses(requests, w, clients, chat)  # Выполним отправку ответов клиентам
-            if chat:  # если есть сообщения, то выполнится отправка клиентам
-                for client in clients:
-                    data = {
-                        "response": 200,
-                        "action": "message",
-                        "time": datetime.timestamp(datetime.now()),
-                        "text": chat[0],
-                    }
-                    send_data(data, client)
-                del chat[0]
 
 
 if __name__ == '__main__':
