@@ -8,14 +8,10 @@ from threading import Thread
 import log.client_log_config
 from log.log_decorator import log
 from dis import get_instructions
+from store import StoreClient
 
 
 client_log = logging.getLogger('client')
-
-# Lesson 10. 1. Реализовать метакласс ClientVerifier, выполняющий базовую проверку класса «Клиент» (для некоторых
-# проверок уместно использовать модуль dis): отсутствие вызовов accept и listen для сокетов; использование сокетов
-# для работы по TCP; отсутствие создания сокетов на уровне классов, то есть отсутствие конструкций такого вида: class
-# Client: s = socket() ...
 
 
 class ClientVerifier(type):
@@ -43,12 +39,18 @@ class Client(metaclass=ClientVerifier):
         self.s = s
         self.user = user
         self.status = status
+        self.db = None
 
     def run(self):
         """
         Основной метод класса с логикой чата
         :return:
         """
+        print(f'client {self.user} starting...')
+        client_log.info(f'client {self.user} starting...')
+        self.db = StoreClient(self.user)
+        print(f'{self.user} data base init...')
+        client_log.info(f'{self.user} data base init...')
         presence_msg = self.presence(self.user, self.status)  # создаем presence-сообщение
         client_log.info('Presence message sending...')
         self.send_data(presence_msg, self.s)
@@ -109,11 +111,20 @@ class Client(metaclass=ClientVerifier):
                     else:
                         if result_msg:
                             return f'>>>{result_msg[1]}: {result_msg[0]}'  # если есть текст выводим сообщение и автора
-                else:
-                    result_msg = dict_from_server.get('error', 'unknown error')
-                    client_log.info(f'Status: {response_code}: {result_msg}')
-                return f'{response_code}: {result_msg}'
+
+                    return f'{response_code}: {result_msg}'
+
+                if response_code == 202:
+                    try:
+                        result_msg = dict_from_server.get('alert')  # пробуем достать сообщение
+                    except Exception as err:
+                        client_log.error(f'Error {err})')
+                    else:
+                        if result_msg:
+                            return f'>>>{result_msg}'
+
             client_log.error(f'Data : {dict_from_server}')
+
         return ''
 
     def chat_r_message(self, sock):
@@ -128,7 +139,7 @@ class Client(metaclass=ClientVerifier):
                 print(answer)
                 client_log.info(f'Message received: {answer} ')
             except Exception as err:
-                client_log.error(f'Some errors: {err}')
+                client_log.error(f'Some errors in chat_r_message: {err}')
                 exit(1)
 
     def chat_w_message(self, user, s):
@@ -138,10 +149,84 @@ class Client(metaclass=ClientVerifier):
         """
         while True:
             message = input(f'>>>{user}\n')
-            try:
-                self.send_data(self.message_to_server(message, user), s)
-            except Exception as err:
-                client_log.error(f'Some errors: {err}')
+            if message == 'exit':
+                exit()
+
+            if message == 'list':
+                try:
+                    print('Your contacts list: - ', self.db.get_contacts())
+                except Exception as err:
+                    client_log.error(f'Some errors in chat_w_message(list): {err}')
+
+            if message == 'history':
+                try:
+                    print('Your history messages: - ', self.db.get_history())
+                except Exception as err:
+                    client_log.error(f'Some errors in chat_w_message(history): {err}')
+
+            if message == 'online':  # клиент запрашивает получение списка контактов
+                data = {
+                    "action": "get_contacts",  # формируем запрос по ТЗ к серверу с action "get_contacts"
+                    "time": datetime.timestamp(datetime.now()),
+                    "user": {
+                        "account_name": user,
+                    }
+                }
+                client_log.info(f'data for contacts: {data}')
+                try:  # отправляем запрос на сервер и ожидаем ответа, тк такая информация (онлайн клиенты)
+                    self.send_data(data, s)  # хранится только на серверной БД
+                except Exception as err:
+                    client_log.error(f'Some errors in chat_w_message: {err}')
+
+            # Lesson 12 - Добавление/удаление контакта в список контактов
+            if message == 'add':
+                contact = input(f'>>>{user}: Write nickname new contact\n')
+                data = {
+                    "action": "add_contact",  # формируем запрос по ТЗ к серверу с action "add_contact"
+                    "time": datetime.timestamp(datetime.now()),
+                    "user": {
+                        "account_name": user,
+                        "status": self.status
+                    },
+                    "contact": contact
+                }
+                client_log.info(f'data for contacts: {data}')
+                try:
+                    self.send_data(data, s)
+                    self.db.add_contact(contact=contact)  # добавляем контакт в клиентской БД
+                    self.db.get_contacts()  # выводим контакты
+                except Exception as err:
+                    client_log.error(f'Some errors in add part chat_w_message: {err}')
+
+            if message == 'del':
+                contact = input(f'>>>{user}: Write nickname to delete contact\n')
+                data = {
+                    "action": "del_contact",  # формируем запрос по ТЗ к серверу с action "add_contact"
+                    "time": datetime.timestamp(datetime.now()),
+                    "user": {
+                        "account_name": user,
+                        "status": self.status
+                    },
+                    "contact": contact
+                }
+                client_log.info(f'data for contacts: {data}')
+                try:
+                    self.send_data(data, s)
+                    self.db.del_contacts(contact=contact)  # удаление контакта из БД на стороне клиента
+                    self.db.get_contacts()
+                except Exception as err:
+                    client_log.error(f'Some errors in del part chat_w_message: {err}')
+
+            else:
+                # команды клиента, игнорируемые для отправки текстом
+                commands_ignore = ['online', 'del', 'add', 'exit', 'list', 'history']
+                if message not in commands_ignore:
+                    try:  # стандартный протокол отправки сообщения на сервер
+                        self.send_data(self.message_to_server(message, user), s)
+                        self.db.add_history('all', message)  # в текущей версии сообщения будут сохранятся как "all"
+                    except Exception as err:
+                        client_log.error(f'Some errors in main part chat_w_message: {err}')
+                pass
 
     @staticmethod
     def presence(account_name, status):
@@ -158,7 +243,6 @@ class Client(metaclass=ClientVerifier):
                 "status": status
             }
         }
-        # data = ['some_data', 22113]  # wrong type data
         return data
 
     @staticmethod
@@ -187,7 +271,7 @@ class Client(metaclass=ClientVerifier):
         return data
 
 
-# основная функция включает в себя создание сокета, тк по тЗ мы не можем создать сокет на уровне класса
+# основная функция включает в себя создание сокета, тк по ТЗ мы не можем создать сокет на уровне класса
 def main(addr, port, user, status):
     """основная функция для запуска клиента чата
     :param addr: server ip
@@ -229,6 +313,7 @@ def get_addr_port():
     parser.add_argument("-p", action="store", dest="port", type=int, default=7777)
     parser.add_argument("-user", action="store", dest="user", type=str, default='Varvara')
     parser.add_argument("-status", action="store", dest="status", type=str, default='2 years')
+    # parser.add_argument("-c", action="store", dest="contacts", type=str, default='')
     # parser.add_argument("-s", action="store", dest="send", type=int,
     #                     default=0)  # send дает возможность клиенту отправлять сообщения
     args = parser.parse_args()
@@ -240,4 +325,11 @@ def get_addr_port():
 
 
 if __name__ == '__main__':
-    main(*get_addr_port())
+    try:
+        main(*get_addr_port())
+    except Exception:
+        import sys
+        print(sys.exc_info()[0])
+        import traceback
+        print(traceback.format_exc())
+        input("Press Enter to continue ...")

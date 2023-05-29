@@ -1,5 +1,8 @@
 from subprocess import Popen, CREATE_NEW_CONSOLE
 
+# with open("log.txt", 'a') as log:
+#     proc = Popen(['cmd', 'args'], stdout=log, stderr=log)
+
 p_list = []  # Список клиентских процессов
 while True:
     user = input("Запуск 2 тестовых клиентов (t) / Запуск клиентов (add) / Закрыть клиентов (x) / Выйти (q) ")
@@ -25,6 +28,7 @@ while True:
         else:
             print('try again')
     elif user == 'x':
+        print('close clients...')
         for p in p_list:
             p.kill()
         p_list.clear()

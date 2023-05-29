@@ -2,24 +2,21 @@ import argparse
 import json
 import logging
 import select
-import sys
 import threading
 from dis import get_instructions
 from socket import *
 from datetime import datetime
+
+from PyQt5.QtCore import QTimer
+
 import log.server_log_config
 from log.log_decorator import log
+
 from store import StoreServer
+from server_app import *
 
 server_log = logging.getLogger('server')
 print(server_log)
-
-
-# Lesson 10.2. Реализовать метакласс ServerVerifier, выполняющий базовую проверку класса «Сервер»: отсутствие вызовов
-# connect для сокетов; использование сокетов для работы по TCP. ### 3. Реализовать дескриптор для класса серверного
-# сокета, а в нем — проверку номера порта. Это должно быть целое число (>=0). Значение порта по умолчанию равняется
-# 7777. Дескриптор надо создать в отдельном классе. Его экземпляр добавить в пределах класса серверного сокета. Номер
-# порта передается в экземпляр дескриптора при запуске сервера.
 
 
 # дескриптор
@@ -31,23 +28,6 @@ class ServerPort:
 
     def __set_name__(self, owner, name):
         self.name = name
-
-
-# (venv) PS C:\Users\vanka\PycharmProjects\gbChat> python server.py -p ff
-# <Logger server (DEBUG)>
-# usage: server.py [-h] [-a ADDR] [-p PORT]
-# server.py: error: argument -p: invalid int value: 'ff'
-
-# (venv) PS C:\Users\vanka\PycharmProjects\gbChat> python server.py -p 1
-# <Logger server (DEBUG)>
-# Traceback (most recent call last):
-#   File "C:\Users\vanka\PycharmProjects\gbChat\server.py", line 198, in <module>
-#     server = Server(*get_addr_port())
-#   File "C:\Users\vanka\PycharmProjects\gbChat\server.py", line 58, in __init__
-#     self.port = port
-#   File "C:\Users\vanka\PycharmProjects\gbChat\server.py", line 27, in __set__
-#     raise ValueError(f'Wrong port: {value}!')
-# ValueError: Wrong port: 1
 
 
 # метакласс(задание 2 к уроку 10)
@@ -73,10 +53,10 @@ class ServerVerifier(type):
 class Server(threading.Thread, metaclass=ServerVerifier):
     port = ServerPort()  # инициализация класса-дескриптора для проверки и установки значения порта
 
-    def __init__(self, addr, port):
+    def __init__(self, addr, port, db_name):
         self.addr = addr
         self.port = port
-        self.db = StoreServer()
+        self.db = StoreServer(db_name)
         super().__init__()
 
     @staticmethod
@@ -93,7 +73,6 @@ class Server(threading.Thread, metaclass=ServerVerifier):
         s.settimeout(1.5)  # Таймаут для операций с сокетом
         return s
 
-    @log
     def read_requests(self, r_clients, all_clients, users):
         """ Чтение запросов из списка клиентов
         :params: clients (get from select)
@@ -128,7 +107,6 @@ class Server(threading.Thread, metaclass=ServerVerifier):
         msg = json.dumps(msg, indent=4).encode('utf-8')
         return msg
 
-    @log
     def write_responses(self, requests, w_clients, clients, chat, users):
         """ ответ сервера клиентам
         :params: clients requests, clients, chat(list of messages)
@@ -137,8 +115,6 @@ class Server(threading.Thread, metaclass=ServerVerifier):
         for client in w_clients:
             if client in requests:
                 resp = requests[client].encode('utf-8')
-                recipients = clients.copy()  # создаем список получателей
-                recipients.remove(client)  # исключаем из получателей клиента-отправителя
                 if resp != b'':
                     d = json.loads(resp.decode('utf-8'))
                     try:
@@ -146,13 +122,65 @@ class Server(threading.Thread, metaclass=ServerVerifier):
                             client.send(self.presence_answer(d))
                             login = d['user']['account_name']
                             info = d['user']['status']
-                            self.db.client_login(login=login, info=info, ip=self.port, online=True)
-                            users[d['user']['account_name']] = client
-                            # добавляем клиента в базу
-                        if d['text']:  # если в сообщении есть текст
-                            chat.append(
-                                [d['text'], d['user']['account_name']])  # в "чат" добавляем текст и пользователя
-                            for clnt in recipients:  # циклом идем по списку получателей и отправляем сообщение
+                            self.db.client_login(login=login, info=info, ip=self.port, online=True, contacts=None)
+                            users[d['user']['account_name']] = client  # добавляем клиента в базу
+
+                        if d['action'] == 'get_contacts':
+                            try:
+                                contacts = self.db.get_online()
+                                result = []
+                                for i in contacts:
+                                    for x in i:
+                                        result.append(str(x))
+                                data = {
+                                    "response": 202,
+                                    "alert": result,
+                                }
+                                self.send_data(data, client)
+                            except:
+                                pass
+
+                        if d['action'] == 'add_contact':  # клиент ввел команду на добавление контакта
+                            login = d['user']['account_name']
+                            contact = d['contact']
+                            try:
+                                self.db.add_contact(login=login, contact=contact)  # добавляем контакт в серверной БД
+                                client.send(self.presence_answer(d))
+                            except:
+                                pass
+
+                        if d['action'] == 'del_contact':  # клиент ввел команду на удаление контакта
+                            login = d['user']['account_name']
+                            contact = d['contact']
+                            try:
+                                self.db.del_contacts(login=login, contact=contact)  # удаление контакта в серверной БД
+                                client.send(self.presence_answer(d))
+                            except:
+                                pass
+
+                        if d['text'] == 'Hello World':  # тестовое сообщение клиента для ответа только самому клиенту
+                            chat.append(['Hi, Bro!', d['user']['account_name']])
+                            data = {
+                                "response": 200,
+                                "action": "message",
+                                "time": datetime.timestamp(datetime.now()),
+                                "text": chat[0],
+                            }
+                            try:
+                                self.send_data(data, client)
+                            except:
+                                # Сокет недоступен, клиент отключился
+                                pass
+                            del chat[0]  # удаляем сообщение
+
+                        if d['text'] and d['text'] != 'Hello World':  # если в сообщении есть текст
+                            login = d['user']['account_name']
+                            client_list = self.db.get_contacts(login=login)
+                            # Ниже создаем список получателей из словаря users(клиенты онлайн) и списка client_list
+                            # т.е. сообщение будет отправлено только тем, кто онлайн и в контактах отправителя
+                            receivers = {name: users[name] for name in client_list if name in users}
+                            chat.append([d['text'], login])
+                            for key, value_sock in receivers.items():  # идем циклом по значению словаря (сокетам)
                                 data = {
                                     "response": 200,
                                     "action": "message",
@@ -160,7 +188,10 @@ class Server(threading.Thread, metaclass=ServerVerifier):
                                     "text": chat[0],
                                 }
                                 try:
-                                    self.send_data(data, clnt)
+                                    self.send_data(data, value_sock)
+                                    history_rec = self.db.MessageHistory(author=login, recipient=key, text=chat[0][0])
+                                    self.db.session.add(history_rec)
+                                    self.db.session.commit()
                                 except:
                                     # Сокет недоступен, клиент отключился
                                     pass
@@ -206,12 +237,13 @@ class Server(threading.Thread, metaclass=ServerVerifier):
                 if requests:
                     self.write_responses(requests, w, clients, chat, users)  # Выполним отправку ответов клиентам
                     print(f'Clients online: {self.db.get_online()}')  # вывод находящихся онлайн пользователей
+                    # requests = {}
 
     def admin_commands(self):  # функция для администрирования серверной части чата, ввода команд
         while True:
             command = input('введите команду\n')
             if command == 'exit':
-                sys.exit()
+                exit()
             elif command == 'online':
                 print(f'Clients online: {self.db.get_online()}')
             elif command == 'h':
@@ -237,35 +269,73 @@ def get_addr_port():
     return addr, port
 
 
+# GUI Functions
+def refresh_table():
+    main_window.table(db=server.db)
+
+
+def on_clicked():
+    print("Поздравляю! Твоя первая кнопка нажата!")
+
+
+def all_clients(db):
+    s = db.get_clients()
+    raw_s = r'{}'.format(s)
+    print(raw_s)
+
+
+def on_line(db):
+    res = db.get_online()
+    if res:
+        s = ''.join(res[0])
+        raw_s = r'{}'.format(s)
+        print(raw_s)
+    else:
+        print('No online client')
+
+
+def save_config(config_window):
+    new_settings = config_window.setting_dict()
+    with open('server_settings.json', 'w', encoding='utf-8') as f:
+        json.dump(new_settings, f)
+    config_window.close()
+
+
 if __name__ == '__main__':
-    server = Server(*get_addr_port())
+    # сначала запускаем окно настроек
+    server_app = QApplication(sys.argv)
+    config_window = ConfigWindow({})
+    config_window.ok_button.clicked.connect(lambda _: save_config(config_window))
+    server_app.exec_()
+    with open('server_settings.json', 'r', encoding='utf-8') as f_r:  # полученные из ConfigWindow настройки в файл
+        settings = json.load(f_r)  # полученные из ConfigWindow настройки передаем в файл
+        f_r.close()
+
+    # запуск сервера через командную строку
+    # server = Server(*get_addr_port())
+
+    # после получения настроек используем их для запуска сервера
+    server = Server(addr=settings['addr'], port=settings['port'],
+                    db_name=settings['db_name'])  # запуск сервера через приложение
 
     threading_1 = threading.Thread(daemon=True, target=server.main)
-    threading_1.start()
+    threading_1.start()  # запускаем первый поток с основным методом класса Server
 
     threading_2 = threading.Thread(target=server.admin_commands)
     threading_2.daemon = True
-    threading_2.start()
+    threading_2.start()  # определяем второй поток для возможности ввода команд
 
+    main_window = MainWindow()
+
+    # таймер для обновления отображения данных в приложении
+    timer = QTimer()
+    timer.timeout.connect(refresh_table)
+    timer.start(1000)
+
+    main_window.just_button.triggered.connect(on_clicked)  # тестовая кнопка
+    main_window.all_clients.triggered.connect(lambda: main_window.online_clients(db=server.db))  # клиенты-онлайн
+    main_window.online.triggered.connect(lambda _: main_window.history_table(db=server.db))  # история сообщений
+    main_window.statusBar().showMessage('Lets go!')  # статус-бар
+
+    server_app.exec_()
     server.admin_commands()
-# (venv) PS C:\Users\vanka\PycharmProjects\gbChat> python server.py
-# <Logger server (DEBUG)>
-# server params = addr: , port 7777
-# введите команду
-# Получен запрос на соединение от ('127.0.0.1', 55491)
-# Получен запрос на соединение от ('127.0.0.1', 55492)
-# Clients online: [('Amelia',)]
-# Clients online: [('Amelia',), ('Varvara',)]
-# [<User('login:Amelia','info/status:5years', 'online:False')>]
-# Amelia - disconnecting
-# online
-# введите команду
-# Clients online: [('Varvara',)]
-# h
-# введите логин клиента
-# Amelia
-# введите команду
-# Client hystory: ('Amelia', <History('id:1','время входа:2023-05-22 19:23:39.794237', 'ip:7777')>)
-# exit
-# введите команду
-# (venv) PS C:\Users\vanka\PycharmProjects\gbChat>
