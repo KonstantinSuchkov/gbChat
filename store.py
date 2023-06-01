@@ -3,6 +3,7 @@ from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, cre
 from sqlalchemy.orm import sessionmaker, registry
 from settings import SERVER_DB_FILE
 
+
 # lesson 12
 # b) Реализовать хранение информации в БД на стороне клиента:
 # * список контактов;
@@ -26,8 +27,10 @@ class StoreClient:
             self.text = text
             self.time = datetime.datetime.now()
 
-        def __repr__(self):
-            return "<Message('recipient:%s', 'text:%s', 'time:%s')>" % (self.recipient, self.text, self.time)
+        def __iter__(self):
+            yield self.recipient
+            yield self.text
+            yield self.time
 
     def __init__(self, client):
         self.client = client
@@ -233,7 +236,7 @@ class StoreServer:
 
     def add_contact(self, login, contact):
         client = self.session.query(self.User).filter(self.User.login == login)
-        if client[0].contacts == None or client[0].contacts == '':  # если это контакт, то значение None
+        if client[0].contacts is None or client[0].contacts == '':  # если это новый контакт, то значение None
             client[0].contacts = contact  # тогда просто добавляем новый контакт
         else:  # иначе
             res = client[0].contacts  # запоминаем предыдущие контакты
@@ -272,7 +275,7 @@ class StoreServer:
 
 # testing
 if __name__ == '__main__':
-    db = StoreServer(SERVER_DB_FILE)
+    # db = StoreServer(SERVER_DB_FILE)
     # history_rec = db.MessageHistory(author='Test1', recipient='Test2', text='test text')
     # db.session.add(history_rec)
     # db.session.commit()
@@ -293,11 +296,11 @@ if __name__ == '__main__':
     # # print(db.get_contacts('Varvara'))
     # print(db.get_history(login='Amelia', last_entry=True))
     # print(db.get_history())
-    print(db.messages_history())
+    # print(db.messages_history())
 
-    # db_client = StoreClient('Amelia')
+    db_client = StoreClient('Amelia')
     # # db_client.add_contact('Admin')
     # # db_client.del_contacts('Papa')
-    # # print(db_client.get_contacts())
+    contacts = db_client.get_contacts()
     # db_client.add_history(recipient='Varvara', text='Hello, Amelia!')
     # print(db_client.get_history())

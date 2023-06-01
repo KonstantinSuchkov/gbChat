@@ -21,7 +21,7 @@ class MainWindow(QMainWindow):
 
         # Размер GUI
         self.setFixedSize(1200, 900)
-        self.setWindowTitle('My first QUI')
+        self.setWindowTitle('My first GUI - SERVER')
 
         # Действия
         self.just_button = QAction('Первая кнопка', self)
@@ -65,7 +65,7 @@ class MainWindow(QMainWindow):
         self.show_table(arr)
 
     def history_table(self, db):  # метод для отображения таблицы с историей переписки
-        self.table = self.history_table # при вызове метода меняем основную таблицу
+        self.table = self.history_table  # при вызове метода меняем основную таблицу
         result = db.messages_history()
         arr = QtGui.QStandardItemModel()
         arr.setHorizontalHeaderLabels(['author', 'recipient', 'text', 'datetime'])

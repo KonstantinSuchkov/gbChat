@@ -1,12 +1,13 @@
 import argparse
 import json
 import logging
+import queue
 import select
 import threading
 from dis import get_instructions
 from socket import *
 from datetime import datetime
-
+import sys
 from PyQt5.QtCore import QTimer
 
 import log.server_log_config
@@ -57,6 +58,7 @@ class Server(threading.Thread, metaclass=ServerVerifier):
         self.addr = addr
         self.port = port
         self.db = StoreServer(db_name)
+        self.q = queue.Queue()
         super().__init__()
 
     @staticmethod
@@ -116,7 +118,10 @@ class Server(threading.Thread, metaclass=ServerVerifier):
             if client in requests:
                 resp = requests[client].encode('utf-8')
                 if resp != b'':
-                    d = json.loads(resp.decode('utf-8'))
+                    try:
+                        d = json.loads(resp.decode('utf-8'))
+                    except:
+                        pass
                     try:
                         if d['action'] == 'presence':  # если сообщение presence, то отправляем соответствующий ответ
                             client.send(self.presence_answer(d))
@@ -175,11 +180,18 @@ class Server(threading.Thread, metaclass=ServerVerifier):
 
                         if d['text'] and d['text'] != 'Hello World':  # если в сообщении есть текст
                             login = d['user']['account_name']
-                            client_list = self.db.get_contacts(login=login)
+                            if type(d['text']) is list:
+                                client_list = d['text'][-1]
+                                d['text'].pop()
+                                message = d['text'][0]
+                            else:
+                                client_list = self.db.get_contacts(login=login)
+                                message = d['text']
                             # Ниже создаем список получателей из словаря users(клиенты онлайн) и списка client_list
                             # т.е. сообщение будет отправлено только тем, кто онлайн и в контактах отправителя
                             receivers = {name: users[name] for name in client_list if name in users}
-                            chat.append([d['text'], login])
+
+                            chat.append([message, login])
                             for key, value_sock in receivers.items():  # идем циклом по значению словаря (сокетам)
                                 data = {
                                     "response": 200,
@@ -235,9 +247,22 @@ class Server(threading.Thread, metaclass=ServerVerifier):
                     pass  # Ничего не делать, если какой-то клиент отключился
                 requests = self.read_requests(r, clients, users)  # Сохраним запросы клиентов
                 if requests:
-                    self.write_responses(requests, w, clients, chat, users)  # Выполним отправку ответов клиентам
-                    print(f'Clients online: {self.db.get_online()}')  # вывод находящихся онлайн пользователей
-                    # requests = {}
+                    self.q.put(requests)
+                    item = self.q.get()
+                    self.write_responses(item, w, clients, chat, users)  # Выполним отправку ответов клиентам
+                    # print(f'Clients online: {self.db.get_online()}')  # вывод находящихся онлайн пользователей
+                    self.q.task_done()
+
+
+                # if requests:
+                #     self.write_responses(requests, w, clients, chat, users)  # Выполним отправку ответов клиентам
+                #     print(f'Clients online: {self.db.get_online()}')  # вывод находящихся онлайн пользователей
+                #     requests = {}
+
+    def worker(self, w, clients, chat, users):
+        pass
+
+
 
     def admin_commands(self):  # функция для администрирования серверной части чата, ввода команд
         while True:
