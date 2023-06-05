@@ -1,23 +1,36 @@
-# Задание 13
-# Продолжаем работать над мессенджером:
-#
-# 1. Реализовать графический интерфейс пользователя на стороне клиента:
-# Отображение списка контактов;
-# Выбор чата двойным кликом на элементе списка контактов;
-# Добавление нового контакта в локальный список контактов;
-# Отображение сообщений в окне чата;
-# Набор сообщения в окне ввода сообщения;
-# Отправка введенного сообщения.
-
 import sys
 
 from PyQt5.QtCore import pyqtSignal, QTimer
 from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QLabel, QLineEdit, QPushButton, \
-    QApplication, QTableView, QInputDialog, QListWidget, QVBoxLayout
+    QApplication, QTableView, QInputDialog, QListWidget, QVBoxLayout, QDialog, QDialogButtonBox, QFormLayout
 from PyQt5 import QtGui, Qt
 
 
-class Widget(Qt.QWidget):
+class AuthWindow(QDialog):
+    def __init__(self):
+        super().__init__()
+        self.name_field = QLineEdit(self)
+        self.info = QLineEdit(self)
+        self.passw_field = QLineEdit(self)
+        self.passw_rep = QLineEdit(self)
+        buttonBox = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel, self)
+
+        layout = QFormLayout(self)
+        layout.addRow("Client login/name", self.name_field)
+        layout.addRow("Client info / status", self.info)
+        layout.addRow("Client password", self.passw_field)
+        layout.addRow("Repeat password", self.passw_rep)
+        layout.addWidget(buttonBox)
+
+        buttonBox.accepted.connect(self.accept)
+        buttonBox.rejected.connect(self.reject)
+        self.show()
+
+    def getInputs(self):  # возвращает кортеж
+        return self.name_field.text(), self.info.text(), self.passw_field.text(), self.passw_rep.text()
+
+
+class Widget(Qt.QWidget):  # отображение клиентов для отправки писем только одному клиенту
     # def __init__(self, parent = None):
     #     super(Widget, self).__init__(parent)
 
@@ -139,7 +152,7 @@ class MainClientWindow(QMainWindow):
 
     def start(self):  # отображение списка клиентов, для отправки ссобщений каждому клиенту по щелчку мыши
 
-        # Вариант ListWidget в главной окне, но так у меня работает(кликабельный) только последний объект
+        # Вариант ListWidget в главном окне, но так у меня работает(кликабельный) только последний объект
         items = []
         # for x in range(self.listWidget11.count() - 1):
         #     items.append(self.listWidget11.item(x).text())
@@ -175,7 +188,7 @@ class MainClientWindow(QMainWindow):
         self.show_table(arr)
 
     def history_table(self, db, online, chat_arr):  # метод для отображения таблицы с историей переписки
-        self.table = self.history_table # при вызове метода меняем основную таблицу
+        self.table = self.history_table  # при вызове метода меняем основную таблицу
         result = db.get_history()
         arr = QtGui.QStandardItemModel()
         arr.setHorizontalHeaderLabels(['recipient', 'text', 'datetime'])
@@ -241,7 +254,7 @@ class MainClientWindow(QMainWindow):
 
     def show_message_to_one(self):  # передача сообщения в client.py
         self.message = [self.text.text(), [self.contact]]  # при отправке одному клиенту сообщение будет иметь
-        print(self.message)  # тип "список", вторым элементом которого будет никнейм получателя сообщения
+        print(self.message[0])  # тип "список", вторым элементом которого будет никнейм получателя сообщения
         return self.message
 
     def show_table(self, content):  # метод отображения таблицы в основном окне
@@ -256,5 +269,11 @@ class MainClientWindow(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    conf = MainClientWindow(user='Amelia')
-    app.exec_()
+    window = AuthWindow()
+    # conf = MainClientWindow(user='Amelia')
+    if window.exec():
+        print(window.name_field.text())
+        print('info=', type(window.info.text()))
+    # app.exec_()
+    # exit(0)
+

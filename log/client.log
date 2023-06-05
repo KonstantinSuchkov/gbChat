@@ -1,26 +1,1577 @@
-2023-06-01 10:53:02,084 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
-2023-06-01 10:53:02,085 INFO client.py  client.py start...
-2023-06-01 10:53:02,086 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
-2023-06-01 10:53:02,086 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-06-01 10:53:02,090 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-06-01 10:53:02,090 INFO client.py  client Varvara starting...
-2023-06-01 10:53:02,106 INFO client.py  Varvara data base init...
-2023-06-01 10:53:02,106 INFO client.py  Presence message sending...
-2023-06-01 10:53:02,106 INFO client.py  Presence message sending...DONE
-2023-06-01 10:53:03,613 INFO client.py  Response status OK
-2023-06-01 10:53:03,764 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
-2023-06-01 10:53:03,766 INFO client.py  client.py start...
-2023-06-01 10:53:03,766 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 5years
-2023-06-01 10:53:03,766 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
-2023-06-01 10:53:03,770 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
-2023-06-01 10:53:03,770 INFO client.py  client Amelia starting...
-2023-06-01 10:53:03,785 INFO client.py  Amelia data base init...
-2023-06-01 10:53:03,785 INFO client.py  Presence message sending...
-2023-06-01 10:53:03,785 INFO client.py  Presence message sending...DONE
-2023-06-01 10:53:05,290 INFO client.py  Response status OK
-2023-06-01 10:53:19,574 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685605999.574232, 'user': {'account_name': 'Amelia'}}
-2023-06-01 10:53:20,430 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
-2023-06-01 10:53:38,572 INFO client.py  Response status OK
-2023-06-01 10:53:38,572 INFO client.py  Message received: >>>Amelia: прр 
-2023-06-01 10:54:08,862 INFO client.py  Response status OK
-2023-06-01 10:54:08,862 INFO client.py  Message received: >>>Varvara: привет, Амелька! 
+
+2023-06-04 12:22:53,681 INFO client.py  Response status OK
+2023-06-04 12:22:53,681 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 12:22:56,047 INFO client.py  Presence message sending...
+2023-06-04 12:22:56,047 INFO client.py  Presence message sending...DONE
+2023-06-04 12:22:56,065 INFO client.py  Varvara data base init...
+2023-06-04 12:22:56,704 INFO client.py  Response status OK
+2023-06-04 12:23:00,277 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685870580.277531, 'user': {'account_name': 'Varvara'}}
+2023-06-04 12:23:01,242 INFO client.py  Message received: >>>['Varvara'] 
+2023-06-04 12:23:15,771 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 12:23:21,812 INFO client.py  client.py start...
+2023-06-04 12:23:21,813 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 12:23:21,813 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 12:23:21,816 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 12:23:21,816 INFO client.py  client Amelia starting...
+2023-06-04 12:23:23,330 INFO client.py  Response status OK
+2023-06-04 12:23:23,331 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 12:23:23,996 INFO client.py  Presence message sending...
+2023-06-04 12:23:23,997 INFO client.py  Presence message sending...DONE
+2023-06-04 12:23:24,014 INFO client.py  Amelia data base init...
+2023-06-04 12:23:24,834 INFO client.py  Response status OK
+2023-06-04 12:23:27,390 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685870607.39095, 'user': {'account_name': 'Amelia'}}
+2023-06-04 12:23:27,869 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 12:23:47,814 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:23:47,814 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:23:47,815 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:23:47,815 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:50:10,097 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 12:50:20,518 INFO client.py  client.py start...
+2023-06-04 12:50:20,518 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 12:50:20,519 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 12:50:20,522 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 12:50:20,522 INFO client.py  client Varvara starting...
+2023-06-04 12:50:22,124 INFO client.py  Response status OK
+2023-06-04 12:50:22,125 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 12:50:22,452 INFO client.py  Presence message sending...
+2023-06-04 12:50:22,452 INFO client.py  Presence message sending...DONE
+2023-06-04 12:50:22,469 INFO client.py  Varvara data base init...
+2023-06-04 12:50:23,639 INFO client.py  Response status OK
+2023-06-04 12:50:25,202 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 12:50:31,538 INFO client.py  client.py start...
+2023-06-04 12:50:31,538 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 12:50:31,539 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 12:50:31,542 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 12:50:31,542 INFO client.py  client Amelia starting...
+2023-06-04 12:50:33,048 INFO client.py  Response status OK
+2023-06-04 12:50:33,048 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 12:50:33,807 INFO client.py  Presence message sending...
+2023-06-04 12:50:33,807 INFO client.py  Presence message sending...DONE
+2023-06-04 12:50:33,824 INFO client.py  Amelia data base init...
+2023-06-04 12:50:34,563 INFO client.py  Response status OK
+2023-06-04 12:50:37,193 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685872237.192204, 'user': {'account_name': 'Amelia'}}
+2023-06-04 12:50:37,599 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 12:50:41,831 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685872241.831942, 'user': {'account_name': 'Varvara'}}
+2023-06-04 12:50:42,130 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 12:54:36,456 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:54:36,456 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:54:36,457 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:54:36,457 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:54:56,524 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 12:55:01,493 INFO client.py  client.py start...
+2023-06-04 12:55:01,493 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 12:55:01,494 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 12:55:01,498 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 12:55:01,499 INFO client.py  client Amelia starting...
+2023-06-04 12:55:03,098 INFO client.py  Response status OK
+2023-06-04 12:55:03,098 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 12:55:03,466 INFO client.py  Presence message sending...
+2023-06-04 12:55:03,466 INFO client.py  Presence message sending...DONE
+2023-06-04 12:55:03,482 INFO client.py  Amelia data base init...
+2023-06-04 12:55:04,615 INFO client.py  Response status OK
+2023-06-04 12:55:05,394 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 12:55:11,002 INFO client.py  client.py start...
+2023-06-04 12:55:11,002 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 12:55:11,003 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 12:55:11,006 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 12:55:11,006 INFO client.py  client Varvara starting...
+2023-06-04 12:55:12,525 INFO client.py  Response status OK
+2023-06-04 12:55:12,526 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 12:55:12,829 INFO client.py  Presence message sending...
+2023-06-04 12:55:12,829 INFO client.py  Presence message sending...DONE
+2023-06-04 12:55:12,845 INFO client.py  Varvara data base init...
+2023-06-04 12:55:14,034 INFO client.py  Response status OK
+2023-06-04 12:55:16,318 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:55:16,319 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:55:18,335 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685872518.335339, 'user': {'account_name': 'Amelia'}}
+2023-06-04 12:55:18,335 ERROR client.py  Some errors in chat_w_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:55:29,408 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:55:30,150 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 12:55:46,978 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 12:55:50,613 INFO client.py  client.py start...
+2023-06-04 12:55:50,613 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 12:55:50,614 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 12:55:50,617 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 12:55:50,617 INFO client.py  client Varvara starting...
+2023-06-04 12:55:52,226 INFO client.py  Response status OK
+2023-06-04 12:55:52,226 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 12:55:53,300 INFO client.py  Presence message sending...
+2023-06-04 12:55:53,300 INFO client.py  Presence message sending...DONE
+2023-06-04 12:55:53,318 INFO client.py  Varvara data base init...
+2023-06-04 12:55:53,732 INFO client.py  Response status OK
+2023-06-04 12:55:58,996 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 12:56:13,099 INFO client.py  client.py start...
+2023-06-04 12:56:13,099 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 12:56:13,100 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 12:56:13,102 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 12:56:13,102 INFO client.py  client Amelia starting...
+2023-06-04 12:56:14,617 INFO client.py  Response status OK
+2023-06-04 12:56:14,618 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 12:56:14,870 INFO client.py  Presence message sending...
+2023-06-04 12:56:14,871 INFO client.py  Presence message sending...DONE
+2023-06-04 12:56:14,887 INFO client.py  Amelia data base init...
+2023-06-04 12:56:16,124 INFO client.py  Response status OK
+2023-06-04 12:56:19,822 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685872579.82219, 'user': {'account_name': 'Varvara'}}
+2023-06-04 12:56:20,664 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 12:56:22,679 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685872582.67929, 'user': {'account_name': 'Amelia'}}
+2023-06-04 12:56:23,688 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 12:58:13,808 INFO client.py  Response status OK
+2023-06-04 12:58:13,809 INFO client.py  Message received: >>>Varvara: 111 
+2023-06-04 13:00:54,242 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:00:54,242 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:00:54,243 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:00:54,243 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:16:41,108 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 13:16:47,551 INFO client.py  client.py start...
+2023-06-04 13:16:47,551 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 13:16:47,552 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 13:16:47,555 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 13:16:47,555 INFO client.py  client Varvara starting...
+2023-06-04 13:16:49,161 INFO client.py  Response status OK
+2023-06-04 13:16:49,162 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 13:16:50,260 INFO client.py  Presence message sending...
+2023-06-04 13:16:50,261 INFO client.py  Presence message sending...DONE
+2023-06-04 13:16:50,277 INFO client.py  Varvara data base init...
+2023-06-04 13:16:50,681 INFO client.py  Response status OK
+2023-06-04 13:16:55,419 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 13:17:00,887 INFO client.py  client.py start...
+2023-06-04 13:17:00,887 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 13:17:00,888 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 13:17:00,890 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 13:17:00,890 INFO client.py  client Amelia starting...
+2023-06-04 13:17:02,402 INFO client.py  Response status OK
+2023-06-04 13:17:02,403 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 13:17:03,814 INFO client.py  Presence message sending...
+2023-06-04 13:17:03,814 INFO client.py  Presence message sending...DONE
+2023-06-04 13:17:03,829 INFO client.py  Amelia data base init...
+2023-06-04 13:17:03,916 INFO client.py  Response status OK
+2023-06-04 13:17:09,321 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685873829.321609, 'user': {'account_name': 'Varvara'}}
+2023-06-04 13:17:09,938 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 13:17:10,480 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685873830.480397, 'user': {'account_name': 'Amelia'}}
+2023-06-04 13:17:11,448 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 13:19:32,394 ERROR client.py  Some errors in main part chat_w_message: (sqlite3.InterfaceError) Error binding parameter 1 - probably unsupported type.
+[SQL: INSERT INTO "History" (recipient, text, time) VALUES (?, ?, ?)]
+[parameters: ('Amelia', ['hi', ['Amelia']], '2023-06-04 13:19:32.393653')]
+(Background on this error at: https://sqlalche.me/e/20/rvf5)
+2023-06-04 13:19:49,848 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:19:49,848 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:19:54,203 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 13:35:56,262 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 13:36:02,461 INFO client.py  client.py start...
+2023-06-04 13:36:02,461 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 13:36:02,461 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 13:36:02,465 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 13:36:02,465 INFO client.py  client Varvara starting...
+2023-06-04 13:36:04,067 INFO client.py  Response status OK
+2023-06-04 13:36:04,067 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 13:36:05,117 INFO client.py  Presence message sending...
+2023-06-04 13:36:05,118 INFO client.py  Presence message sending...DONE
+2023-06-04 13:36:05,150 INFO client.py  Varvara data base init...
+2023-06-04 13:36:05,583 INFO client.py  Response status OK
+2023-06-04 13:36:15,566 INFO client.py  data for contacts: {'action': 'del_contact', 'time': 1685874975.566488, 'user': {'account_name': 'Varvara', 'status': '2 years'}, 'contact': 'Amelia'}
+2023-06-04 13:36:16,184 INFO client.py  Response status OK
+2023-06-04 13:36:16,185 INFO client.py  Message received: 200: 0 
+2023-06-04 13:36:26,770 INFO client.py  data for contacts: {'action': 'add_contact', 'time': 1685874986.770895, 'user': {'account_name': 'Varvara', 'status': '2 years'}, 'contact': 'Amelia'}
+2023-06-04 13:36:28,289 INFO client.py  Response status OK
+2023-06-04 13:36:28,289 INFO client.py  Message received: 200: 0 
+2023-06-04 13:36:30,965 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:36:30,965 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685874990.965139, 'user': {'account_name': 'Varvara'}}
+2023-06-04 13:36:30,966 ERROR client.py  Some errors in chat_w_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:37:12,933 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:38:55,276 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 13:39:08,412 INFO client.py  client.py start...
+2023-06-04 13:39:08,412 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, Varvara
+2023-06-04 13:39:08,413 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 13:39:08,416 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 13:39:08,416 INFO client.py  client Varvara starting...
+2023-06-04 13:39:10,019 INFO client.py  Wrong auth for clientVarvara
+2023-06-04 13:39:46,310 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 13:39:49,700 INFO client.py  client.py start...
+2023-06-04 13:39:49,700 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 13:39:49,701 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 13:39:49,704 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 13:39:49,705 INFO client.py  client Varvara starting...
+2023-06-04 13:39:51,214 INFO client.py  Response status OK
+2023-06-04 13:39:51,214 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 13:39:51,593 INFO client.py  Presence message sending...
+2023-06-04 13:39:51,593 INFO client.py  Presence message sending...DONE
+2023-06-04 13:39:51,621 INFO client.py  Varvara data base init...
+2023-06-04 13:39:52,729 INFO client.py  Response status OK
+2023-06-04 13:39:57,924 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685875197.924958, 'user': {'account_name': 'Varvara'}}
+2023-06-04 13:39:58,792 INFO client.py  Message received: >>>['Varvara'] 
+2023-06-04 13:40:13,192 INFO client.py  data for contacts: {'action': 'add_contact', 'time': 1685875213.192565, 'user': {'account_name': 'Varvara', 'status': '2 years'}, 'contact': 'Amelia'}
+2023-06-04 13:40:13,895 INFO client.py  Response status OK
+2023-06-04 13:40:13,895 INFO client.py  Message received: 200: 0 
+2023-06-04 13:40:36,295 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:40:36,295 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:42:09,407 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 13:42:12,767 INFO client.py  client.py start...
+2023-06-04 13:42:12,767 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 13:42:12,768 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 13:42:12,771 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 13:42:12,771 INFO client.py  client Amelia starting...
+2023-06-04 13:42:14,377 INFO client.py  Response status OK
+2023-06-04 13:42:14,377 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 13:42:15,270 INFO client.py  Presence message sending...
+2023-06-04 13:42:15,270 INFO client.py  Presence message sending...DONE
+2023-06-04 13:42:15,293 INFO client.py  Amelia data base init...
+2023-06-04 13:42:15,894 INFO client.py  Response status OK
+2023-06-04 13:42:21,776 INFO client.py  data for contacts: {'action': 'add_contact', 'time': 1685875341.776616, 'user': {'account_name': 'Amelia', 'status': '2 years'}, 'contact': 'Varvara'}
+2023-06-04 13:42:21,957 INFO client.py  Response status OK
+2023-06-04 13:42:21,957 INFO client.py  Message received: 200: 0 
+2023-06-04 13:42:42,546 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 13:42:49,867 INFO client.py  client.py start...
+2023-06-04 13:42:49,867 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 13:42:49,868 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 13:42:49,872 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 13:42:49,872 INFO client.py  client Varvara starting...
+2023-06-04 13:42:51,381 INFO client.py  Response status OK
+2023-06-04 13:42:51,381 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 13:42:51,989 INFO client.py  Presence message sending...
+2023-06-04 13:42:51,989 INFO client.py  Presence message sending...DONE
+2023-06-04 13:42:52,003 INFO client.py  Varvara data base init...
+2023-06-04 13:42:52,891 INFO client.py  Response status OK
+2023-06-04 13:42:57,613 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685875377.61304, 'user': {'account_name': 'Amelia'}}
+2023-06-04 13:42:58,937 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 13:43:01,635 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685875381.635656, 'user': {'account_name': 'Amelia'}}
+2023-06-04 13:43:01,954 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 13:43:02,885 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685875382.88537, 'user': {'account_name': 'Varvara'}}
+2023-06-04 13:43:03,463 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 13:46:13,877 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:46:13,878 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:46:13,878 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:46:13,879 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:46:25,113 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 13:46:29,062 INFO client.py  client.py start...
+2023-06-04 13:46:29,062 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 13:46:29,063 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 13:46:29,066 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 13:46:29,066 INFO client.py  client Varvara starting...
+2023-06-04 13:46:30,673 INFO client.py  Response status OK
+2023-06-04 13:46:30,673 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 13:46:31,111 INFO client.py  Presence message sending...
+2023-06-04 13:46:31,111 INFO client.py  Presence message sending...DONE
+2023-06-04 13:46:31,129 INFO client.py  Varvara data base init...
+2023-06-04 13:46:32,180 INFO client.py  Response status OK
+2023-06-04 13:46:33,562 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 13:46:39,013 INFO client.py  client.py start...
+2023-06-04 13:46:39,013 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 13:46:39,013 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 13:46:39,016 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 13:46:39,016 INFO client.py  client Amelia starting...
+2023-06-04 13:46:40,534 INFO client.py  Response status OK
+2023-06-04 13:46:40,534 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 13:46:41,223 INFO client.py  Presence message sending...
+2023-06-04 13:46:41,223 INFO client.py  Presence message sending...DONE
+2023-06-04 13:46:41,240 INFO client.py  Amelia data base init...
+2023-06-04 13:46:42,043 INFO client.py  Response status OK
+2023-06-04 13:46:44,059 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685875604.059114, 'user': {'account_name': 'Amelia'}}
+2023-06-04 13:46:45,075 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 13:46:49,113 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685875609.113435, 'user': {'account_name': 'Varvara'}}
+2023-06-04 13:46:49,598 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 13:50:43,779 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:50:43,779 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:50:43,780 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:50:44,560 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 13:50:47,261 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:03:05,665 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:03:11,855 INFO client.py  client.py start...
+2023-06-04 14:03:11,855 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 14:03:11,856 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:03:11,859 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:03:11,859 INFO client.py  client Varvara starting...
+2023-06-04 14:03:13,457 INFO client.py  Response status OK
+2023-06-04 14:03:13,457 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:03:14,699 INFO client.py  Presence message sending...
+2023-06-04 14:03:14,699 INFO client.py  Presence message sending...DONE
+2023-06-04 14:03:14,716 INFO client.py  Varvara data base init...
+2023-06-04 14:03:14,970 INFO client.py  Response status OK
+2023-06-04 14:03:16,608 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685876596.608034, 'user': {'account_name': 'Varvara'}}
+2023-06-04 14:03:17,995 INFO client.py  Message received: >>>['Varvara'] 
+2023-06-04 14:03:21,469 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:03:26,924 INFO client.py  client.py start...
+2023-06-04 14:03:26,924 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 14:03:26,925 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:03:26,928 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:03:26,929 INFO client.py  client Amelia starting...
+2023-06-04 14:03:28,437 INFO client.py  Response status OK
+2023-06-04 14:03:28,439 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:03:29,317 INFO client.py  Presence message sending...
+2023-06-04 14:03:29,317 INFO client.py  Presence message sending...DONE
+2023-06-04 14:03:29,333 INFO client.py  Amelia data base init...
+2023-06-04 14:03:29,942 INFO client.py  Response status OK
+2023-06-04 14:03:39,173 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685876619.173998, 'user': {'account_name': 'Amelia'}}
+2023-06-04 14:03:40,520 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 14:03:42,454 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685876622.454489, 'user': {'account_name': 'Varvara'}}
+2023-06-04 14:03:43,542 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 14:03:54,102 INFO client.py  Response status OK
+2023-06-04 14:03:54,102 INFO client.py  Message received: 200: ['Hello', 'Varvara'] 
+2023-06-04 14:04:01,680 INFO client.py  Response status OK
+2023-06-04 14:04:01,680 INFO client.py  Message received: 200: ['Hello', 'Amelia'] 
+2023-06-04 14:04:30,365 INFO client.py  Response status OK
+2023-06-04 14:04:30,365 INFO client.py  Message received: 200: ['hello', 'Amelia'] 
+2023-06-04 14:04:53,001 INFO client.py  Response status OK
+2023-06-04 14:04:53,001 INFO client.py  Message received: 200: ['hi', 'Amelia'] 
+2023-06-04 14:09:00,189 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:09:00,190 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:09:00,190 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:09:00,191 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:12:59,205 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:13:08,275 INFO client.py  client.py start...
+2023-06-04 14:13:08,276 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 14:13:08,276 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:13:08,280 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:13:08,280 INFO client.py  client Varvara starting...
+2023-06-04 14:13:09,910 INFO client.py  Response status OK
+2023-06-04 14:13:09,911 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:13:12,516 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:13:13,014 INFO client.py  Presence message sending...
+2023-06-04 14:13:13,015 INFO client.py  Presence message sending...DONE
+2023-06-04 14:13:13,031 INFO client.py  Varvara data base init...
+2023-06-04 14:13:14,445 INFO client.py  Response status OK
+2023-06-04 14:13:23,939 INFO client.py  client.py start...
+2023-06-04 14:13:23,939 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 14:13:23,940 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:13:23,942 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:13:23,943 INFO client.py  client Amelia starting...
+2023-06-04 14:13:25,460 INFO client.py  Response status OK
+2023-06-04 14:13:25,460 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:13:25,676 INFO client.py  Presence message sending...
+2023-06-04 14:13:25,676 INFO client.py  Presence message sending...DONE
+2023-06-04 14:13:25,694 INFO client.py  Amelia data base init...
+2023-06-04 14:13:26,970 INFO client.py  Response status OK
+2023-06-04 14:13:29,147 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685877209.147871, 'user': {'account_name': 'Varvara'}}
+2023-06-04 14:13:29,998 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 14:13:32,308 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685877212.308888, 'user': {'account_name': 'Amelia'}}
+2023-06-04 14:13:33,023 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 14:14:43,933 INFO client.py  Response status OK
+2023-06-04 14:14:43,934 INFO client.py  Message received: 200: ['Hello', 'Amelia'] 
+2023-06-04 14:15:56,998 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:15:56,998 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:15:56,999 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:15:56,999 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:16:04,212 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:16:07,826 INFO client.py  client.py start...
+2023-06-04 14:16:07,826 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 14:16:07,826 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:16:07,829 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:16:07,829 INFO client.py  client Amelia starting...
+2023-06-04 14:16:09,426 INFO client.py  Response status OK
+2023-06-04 14:16:09,426 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:16:09,427 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:16:11,136 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:16:11,549 INFO client.py  Presence message sending...
+2023-06-04 14:16:11,550 INFO client.py  Presence message sending...DONE
+2023-06-04 14:16:11,567 INFO client.py  Amelia data base init...
+2023-06-04 14:16:12,456 INFO client.py  Response status OK
+2023-06-04 14:16:12,456 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:16:19,216 INFO client.py  client.py start...
+2023-06-04 14:16:19,216 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 14:16:19,217 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:16:19,220 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:16:19,220 INFO client.py  client Varvara starting...
+2023-06-04 14:16:20,730 INFO client.py  Response status OK
+2023-06-04 14:16:20,730 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:16:20,731 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:16:23,104 INFO client.py  Presence message sending...
+2023-06-04 14:16:23,105 INFO client.py  Presence message sending...DONE
+2023-06-04 14:16:23,121 INFO client.py  Varvara data base init...
+2023-06-04 14:16:23,749 INFO client.py  Response status OK
+2023-06-04 14:16:23,749 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:16:26,587 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685877386.587548, 'user': {'account_name': 'Varvara'}}
+2023-06-04 14:16:26,783 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 14:16:27,973 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685877387.973434, 'user': {'account_name': 'Amelia'}}
+2023-06-04 14:16:28,292 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 14:16:37,340 INFO client.py  Response status OK
+2023-06-04 14:16:37,341 INFO client.py  Message received: >>>Amelia: Hello 
+2023-06-04 14:16:44,902 INFO client.py  Response status OK
+2023-06-04 14:16:44,903 INFO client.py  Message received: >>>Varvara: Hi 
+2023-06-04 14:17:21,097 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:17:23,914 INFO client.py  client.py start...
+2023-06-04 14:17:23,914 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Janna, 2 years
+2023-06-04 14:17:23,914 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:17:23,917 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:17:23,917 INFO client.py  client Janna starting...
+2023-06-04 14:17:25,434 INFO client.py  Response status OK
+2023-06-04 14:17:25,434 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:17:25,434 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:17:25,733 INFO client.py  Presence message sending...
+2023-06-04 14:17:25,733 INFO client.py  Presence message sending...DONE
+2023-06-04 14:17:25,757 INFO client.py  Janna data base init...
+2023-06-04 14:17:26,947 INFO client.py  Response status OK
+2023-06-04 14:17:26,948 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:17:58,547 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685877478.547848, 'user': {'account_name': 'Janna'}}
+2023-06-04 14:17:58,663 INFO client.py  Message received: >>>['Amelia', 'Varvara', 'Janna'] 
+2023-06-04 14:18:50,663 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:18:50,664 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:18:50,664 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:18:50,664 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:18:50,665 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:37:50,175 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:38:02,718 INFO client.py  client.py start...
+2023-06-04 14:38:02,718 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 14:38:02,719 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:38:02,721 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:38:02,722 INFO client.py  client Amelia starting...
+2023-06-04 14:38:02,813 INFO client.py  Response status OK
+2023-06-04 14:38:02,813 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:38:02,814 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:38:03,545 INFO client.py  Presence message sending...
+2023-06-04 14:38:03,545 INFO client.py  Presence message sending...DONE
+2023-06-04 14:38:03,561 INFO client.py  Amelia data base init...
+2023-06-04 14:38:04,318 INFO client.py  Response status OK
+2023-06-04 14:38:04,319 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:38:07,394 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:38:15,688 INFO client.py  client.py start...
+2023-06-04 14:38:15,688 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 14:38:15,689 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:38:15,692 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:38:15,692 INFO client.py  client Varvara starting...
+2023-06-04 14:38:17,201 INFO client.py  Response status OK
+2023-06-04 14:38:17,201 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:38:17,202 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:38:17,464 INFO client.py  Presence message sending...
+2023-06-04 14:38:17,465 INFO client.py  Presence message sending...DONE
+2023-06-04 14:38:17,489 INFO client.py  Varvara data base init...
+2023-06-04 14:38:18,716 INFO client.py  Response status OK
+2023-06-04 14:38:18,716 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:38:24,350 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685878704.350918, 'user': {'account_name': 'Varvara'}}
+2023-06-04 14:38:24,764 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 14:38:25,783 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685878705.783187, 'user': {'account_name': 'Amelia'}}
+2023-06-04 14:38:26,277 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 14:38:41,368 INFO client.py  Response status OK
+2023-06-04 14:38:41,368 INFO client.py  Message received: >>>Varvara: Hello 
+2023-06-04 14:38:50,425 INFO client.py  Response status OK
+2023-06-04 14:38:50,426 INFO client.py  Message received: >>>Amelia: Hi 
+2023-06-04 14:39:16,072 INFO client.py  Response status OK
+2023-06-04 14:39:16,073 INFO client.py  Message received: >>>Varvara: To One 
+2023-06-04 14:39:36,838 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:39:36,838 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:39:36,839 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:39:36,839 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:53:15,005 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:53:21,618 INFO client.py  client.py start...
+2023-06-04 14:53:21,618 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 14:53:21,618 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:53:21,621 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:53:21,621 INFO client.py  client Amelia starting...
+2023-06-04 14:53:23,219 INFO client.py  Response status OK
+2023-06-04 14:53:23,219 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:53:23,219 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:53:24,322 INFO client.py  Presence message sending...
+2023-06-04 14:53:24,323 INFO client.py  Presence message sending...DONE
+2023-06-04 14:53:24,338 INFO client.py  Amelia data base init...
+2023-06-04 14:53:24,734 INFO client.py  Response status OK
+2023-06-04 14:53:24,734 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:53:27,708 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:53:35,054 INFO client.py  client.py start...
+2023-06-04 14:53:35,054 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 14:53:35,055 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:53:35,058 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:53:35,058 INFO client.py  client Varvara starting...
+2023-06-04 14:53:36,567 INFO client.py  Response status OK
+2023-06-04 14:53:36,567 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:53:36,568 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:53:37,257 INFO client.py  Presence message sending...
+2023-06-04 14:53:37,257 INFO client.py  Presence message sending...DONE
+2023-06-04 14:53:37,274 INFO client.py  Varvara data base init...
+2023-06-04 14:53:38,075 INFO client.py  Response status OK
+2023-06-04 14:53:38,075 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:53:43,899 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685879623.899728, 'user': {'account_name': 'Varvara'}}
+2023-06-04 14:53:44,119 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 14:53:46,513 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685879626.513824, 'user': {'account_name': 'Amelia'}}
+2023-06-04 14:53:47,138 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 14:53:56,985 ERROR client.py  Some errors in main part chat_w_message: Object of type bytes is not JSON serializable
+2023-06-04 14:54:24,152 ERROR client.py  Some errors in main part chat_w_message: Object of type bytes is not JSON serializable
+2023-06-04 14:56:49,741 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:56:49,741 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:56:49,742 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 14:57:42,618 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:57:45,457 INFO client.py  client.py start...
+2023-06-04 14:57:45,458 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 14:57:45,459 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:57:45,467 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:57:45,467 INFO client.py  client Varvara starting...
+2023-06-04 14:57:47,065 INFO client.py  Response status OK
+2023-06-04 14:57:47,066 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:57:47,066 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:57:47,993 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 14:57:48,522 INFO client.py  Presence message sending...
+2023-06-04 14:57:48,523 INFO client.py  Presence message sending...DONE
+2023-06-04 14:57:48,538 INFO client.py  Varvara data base init...
+2023-06-04 14:57:48,578 INFO client.py  Response status OK
+2023-06-04 14:57:48,578 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:57:59,335 INFO client.py  client.py start...
+2023-06-04 14:57:59,335 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 14:57:59,336 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 14:57:59,338 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 14:57:59,339 INFO client.py  client Amelia starting...
+2023-06-04 14:58:00,857 INFO client.py  Response status OK
+2023-06-04 14:58:00,857 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:58:00,858 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 14:58:01,159 INFO client.py  Presence message sending...
+2023-06-04 14:58:01,159 INFO client.py  Presence message sending...DONE
+2023-06-04 14:58:01,179 INFO client.py  Amelia data base init...
+2023-06-04 14:58:02,368 INFO client.py  Response status OK
+2023-06-04 14:58:02,368 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 14:58:04,889 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685879884.889943, 'user': {'account_name': 'Varvara'}}
+2023-06-04 14:58:05,394 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 14:58:05,754 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685879885.754609, 'user': {'account_name': 'Amelia'}}
+2023-06-04 14:58:06,903 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 15:01:11,839 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:01:11,840 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:01:11,841 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:01:11,841 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:03:14,855 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 15:03:26,596 INFO client.py  client.py start...
+2023-06-04 15:03:26,596 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 15:03:26,597 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 15:03:26,600 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 15:03:26,600 INFO client.py  client Varvara starting...
+2023-06-04 15:03:28,215 INFO client.py  Response status OK
+2023-06-04 15:03:28,216 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:03:28,216 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 15:03:29,090 INFO client.py  Presence message sending...
+2023-06-04 15:03:29,091 INFO client.py  Presence message sending...DONE
+2023-06-04 15:03:29,108 INFO client.py  Varvara data base init...
+2023-06-04 15:03:29,719 INFO client.py  Response status OK
+2023-06-04 15:03:29,719 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:03:32,914 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 15:03:38,488 INFO client.py  client.py start...
+2023-06-04 15:03:38,488 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 15:03:38,489 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 15:03:38,492 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 15:03:38,492 INFO client.py  client Amelia starting...
+2023-06-04 15:03:40,007 INFO client.py  Response status OK
+2023-06-04 15:03:40,007 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:03:40,008 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 15:03:41,410 INFO client.py  Presence message sending...
+2023-06-04 15:03:41,411 INFO client.py  Presence message sending...DONE
+2023-06-04 15:03:41,427 INFO client.py  Amelia data base init...
+2023-06-04 15:03:41,512 INFO client.py  Response status OK
+2023-06-04 15:03:41,512 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:05:37,352 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685880337.352191, 'user': {'account_name': 'Varvara'}}
+2023-06-04 15:05:37,592 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 15:05:38,655 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685880338.655675, 'user': {'account_name': 'Amelia'}}
+2023-06-04 15:05:39,107 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 15:07:23,960 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:07:23,960 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:07:23,960 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:07:23,961 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:07:31,434 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 15:07:37,635 INFO client.py  client.py start...
+2023-06-04 15:07:37,635 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 15:07:37,636 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 15:07:37,639 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 15:07:37,639 INFO client.py  client Varvara starting...
+2023-06-04 15:07:39,250 INFO client.py  Response status OK
+2023-06-04 15:07:39,250 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:07:39,250 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 15:07:40,519 INFO client.py  Presence message sending...
+2023-06-04 15:07:40,520 INFO client.py  Presence message sending...DONE
+2023-06-04 15:07:40,538 INFO client.py  Varvara data base init...
+2023-06-04 15:07:40,758 INFO client.py  Response status OK
+2023-06-04 15:07:40,758 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:07:40,861 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 15:07:47,051 INFO client.py  client.py start...
+2023-06-04 15:07:47,051 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 15:07:47,052 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 15:07:47,054 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 15:07:47,055 INFO client.py  client Amelia starting...
+2023-06-04 15:07:48,569 INFO client.py  Response status OK
+2023-06-04 15:07:48,569 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:07:48,570 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 15:07:48,911 INFO client.py  Presence message sending...
+2023-06-04 15:07:48,912 INFO client.py  Presence message sending...DONE
+2023-06-04 15:07:48,927 INFO client.py  Amelia data base init...
+2023-06-04 15:07:50,076 INFO client.py  Response status OK
+2023-06-04 15:07:50,076 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:07:55,735 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685880475.735086, 'user': {'account_name': 'Varvara'}}
+2023-06-04 15:07:56,120 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 15:07:56,776 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685880476.776256, 'user': {'account_name': 'Amelia'}}
+2023-06-04 15:07:57,625 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 15:08:08,176 INFO client.py  Response status OK
+2023-06-04 15:08:08,176 INFO client.py  Message received: >>>Varvara: Hello 
+2023-06-04 15:08:14,217 INFO client.py  Response status OK
+2023-06-04 15:08:14,217 INFO client.py  Message received: >>>Amelia: Hu 
+2023-06-04 15:08:37,306 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:08:37,307 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:08:37,308 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:14:28,124 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 15:14:46,062 INFO client.py  client.py start...
+2023-06-04 15:14:46,062 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 15:14:46,063 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 15:14:46,066 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 15:14:46,067 INFO client.py  client Amelia starting...
+2023-06-04 15:14:47,680 INFO client.py  Response status OK
+2023-06-04 15:14:47,680 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:14:47,681 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 15:14:49,174 INFO client.py  Presence message sending...
+2023-06-04 15:14:49,174 INFO client.py  Presence message sending...DONE
+2023-06-04 15:14:49,193 INFO client.py  Amelia data base init...
+2023-06-04 15:14:49,237 INFO client.py  Response status OK
+2023-06-04 15:14:49,237 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:14:52,914 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 15:14:59,022 INFO client.py  client.py start...
+2023-06-04 15:14:59,022 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 15:14:59,022 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 15:14:59,025 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 15:14:59,025 INFO client.py  client Varvara starting...
+2023-06-04 15:15:00,548 INFO client.py  Response status OK
+2023-06-04 15:15:00,548 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:15:00,548 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 15:15:00,896 INFO client.py  Presence message sending...
+2023-06-04 15:15:00,897 INFO client.py  Presence message sending...DONE
+2023-06-04 15:15:00,912 INFO client.py  Varvara data base init...
+2023-06-04 15:15:02,055 INFO client.py  Response status OK
+2023-06-04 15:15:02,055 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:15:12,255 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685880912.255087, 'user': {'account_name': 'Amelia'}}
+2023-06-04 15:15:12,642 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 15:15:13,262 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685880913.262604, 'user': {'account_name': 'Varvara'}}
+2023-06-04 15:15:14,143 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 15:15:38,279 INFO client.py  Response status OK
+2023-06-04 15:15:38,279 INFO client.py  Message received: >>>Varvara: b'E[\xb7\x80imE\xd2\xcdRt\xaa\xef%X\x1b\xfb\xb1\x03\x12\x04g\xe7\xc6c~\x94="\xb5\x8a\nm\x02X\xf73D+Up\xde\xbd\xea\xdc\xcb=D\x1a\xe8G\xa7\xe0\xaa\xead\x10\x9c`\x8e\xa1<M\xd2\xde\x98\xfeA\x97\x13L\xd9|)q\xc1ia\x1b\xa2\xb9K\xaf&\x8cQ\x05\xaa\xa5\xe1\xa8GI\xee\x9e\xd5\xe2qtXU\xa0i(\xd2\x8c\x0bT\xebH\x0cx\x00Q2\x97^\xb2\xbe\xa5\r\xf8\xf8\t.\xeb\xfc\x82\xc2\x82\xfa\x01\xdb\xdc<d:\xe3Z$}\x9e\x053\xcb1&\xfb\xabl\xc3\xa3\x14\x98\x81\xe7\xed\xe0g\xbfKp\xdc\xc8:\x9b\x16\x8bU\xb0\xb7\xb7\xa4\xafN\xf6b\x95\x0c\xe4)\xa1[F2\xbd\xba\xa2\xeb\xe9P%@L*\x85,\xa8O|\x86t\t\x98\x0e\xce\xe3R\x11)"n\xc5\x01>\x16\xf3&\x03D\x19M\xe1\xa4\xf0\xac\xedz\x9d\xfe~P\xdb\xbdGl\t\x7f\xde\xea\xa6\xf2#?v\x03\xc2\xbe\xf0\xe2\xe7\x10\xb0\xfd\x95\xcb' 
+2023-06-04 15:18:31,703 INFO client.py  Response status OK
+2023-06-04 15:18:31,704 INFO client.py  Message received: >>>Varvara: b'\x97p\x1fS\x9a\xd1\x96\xdb\x87\xf3KO\x8c\x97\x99v\xc0%\xbb\x02\xc84_\xbe1^\xdc\xfa\x08e\xfe\x01C%\xf0\xad\xd8\xc1e\xdf\xd5\x85O J\xcdI:\xd4\x08\x14\xaboz\xf8V\xb6\t\xea\x82\xd9-\xfbO;c*\xf1\x87_\xcc<\xa5\x10\xf7\xbf \xddlZ\x9e\xc4\x07\xc8\xcc\x92\xd8l%\xb4\x13\xce\x02\xceB\x8eGM\x88B\x1f(3\xc1\xc8\x01\x87\xe6\xb5U8\x14\xe7?55\xdf\xf0O\x1d\xd0O\xa3\xea\x81\x17pA\xc5\xdb\x15c\xc5,-\xfc\x94^\x8e\xfa\xfaD\xd8\xb8xcDN\xcf\xf7\xc3F\x8e\x17}flh\xde\xf9{\x14\x8e\x8e\x1cU\xe1Le\xfa\xb0\x90\xa1S\xa4?\xa5\x8eQM \x17\xbe\x9c\x02}P\xc5\xf9\xc7<\x86\x06\xed\xca\xb8\x9fO\x87S\xd13/\x85\x1a\xe4\xac\xe88\xb0\x04\xc2eh\x8f\xe3Ht\xe1\xef\xac\x83W]E!\x02\xbfm\xcb\xa2lEd!M\x87\xcc\xaf\x8b\xbd\x13\xfc6*H\xd3\xac\x9d\xb3\xe3\x0e\x9b\x93\xb1u' 
+2023-06-04 15:19:03,410 INFO client.py  Response status OK
+2023-06-04 15:19:03,410 INFO client.py  Message received: >>>Varvara: b'\x07\xaa\x13M\xae\x9a\xee\xfe\xffJ\x85\xe4gA(\xbc\xde\x7foU\x0f\xb6\xbc\x10QI\x9eO\x00\xadk\'\xdc\xed\xc5\'\xfcPB\x03\x18\xbfDw/\xcb\xc8o\x11ZhDL\xbfh \xd8S{^\x91\xd9\x13\xfbfS\xdat\xf9"\xc6\xe4\xa6\xe9\x00\xbd<\xf8\x8a[y\xe2\xf8ug\n7\xa1<\x85\xc6\xbb\xa6\x98n\xa2\x0f:wj\xf0\r\xd8V\x0c\xf1\xe9\xc6#/>c\xb5t\xe0XA\xfd\x9ea\xd6\x05\xe6\xb4\x8f\xd0,I\x0b\x9c\x7f\xc7\xa2\x82rR/\xad\x9aC\xab\xd1\x92`q\xf1=\xf3\xfaBD\x03p\xa0oc\x19I\x0e\n\xd6sV\xc2\xe1\xe1b\xce\xf3\xb7\n\xdbC\x8a\xf3\xafE\xbaC\x8ay\x9fm\xbf\xc5\xbe\x83\xb1\x7f\x9e\xf2\x14\xa9 /I\x9e[\x1fa\xa1\x8daP\xcf\xf8\xe4\x05"=\xf1\x11\xb0\xe81\xe7/\x88\xb1{\xb8\xc5|e\x01\x0fP\x00\xfc\xabiT\xc9\x1c\xb5\xda9\xc6\x82l\xe3\xd4u5\xcb]\xa5\x0b\x13\x9a\xa6U\x8f\xf66S' 
+2023-06-04 15:19:10,952 INFO client.py  Response status OK
+2023-06-04 15:19:10,952 INFO client.py  Message received: >>>Amelia: b"\x89\xa7Hs\x99\xf7v\xf9\x82KK;\xcaNY'\xfa\xad\xc0\xcf\xaf\x8c\xae\xd4\xa2\xbb\x80eL\x0c\x00\xde\x0f\xa9k//\xcfw\xe8\x88\xd8\x9f\x1fmZ_\xef\xb9\x14\xb0]\x91\xde\xe6\x12\xdajh\x10\xdf\x1f\x8czFm\x04q8A\xa1$\x18sF\x08;Wg\xdf5\x8f\x12\xb4\xb2\xc4\x99\xe6d\x9eN\x11M\x0c`\xb3S\x96n\xfa\x1b\xc8\xaa7,J&\xe0\x97M\xb4\xe3N\xd6\xc8\xb7\x92\xe9\xf8\xc5\x1ao\x07\xf5\xc1\tD\xc8\xf3\xe7W\x1b\x85\xd1\xbe\x91\xe5\x02\x13\x81B[i\x03\xb1EG%\x8c\xdf+\xae)\xd1\x14\x90\x8d\xa5/Y\x8du\xa2\xec@\xf1'\xcaOR\xcf(G\xae\xaeb\xe5\xf0 \xb9\x1f\x83\xb3\r\xc7\xa5\x98\x1eX\xc3\xacbU\xf7\x12R\x82\xe1Q\x02Fz\xe7\xe1\xf6'\xa8\xa4\x88\xef\x19!\x92\xbdN\x85\xb0\xfa\xebRS\x9dT\xc4\x0cr[g\xf6?5!\xd5\x13\x14\x93G8{\x04\x19\xddNR\xd8\xe4\x1c\xd3\xe7C\xea1ynZ\x17" 
+2023-06-04 15:19:36,621 INFO client.py  Response status OK
+2023-06-04 15:19:36,621 INFO client.py  Message received: >>>Amelia: b"\x16Q@W\x9e!\x81\x1b\xf8\xd1Wn\x18\xa4F5\xf9\xd5R\x07<\x1cba\xad \x06\x165\xa0\xeb_\xd1\xba\xa3k\x8e!P\xff\xbf\xc3R\xd9\xf7\xdb\x9e3!\xee\xa03#\x9dJGsM\x1a\x92:\xc5\xcc\x82\xd8B\x16?\xfb2R\x82%p\x1b\x14\xf5\xe4c\x8c\xf8b[\x00Q}Y\x0cL\x0e\x8a7<\xae\xbc\xff\xbe\x88\xd1cD.N\x8b\xbe>\xfb\xa6n\xe1P\x8f\xfb\x13<B\x94\x87g\xb9\x0eT\xa3'X\xe3\xcfUC\xc3\x84?5\x84\x94\xe4O~t\xd6\xaeq<\x87!&\xaeI2*f\xfa\x9ew\x16b\x8c3\xb8d\xa5\xec\xb5\x17\x9b_s\xb0\x81\xf1\x1a\xca\xa5Vb\x97\x0e\xf0\xcdj\xc2\x99\xa4\x9e\xef\xda\x86\x15\xa8\x9d#\xd5\x95\n\xe4\x86\xc9/\x8fa;RO7\xf4g\xf5\x0e\xc0\x1cf\x1f\x13\xd1\x13\x04\xd6\xd8\xe5\x93\x04\x84\x7f\xa0\xbd\x03\xcdr\xf8t\\#\xe2\xfd*^;$r\xf0\x84t\xea\xd7\xa4d\xb5g\x8a\xf2!\xe0\xf3\x1d\x08\xda" 
+2023-06-04 15:19:53,209 INFO client.py  Response status OK
+2023-06-04 15:19:53,209 INFO client.py  Message received: >>>Varvara: b'K\xe9-U*\x82\xcd\xf5\xba\xe6\x9f\x97N_@\x1c~\x92\x89 \x0fjp\x84}\x96\xf8\xf1\xecS\x00@tI,\xe0\xa0\xc3\xe8;9\x1aD_]\xe0^\xb8|\xe8S\xdbSh.\x7f\xf1\xc7r\x04\x00\xfd\xfb\xde?\xec\x05\xbcn\xf0e\xf3B\xe2\xe0\x81\x8bS\x96\x97\xb0\xb5\x8e|\x96r&e\x86qU\x00D\xb3\x04\xf9\xc3\x16\xf0\xc7\xa7_0\x0c\x1f\x9b)y\xd6\x90\x99\xf8\x16\xd2\xddjR\xea\xf7\x82\xc3=L\xf3\xf5\xa7\'9r^\xb5\xc0!}H6\xa1\xcd\xee)\xff\xe8\x02pw\x94\t\xa9#O\xac\x15\xde\xf5\x9as\xd0\x97\x1f\xf9\x81\xec9\xc9\xc2\xcd\xc1\xb3\xb6\xf8P\xbfV\x82\xbaw"qK^#/\x1b\x8a\x00\x92\xfb?\xdf\xd2\x05\xe8Q\x0f\xc1\xf1\x8em\xa2\xf0C\xe1\xd6\x8bJ\x9e\x97\x91\x90Vn\xb2\x1b\xc0\xe0g\xa6\xcf\n$u\xa0#7\xc2i5\xe3\ns\xde^\xe7\xa1\x9d\xee\x00\xbf\x81g\xbd\x17\xc0#\xbf\x02\xf2>\x02T\xe4xZ\x9a\n\x8b' 
+2023-06-04 15:20:06,796 INFO client.py  Response status OK
+2023-06-04 15:20:06,797 INFO client.py  Message received: >>>Amelia: b'\'\x1c\xfd\x84A\x92b\x88x\xd8$]\x07\xf1\x83\x00\xe4\xeb7\xc6\xf2K!\x900-\xf5\xebx8f\x16\xe1^\xe2\xf8\x0c\xdf8\xb8\x8f\x1b4\x82`\xa8\x80\xb7^\x07\xf2N\x83\x7f\x10=\x02I\x8ew!7\x83\r\xd3\x19\x9b\x8d\x9bK<\xba\xd8:\x93g\xd8\xc1\x8bd\x88R\x94\'V\xf3\x17\xc0\xa2f=\xd0$k#\xac>\xdeN:\xe0y\xc0\x10\xe9\xac\xd2B\'\xfdz\xd9\xa7\xdb\xbf\xc5\xfe\x91\xf4\xb80\xadh\xad\xf0\x98V\x9b\xec;\x02\xa5Q\xf6\x11k\xa97\xec\xe9\x97\xc3Kgf\x9c"C,\x9f\xb6\xad\x17\xe6\xa2\xd7r7\xfasg~\xef\x9a*3\x88I+\xd0\x89IP\xf6\xf4\xcc\x9f\xac\xba.eo\x18\'j\xb2dU;\x012t\xf0\xde\x1c\xb0&\xbfb\xe9\xae\x9f\xb3\x7f\x80e\xcebG \xcb\xcb\xcahd\x85\x9a\x92|\xf7\x988\xe4=\x88\xf8\xa5N\xff\x98\x02\xb9\xa70\x05\x90\xe5\x1d\xcd\x89r\xfa0\xabk\xd3\x13\xbb_m\xef\xe9e&4i' 
+2023-06-04 15:20:17,377 INFO client.py  Response status OK
+2023-06-04 15:20:17,377 INFO client.py  Message received: >>>Varvara: b'\rm\xe761!68&\xdff\xffM\xc8&\'\xcc\x80\x96sf\xde\xbc\xd4\x90\x19\xac\x02.\xcf0\xc0\x89/8X\xc8\xff\x84\x08n\\c\xbfg\xb5\xc3\xaan\xe4}\xd6\x19C\x8epv!]\xec\xbao1\xcd\xe2o\xcc\xbc>\x10\xee\x14GB\xd2\xa4D}\xff\x18\x06\xff \x1bk\xa9`cf6\xab\xb1:\xa5\xfb\x96s\xde\xa5_\xbf(\xd9\x87\x06\xcc\xb5\xd5\xf5\xefT\xc0\xdc\xfa\xc0\xb0\xd5\xe7\xff8\x98\x08 \x17\xef\xf5\xd4\xe2.\xffb\xb6y\xd3\x0c\xce\xb5\xe9\x7f\xb1\x8d\xe6\x9a\xa9~\xab"6\x9aG\xb1n\x04\x0eV\x9b\xf0\x13\x1b*:3\xd3Z\xd4\xbd\x18\x9dOO\xbf\xbat\x131\x90\xd8n\x99\x19v\xe4\xf7\x03z\x13\xd2\xa5\x81\x9b a\xc17l\xaa@\xda\x03\t\t\x8bR|9DP\xb6\xe1\xe0NpX\xc0C^o\x9a\xa7\xbb~9\x8eL\xd3\xb8[l\x80M8R|#\xc8{;\x16\xb0W,|~%\x1fY\xe9?\xc7\xdd\xbe*B\xda\xd1Y' 
+2023-06-04 15:20:20,402 INFO client.py  Response status OK
+2023-06-04 15:20:20,402 INFO client.py  Message received: >>>Varvara: b"o7\xaf\xf3\xe7\x99\xcfzfdH\xc0\xae\x96)\xc9F\x18K\xa6C\x8a\x07\xa7\x0c\x1a\\:\xb2\x86\xb0T\x08\xcc\xc1\x8f\xd1De\x8e\xcf\xe2@\x80\x7fe\xb4A\\\x01N4U\x85\xbc)\xe0\xd4\x0f:\x87\\\x0f\xb7\xe9\xc8!\xa82k:oQ\xf5\n};\x9b>\x1b$\xa2U\x94>|\x03\xbb\xec\xa8\r\x05E\xd3^\x0fW_\xa1\xccB\xa8\xa6\xebf.\xce\x85\xf6\xaf\xe6wi\x10\xee\xc2\xb5*\xaf\xda\x15Xd\x0c\xa6\xe3u\xe5]\xa4\x06\x18\x88\\\xd6\x8b\xbc\x83\x92=\x9d\xdd\x8c\xbc\xa7\x16C\x1b\xc8\xff~\xf8Z9\xd5|F\xda\xe3\x91\x89B\xf1\x15J \xcc\x8d\xb8t6CS';[\xd6\x03\xc2\x88\xd1;\xa6\xb3H\xa7Xxv!\x9aT\xcfe@\xfc\xbc\x06o\xaf\xfc\xe2\x1f<\xd1\x14m\xc0\x13\xaeA\x01\xe5\x9a\xdazY\xf2\x18\xab+R\x945\x0c\xe1\xe4\xd5\xf8!\xa6\xb7\xfbJ\xc3qY\x00\xd5\x11k\xc3\xba\xf42Tr\xc8A\xd3o\xdaS\x12I\xe8" 
+2023-06-04 15:20:24,941 INFO client.py  Response status OK
+2023-06-04 15:20:24,941 INFO client.py  Message received: >>>Varvara: b'A\x9c\n\xed\x82y\xfdXA\xbb\xbe\xb9\t\x93\xdb#\x1a\xf3\xa1\xd0\xc5\xe3\xe2\xa2\xcd0zk\xe0u\x02\x1ad\x82:vAhDR\xa7\x8f-\xce\xd3~\x94(#\xc2\xca\xec/\x04\x10\x1b\xeb\x0e!\xd0i\x87R q\x89Q\xb1\x8d\x82a\xd6\xa9\x9d\x84\x84gf\x1c[\xaa(ll\xfcS\x13\xe9\xe9\x9b\xfc\x03\x17W\x88C\x12H\x80\x95I&45\xccC\x8a\xc2\x9c\xbd\xff\x00\x86\xb3<\xb0F\x12\xdbzJMA\xf6\xb5]\x1f@??e\xef\x06F\xcf\xe3\x95\xd9~z\x86(\x997:\xectTm\xd8\xbd\x07\xdb>\x94\xde\xe6\x92B\xdb\t\xf1\xf6\xf0*\xb2q\xc1T\x86\xc1`_\xfb\xf6i\xdc\xed>u\xef\x99$i!{\x87z\xd8pq\xfb\x06R\xd75\x89\x85\xaa\xaf<\x11\xa0\x1f)Um\xaf\xbe\xb1I.\xe9}z\xc22\xfe\xcf\xbeH\xb0\xf5\xb2-\x8d\x819i\xf7\xb1&\xe0#/\xad\x17\x8d=\x10\xda\xb9\xf3\x92\xd4\r\xcc\xdf\xe7\xd0\xecx\xe7i\ty' 
+2023-06-04 15:20:37,036 INFO client.py  Response status OK
+2023-06-04 15:20:37,037 INFO client.py  Message received: >>>Varvara: b'=-#\x88\x00:\xe2~\x9c\x86\xae\xcf\xd5\xa0*^N\x1f\xdb\x8c\xf4\x0c\xac\x9a\'@\xc1ob\xa1S\xe7\rS\x0b@M&y\xf9n3"\xe7\xc2x\\h\xd7\x8e5\x1c\xbc\xae\x9e2Q\x95\xff\x1f\x8cx\xb7\xba\xc8\xd7g\xf6}\x08\xf3\xa4\xeb\xda\xa6\xbeQn\x9b6\xa4q \xc5h\xafJ\xe6\x01\x92|zc\x8c\xce\xcf\x87\xd9\xf69\xbcia\xe1\xb0\xa0*\x1e\xc3(i\xcc\xf1\x94X\xecm*E\xf1\x00\xe1\xe5\x84\xde\x0c!](\xbc\x7f\x0b\x8c\x051&\xbc\x17/\xc0\trD\x9f\xbaZ\x84\xcf~\xd7\x1f\xd0\xbf\xce.#Dp\xc1;F\x96\x8eB\t\xd7*^\xd2a\xa3\x86\x99xI\x1bS\xb4\xdd\xc7\xeft-\x0f\x9a\xb9\x84\x81X#\xb2\x11x{\xd6\xd4vC\x7fH\xe6U\xc5\xd0\xf7Md\x84\x041\x1b3#\x91\xbaV\xb3\xd3;\xae\xaf\xfb\xa199 \x18S\xeb\x98CT\x10\xed\x8bJ\xd8\x12O:\xd11I\x1e\xb4QI\'\x0e)\xa2-\xa7\xf9{:' 
+2023-06-04 15:20:41,574 INFO client.py  Response status OK
+2023-06-04 15:20:41,574 INFO client.py  Message received: >>>Amelia: b'*$\x92\x1cC\x19\x133\xaad\xb7\x8c\xae\x7fT\xee\x1e\xd8g\x80 \xee\xad\x0e\xa0\x82\x98\xf4\xcau\x13lT4K\x1d\x95\x94\xcf\xd5\xca\xc6\xe3\xcb\xfaM\xcd\xda2\xf5n#\xec\x0buG}\'\x04\xd2O\xb0\xb0-W!\xab\xd4\xc5[\\\x86P\xb5w\x95\xe2\x0cu\xace\xf2\'Z\xa6\xe7\xbcg\xdaRmh\xa1h\x89\\\x90\t\xd85\x01A!V\x1b}\x83\xfd\x01:n~5\xd6O\x05+u\xcd\x88\xa0\x80/\xa0\x0b]s\xe2\xe4)OEjD?\xaaL\xc9\xcf\x97z\x90E\xbb\xdci\x03\xe7\xcb\xf2\xe4\xd4F\x84\xdaXju\xfd?\xdfh\xd1\x9f\xd8\xc6{}\x1d\xee\xeeXDT\x8e\x95\x13\x82*\xe37&\x04\r\xae\x87h\n\x01\x8eP\xb6}r$mC\xc29]\x19[ri\xacN\x01\r\xdb\x16\xcc\xba\x8f\xba\xcc\xf2\xb7\x05c\xa0\x8f\x9a\xe7\xed\xfbs\x99\xfb\xd8\x1f\xf3\xa9\x99\x84 \x19a\xea\xe5H"\x93\xc8\x84\x89\r\xbb\xef\xc5[I\xeel\xe9\x08\xab' 
+2023-06-04 15:20:55,107 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:20:55,567 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:23:22,424 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 15:23:29,921 INFO client.py  client.py start...
+2023-06-04 15:23:29,921 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 15:23:29,921 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 15:23:29,925 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 15:23:29,925 INFO client.py  client Amelia starting...
+2023-06-04 15:23:31,514 INFO client.py  Response status OK
+2023-06-04 15:23:31,514 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:23:31,514 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 15:23:32,959 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 15:23:33,098 INFO client.py  Presence message sending...
+2023-06-04 15:23:33,098 INFO client.py  Presence message sending...DONE
+2023-06-04 15:23:33,114 INFO client.py  Amelia data base init...
+2023-06-04 15:23:34,529 INFO client.py  Response status OK
+2023-06-04 15:23:34,529 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:23:39,710 INFO client.py  client.py start...
+2023-06-04 15:23:39,710 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 15:23:39,710 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 15:23:39,712 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 15:23:39,713 INFO client.py  client Varvara starting...
+2023-06-04 15:23:41,227 INFO client.py  Response status OK
+2023-06-04 15:23:41,227 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:23:41,227 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 15:23:42,543 INFO client.py  Presence message sending...
+2023-06-04 15:23:42,544 INFO client.py  Presence message sending...DONE
+2023-06-04 15:23:42,560 INFO client.py  Varvara data base init...
+2023-06-04 15:23:42,737 INFO client.py  Response status OK
+2023-06-04 15:23:42,738 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:23:47,820 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685881427.820941, 'user': {'account_name': 'Amelia'}}
+2023-06-04 15:23:48,779 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685881428.77985, 'user': {'account_name': 'Varvara'}}
+2023-06-04 15:23:53,907 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:23:53,908 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:24:07,170 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:24:07,866 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:24:57,840 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 15:25:02,926 INFO client.py  client.py start...
+2023-06-04 15:25:02,926 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 15:25:02,927 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 15:25:02,929 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 15:25:02,929 INFO client.py  client Varvara starting...
+2023-06-04 15:25:04,535 INFO client.py  Response status OK
+2023-06-04 15:25:04,535 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:25:04,535 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 15:25:04,782 INFO client.py  Presence message sending...
+2023-06-04 15:25:04,782 INFO client.py  Presence message sending...DONE
+2023-06-04 15:25:04,798 INFO client.py  Varvara data base init...
+2023-06-04 15:25:06,052 INFO client.py  Response status OK
+2023-06-04 15:25:06,052 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:25:14,895 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 15:25:23,787 INFO client.py  client.py start...
+2023-06-04 15:25:23,787 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 15:25:23,788 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 15:25:23,791 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 15:25:23,791 INFO client.py  client Amelia starting...
+2023-06-04 15:25:25,307 INFO client.py  Response status OK
+2023-06-04 15:25:25,307 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:25:25,307 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 15:25:26,980 INFO client.py  Presence message sending...
+2023-06-04 15:25:26,981 INFO client.py  Presence message sending...DONE
+2023-06-04 15:25:26,996 INFO client.py  Amelia data base init...
+2023-06-04 15:25:28,318 INFO client.py  Response status OK
+2023-06-04 15:25:28,318 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 15:25:42,900 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685881542.900183, 'user': {'account_name': 'Varvara'}}
+2023-06-04 15:25:43,417 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 15:25:46,378 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685881546.378817, 'user': {'account_name': 'Amelia'}}
+2023-06-04 15:25:46,436 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 15:25:59,995 INFO client.py  Response status OK
+2023-06-04 15:25:59,995 INFO client.py  Message received: >>>Varvara: b'\x88\t\x0bp\x0c\xa4\x0b\xb9v6?\xd4\xa8\x87\xf0hG\x92\xbf\xcb%\x10f8\xaf\x03\x11\xcc\x11\x01\xde\x10\xa6\xef\xdc\x9a\xfb7\xef\xf5\xa7\xe2nA0.K\xafaa\xdc\xc7\xe9`2H\xd5Dr\xe6d\x83z\xffP\xc3\x08?\xcf\x96\x0b\rP\'x\xe7j\x0en\x0c:\xb7*\x1c\xc4J\x90\xd1\xf9*\x82u\x93\xe0x\xa0\xcdr\x98o\xcb\xa8m\x9f\xea\xb6\x19\x15\x14\xf7\x9fV\xad\x1a*\xc3}\x14eQ\xfc\x85W\x0f\x8349\xcb\xba\xb8 \x07\xee;\xbd@\x7fX\x12v\x9c\x05VBB\xeel\xb0\x1dhh]HU\xe2\xc6\xabr\x88v\xaa\x98\xc9\x02\x99\xcd[\x12\x8du\x08\xe7a\xb2\xbc\xb6\x11\xae1\xe0\xa8\xc3\x9d\xda\xf7\x03[(\x01\x8dx\x00"\x91\xf5/a6&(\x91\xd4\x85u$\xd3A\xcc\xf4\xca\x8fN\xc3\xfa\xd2\x88r\xa2\xf0\xc0l4@GY\x02\x17\xf3\xe59\\j\xec\x0fkr\x10\x0f%G\xff\xf4`a4m\xa69\xa3\xe35\xfd\xc4{\x10\x9d' 
+2023-06-04 15:26:09,028 INFO client.py  Response status OK
+2023-06-04 15:26:09,029 INFO client.py  Message received: >>>Varvara: b'\x88\t\x0bp\x0c\xa4\x0b\xb9v6?\xd4\xa8\x87\xf0hG\x92\xbf\xcb%\x10f8\xaf\x03\x11\xcc\x11\x01\xde\x10\xa6\xef\xdc\x9a\xfb7\xef\xf5\xa7\xe2nA0.K\xafaa\xdc\xc7\xe9`2H\xd5Dr\xe6d\x83z\xffP\xc3\x08?\xcf\x96\x0b\rP\'x\xe7j\x0en\x0c:\xb7*\x1c\xc4J\x90\xd1\xf9*\x82u\x93\xe0x\xa0\xcdr\x98o\xcb\xa8m\x9f\xea\xb6\x19\x15\x14\xf7\x9fV\xad\x1a*\xc3}\x14eQ\xfc\x85W\x0f\x8349\xcb\xba\xb8 \x07\xee;\xbd@\x7fX\x12v\x9c\x05VBB\xeel\xb0\x1dhh]HU\xe2\xc6\xabr\x88v\xaa\x98\xc9\x02\x99\xcd[\x12\x8du\x08\xe7a\xb2\xbc\xb6\x11\xae1\xe0\xa8\xc3\x9d\xda\xf7\x03[(\x01\x8dx\x00"\x91\xf5/a6&(\x91\xd4\x85u$\xd3A\xcc\xf4\xca\x8fN\xc3\xfa\xd2\x88r\xa2\xf0\xc0l4@GY\x02\x17\xf3\xe59\\j\xec\x0fkr\x10\x0f%G\xff\xf4`a4m\xa69\xa3\xe35\xfd\xc4{\x10\x9d' 
+2023-06-04 15:26:49,856 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:26:49,857 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:26:49,857 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 15:26:49,858 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 16:43:22,418 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 16:43:34,662 INFO client.py  client.py start...
+2023-06-04 16:43:34,662 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 16:43:34,663 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 16:43:34,666 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 16:43:34,666 INFO client.py  client Amelia starting...
+2023-06-04 16:43:36,266 INFO client.py  Response status OK
+2023-06-04 16:43:36,266 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 16:43:36,267 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 16:43:36,420 INFO client.py  Presence message sending...
+2023-06-04 16:43:36,420 INFO client.py  Presence message sending...DONE
+2023-06-04 16:43:36,437 INFO client.py  Amelia data base init...
+2023-06-04 16:43:37,782 INFO client.py  Response status OK
+2023-06-04 16:43:37,782 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 16:43:39,030 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 16:43:48,729 INFO client.py  client.py start...
+2023-06-04 16:43:48,729 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 16:43:48,730 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 16:43:48,733 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 16:43:48,733 INFO client.py  client Varvara starting...
+2023-06-04 16:43:50,245 INFO client.py  Response status OK
+2023-06-04 16:43:50,245 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 16:43:50,246 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 16:43:50,715 INFO client.py  Presence message sending...
+2023-06-04 16:43:50,715 INFO client.py  Presence message sending...DONE
+2023-06-04 16:43:50,732 INFO client.py  Varvara data base init...
+2023-06-04 16:43:51,751 INFO client.py  Response status OK
+2023-06-04 16:43:51,751 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 16:43:59,569 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685886239.569448, 'user': {'account_name': 'Amelia'}}
+2023-06-04 16:44:00,828 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 16:44:06,874 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685886246.874228, 'user': {'account_name': 'Varvara'}}
+2023-06-04 16:44:08,377 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-04 16:44:17,573 ERROR client.py  Some errors in main part chat_w_message: Object of type bytes is not JSON serializable
+2023-06-04 16:54:13,092 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 16:54:13,092 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 16:54:13,093 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 16:54:13,093 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 17:12:00,301 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 17:12:10,430 INFO client.py  client.py start...
+2023-06-04 17:12:10,430 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 17:12:10,431 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 17:12:10,434 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 17:12:10,434 INFO client.py  client Varvara starting...
+2023-06-04 17:12:12,031 INFO client.py  Response status OK
+2023-06-04 17:12:12,031 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 17:12:12,032 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 17:12:12,916 INFO client.py  Presence message sending...
+2023-06-04 17:12:12,917 INFO client.py  Presence message sending...DONE
+2023-06-04 17:12:12,932 INFO client.py  Varvara data base init...
+2023-06-04 17:12:13,543 INFO client.py  Response status OK
+2023-06-04 17:12:13,544 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 17:12:14,936 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 17:12:23,141 INFO client.py  client.py start...
+2023-06-04 17:12:23,141 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 17:12:23,142 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 17:12:23,144 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 17:12:23,145 INFO client.py  client Amelia starting...
+2023-06-04 17:12:24,656 INFO client.py  Response status OK
+2023-06-04 17:12:24,656 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 17:12:24,657 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 17:12:25,507 INFO client.py  Presence message sending...
+2023-06-04 17:12:25,508 INFO client.py  Presence message sending...DONE
+2023-06-04 17:12:25,525 INFO client.py  Amelia data base init...
+2023-06-04 17:12:26,167 INFO client.py  Response status OK
+2023-06-04 17:12:26,167 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 17:12:37,859 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685887957.859248, 'user': {'account_name': 'Varvara'}}
+2023-06-04 17:12:38,255 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 17:12:44,107 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685887964.107883, 'user': {'account_name': 'Amelia'}}
+2023-06-04 17:12:44,299 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 17:12:50,967 ERROR client.py  Some errors in main part chat_w_message: Object of type bytes is not JSON serializable
+2023-06-04 17:13:20,352 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 17:13:20,353 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 17:13:20,353 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 17:13:20,354 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:03:32,533 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:03:40,624 INFO client.py  client.py start...
+2023-06-04 19:03:40,624 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 19:03:40,624 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:03:40,627 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:03:40,627 INFO client.py  client Amelia starting...
+2023-06-04 19:03:44,418 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:03:50,085 INFO client.py  client.py start...
+2023-06-04 19:03:50,086 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 19:03:50,086 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:03:50,089 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:03:50,089 INFO client.py  client Varvara starting...
+2023-06-04 19:05:52,337 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:05:58,140 INFO client.py  client.py start...
+2023-06-04 19:05:58,140 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 19:05:58,141 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:05:58,144 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:05:58,144 INFO client.py  client Varvara starting...
+2023-06-04 19:07:57,388 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:08:16,816 INFO client.py  client.py start...
+2023-06-04 19:08:16,816 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 19:08:16,817 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:08:16,819 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:08:16,819 INFO client.py  client Amelia starting...
+2023-06-04 19:10:36,980 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:10:36,980 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:10:50,702 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:10:53,675 INFO client.py  client.py start...
+2023-06-04 19:10:53,676 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 19:10:53,676 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:10:53,678 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:10:53,679 INFO client.py  client Amelia starting...
+2023-06-04 19:10:55,277 INFO client.py  Response status OK
+2023-06-04 19:10:55,277 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:10:55,278 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 19:10:56,261 INFO client.py  Presence message sending...
+2023-06-04 19:10:56,261 INFO client.py  Presence message sending...DONE
+2023-06-04 19:10:56,287 INFO client.py  Amelia data base init...
+2023-06-04 19:10:56,786 INFO client.py  Response status OK
+2023-06-04 19:10:56,786 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:11:07,017 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685895067.017891, 'user': {'account_name': 'Amelia'}}
+2023-06-04 19:11:07,378 INFO client.py  Message received: >>>['Amelia'] 
+2023-06-04 19:11:53,563 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:11:59,500 INFO client.py  client.py start...
+2023-06-04 19:11:59,500 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 19:11:59,501 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:11:59,503 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:11:59,503 INFO client.py  client Varvara starting...
+2023-06-04 19:12:30,494 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:12:30,684 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:14:30,465 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:14:33,881 INFO client.py  client.py start...
+2023-06-04 19:14:33,881 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 19:14:33,882 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:14:33,885 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:14:33,886 INFO client.py  client Varvara starting...
+2023-06-04 19:18:41,065 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:23:07,502 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:23:13,440 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:23:19,557 INFO client.py  client.py start...
+2023-06-04 19:23:19,558 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 19:23:19,558 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:23:19,562 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:23:19,562 INFO client.py  client Varvara starting...
+2023-06-04 19:23:21,161 INFO client.py  Response status OK
+2023-06-04 19:23:21,161 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:23:21,162 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 19:23:22,589 INFO client.py  Presence message sending...
+2023-06-04 19:23:22,590 INFO client.py  Presence message sending...DONE
+2023-06-04 19:23:22,606 INFO client.py  Varvara data base init...
+2023-06-04 19:23:22,676 INFO client.py  Response status OK
+2023-06-04 19:23:22,676 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:23:25,050 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685895805.05095, 'user': {'account_name': 'Varvara'}}
+2023-06-04 19:23:25,725 INFO client.py  Message received: >>>['Varvara'] 
+2023-06-04 19:23:33,063 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:23:40,200 INFO client.py  client.py start...
+2023-06-04 19:23:40,200 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 19:23:40,201 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:23:40,204 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:23:40,204 INFO client.py  client Amelia starting...
+2023-06-04 19:23:41,722 INFO client.py  Response status OK
+2023-06-04 19:23:41,722 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:23:41,724 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 19:23:42,069 INFO client.py  Presence message sending...
+2023-06-04 19:23:42,069 INFO client.py  Presence message sending...DONE
+2023-06-04 19:23:42,083 INFO client.py  Amelia data base init...
+2023-06-04 19:23:43,234 INFO client.py  Response status OK
+2023-06-04 19:23:43,234 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:23:47,257 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685895827.257409, 'user': {'account_name': 'Varvara'}}
+2023-06-04 19:23:47,775 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 19:23:50,001 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685895830.001467, 'user': {'account_name': 'Amelia'}}
+2023-06-04 19:23:50,793 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 19:24:10,423 INFO client.py  Response status OK
+2023-06-04 19:24:10,424 INFO client.py  Message received: >>>Amelia: message to Varvara 
+2023-06-04 19:42:56,074 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:42:56,075 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:42:56,076 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:42:56,076 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:45:30,196 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:45:39,427 INFO client.py  client.py start...
+2023-06-04 19:45:39,427 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 19:45:39,427 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:45:39,431 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:45:39,431 INFO client.py  client Varvara starting...
+2023-06-04 19:45:41,043 INFO client.py  Response status OK
+2023-06-04 19:45:41,043 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:45:41,044 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 19:45:42,537 INFO client.py  Presence message sending...
+2023-06-04 19:45:42,537 INFO client.py  Presence message sending...DONE
+2023-06-04 19:45:42,554 INFO client.py  Varvara data base init...
+2023-06-04 19:45:42,591 INFO client.py  Response status OK
+2023-06-04 19:45:42,591 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:45:48,942 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685897148.942686, 'user': {'account_name': 'Varvara'}}
+2023-06-04 19:45:50,112 INFO client.py  Message received: >>>['Varvara'] 
+2023-06-04 19:45:52,184 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:46:02,520 INFO client.py  client.py start...
+2023-06-04 19:46:02,520 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 19:46:02,521 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:46:02,524 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:46:02,524 INFO client.py  client Amelia starting...
+2023-06-04 19:46:04,034 INFO client.py  Response status OK
+2023-06-04 19:46:04,034 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:46:04,034 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 19:46:04,151 INFO client.py  Presence message sending...
+2023-06-04 19:46:04,151 INFO client.py  Presence message sending...DONE
+2023-06-04 19:46:04,167 INFO client.py  Amelia data base init...
+2023-06-04 19:46:05,537 INFO client.py  Response status OK
+2023-06-04 19:46:05,537 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:46:10,486 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685897170.486365, 'user': {'account_name': 'Varvara'}}
+2023-06-04 19:46:11,583 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 19:46:13,839 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685897173.839115, 'user': {'account_name': 'Amelia'}}
+2023-06-04 19:46:14,596 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 19:48:13,718 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685897293.718309, 'user': {'account_name': 'Varvara'}}
+2023-06-04 19:48:13,853 ERROR client.py  Data : {'response': 202, 'alert': [], 'keys': {'Varvara': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4MWiyTUnJx/y8X3Grynt\ny5o6GsKSW0fysh3C64X+aD7mrIPVnU34eFRVZHto2AfkTcp5yVlszKGTbchv+v4H\nGZ1ffazq5rxqP+qPsdLQ4O/kzcq58Jh9gHPV+j1dLs8FWoU9cqO5VwPC/RSE8Fxg\nEdAr/OvMvpZ8qRI+YrkP+Zc9Q4IAdcu/KkWGgdIT5Her2QkCq7J524Y/LNilnIv0\npXJQBcBGJCz8fyQ2Qe+/IoxE5qvkkoAbiWKybxfnr0VMWgN9g3FEBSSJD5MLVUZ8\nUqdrcj66DAe/CCq4NDq26/WdgVCJvNesqOupgzJ4jrol/Ecgk0K81pNLZ39Da+9Y\nYQIDAQAB\n-----END PUBLIC KEY-----', 'Amelia': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA9Z9cWpYOoNZcGsQqpCCg\nuABDGcQdmbgE96z+zM83DhdKEwm43gZd+dAmcNzqAUkTPGHnlnKD19llCcMe3+Am\nAO1RuUKkk/AFMhX+19lx0LrUuMPPiuyAkxYRFjwx6vVUCToIuexcUYc+tL++jUVr\nx1Z3Qn2wwZR2WEs+N78A917wNz3qLrDMO9Q+3it5WHa2KmCwgKraxtJ8ZY7Zdaar\nFan5gZxQ2sSjiG+t6OcEvoUFG2hNOxKx2QoEP9fa/HKg3gxiEwAq0yA4JAmJniMy\nMegCDsNcC/29fNsr3X9SXAelNb3PBelDNhXMIJk1E0O7/vLYb6j/GEKDErHdc9RO\nmQIDAQAB\n-----END PUBLIC KEY-----'}}
+2023-06-04 19:48:13,854 INFO client.py  Message received:  
+2023-06-04 19:49:25,301 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:49:25,301 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:49:25,302 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:49:25,302 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:50:00,707 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:50:12,237 INFO client.py  client.py start...
+2023-06-04 19:50:12,237 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 19:50:12,238 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:50:12,240 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:50:12,241 INFO client.py  client Varvara starting...
+2023-06-04 19:50:13,852 INFO client.py  Response status OK
+2023-06-04 19:50:13,852 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:50:13,852 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 19:50:14,971 INFO client.py  Presence message sending...
+2023-06-04 19:50:14,971 INFO client.py  Presence message sending...DONE
+2023-06-04 19:50:14,987 INFO client.py  Varvara data base init...
+2023-06-04 19:50:15,362 INFO client.py  Response status OK
+2023-06-04 19:50:15,362 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:50:17,165 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685897417.165203, 'user': {'account_name': 'Varvara'}}
+2023-06-04 19:50:18,390 INFO client.py  Message received: >>>['Varvara'] 
+2023-06-04 19:51:38,620 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:51:44,634 INFO client.py  client.py start...
+2023-06-04 19:51:44,635 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 19:51:44,635 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:51:44,638 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:51:44,638 INFO client.py  client Amelia starting...
+2023-06-04 19:51:46,160 INFO client.py  Response status OK
+2023-06-04 19:51:46,160 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:51:46,161 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 19:51:46,314 INFO client.py  Presence message sending...
+2023-06-04 19:51:46,315 INFO client.py  Presence message sending...DONE
+2023-06-04 19:51:46,332 INFO client.py  Amelia data base init...
+2023-06-04 19:51:47,678 INFO client.py  Response status OK
+2023-06-04 19:51:47,678 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:51:49,044 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685897509.044158, 'user': {'account_name': 'Amelia'}}
+2023-06-04 19:51:50,335 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:51:50,337 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:52:56,576 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:53:03,890 INFO client.py  client.py start...
+2023-06-04 19:53:03,891 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 19:53:03,891 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:53:05,935 ERROR client.py  Can't connect to server.
+2023-06-04 19:53:18,424 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:53:21,576 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:53:34,140 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:53:40,910 INFO client.py  client.py start...
+2023-06-04 19:53:40,910 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 19:53:40,911 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:53:40,913 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:53:40,914 INFO client.py  client Varvara starting...
+2023-06-04 19:53:42,538 INFO client.py  Response status OK
+2023-06-04 19:53:42,538 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:53:42,539 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 19:53:43,494 INFO client.py  Presence message sending...
+2023-06-04 19:53:43,494 INFO client.py  Presence message sending...DONE
+2023-06-04 19:53:43,511 INFO client.py  Varvara data base init...
+2023-06-04 19:53:44,054 INFO client.py  Response status OK
+2023-06-04 19:53:44,054 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:54:06,718 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:54:06,726 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:54:13,431 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:54:20,402 INFO client.py  client.py start...
+2023-06-04 19:54:20,402 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-04 19:54:20,403 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:54:20,407 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:54:20,407 INFO client.py  client Varvara starting...
+2023-06-04 19:54:22,017 INFO client.py  Response status OK
+2023-06-04 19:54:22,017 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:54:22,018 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 19:54:22,949 INFO client.py  Presence message sending...
+2023-06-04 19:54:22,949 INFO client.py  Presence message sending...DONE
+2023-06-04 19:54:22,964 INFO client.py  Varvara data base init...
+2023-06-04 19:54:23,526 INFO client.py  Response status OK
+2023-06-04 19:54:23,527 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:54:25,667 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685897665.667063, 'user': {'account_name': 'Varvara'}}
+2023-06-04 19:54:26,545 INFO client.py  Message received: >>>['Varvara'] 
+2023-06-04 19:54:29,280 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-04 19:54:35,112 INFO client.py  client.py start...
+2023-06-04 19:54:35,112 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-04 19:54:35,113 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-04 19:54:35,115 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-04 19:54:35,115 INFO client.py  client Amelia starting...
+2023-06-04 19:54:36,630 INFO client.py  Response status OK
+2023-06-04 19:54:36,630 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:54:36,631 INFO client.py  Message from Server received: 200: 0 
+2023-06-04 19:54:37,697 INFO client.py  Presence message sending...
+2023-06-04 19:54:37,697 INFO client.py  Presence message sending...DONE
+2023-06-04 19:54:37,712 INFO client.py  Amelia data base init...
+2023-06-04 19:54:38,138 INFO client.py  Response status OK
+2023-06-04 19:54:38,138 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-04 19:54:53,714 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685897693.714058, 'user': {'account_name': 'Amelia'}}
+2023-06-04 19:54:54,787 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 19:54:57,138 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685897697.138828, 'user': {'account_name': 'Varvara'}}
+2023-06-04 19:54:57,813 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-04 19:59:50,961 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:59:50,961 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:59:50,962 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-04 19:59:50,962 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:16:39,306 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 08:16:47,591 INFO client.py  client.py start...
+2023-06-05 08:16:47,591 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 08:16:47,592 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 08:16:47,595 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 08:16:47,595 INFO client.py  client Amelia starting...
+2023-06-05 08:16:49,216 INFO client.py  Response status OK
+2023-06-05 08:16:49,223 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 08:16:49,223 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 08:16:49,755 INFO client.py  Presence message sending...
+2023-06-05 08:16:49,756 INFO client.py  Presence message sending...DONE
+2023-06-05 08:16:49,786 INFO client.py  Amelia data base init...
+2023-06-05 08:16:50,729 INFO client.py  Response status OK
+2023-06-05 08:16:50,804 ERROR client.py  Error malformed node or string: 0)
+2023-06-05 08:17:11,015 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685942231.01511, 'user': {'account_name': 'Amelia'}}
+2023-06-05 08:17:11,920 INFO client.py  Message received: >>>['Amelia'] 
+2023-06-05 08:17:24,161 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 08:17:32,076 INFO client.py  client.py start...
+2023-06-05 08:17:32,076 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 08:17:32,077 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 08:17:32,080 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 08:17:32,080 INFO client.py  client Varvara starting...
+2023-06-05 08:17:33,604 INFO client.py  Response status OK
+2023-06-05 08:17:33,612 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 08:17:33,614 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 08:17:34,152 INFO client.py  Presence message sending...
+2023-06-05 08:17:34,153 INFO client.py  Presence message sending...DONE
+2023-06-05 08:17:34,179 INFO client.py  Varvara data base init...
+2023-06-05 08:17:35,106 INFO client.py  Response status OK
+2023-06-05 08:17:35,146 ERROR client.py  Error malformed node or string: 0)
+2023-06-05 08:17:44,192 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685942264.19248, 'user': {'account_name': 'Varvara'}}
+2023-06-05 08:17:45,335 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685942265.335603, 'user': {'account_name': 'Amelia'}}
+2023-06-05 08:17:45,699 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 08:17:45,701 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 08:17:57,812 INFO client.py  Response status OK
+2023-06-05 08:17:57,848 ERROR client.py  Error malformed node or string: ['b\'XQ\\x02\\xbb{\\x17r\\xc3"2r\\xb6}\\xb1(\\x9c\\xa0|\\xe9\\x06\\x8f\\x1bUO\\xea%\\x17K\\xae\\xa6S@|:\\xaa\\xa4\\x19\\xbf\\xb0]\\xbd\\x97\\xd6\\x06\\xc2\\x12\\xa5nZ):<\\xe6\\x90h\\x19\\xf76$\\x94}|\\xcf\\xba~\\x9d|\\xdeX\\x03\\xee\\xef\\xb0Q\\xfb\\xce\\x04\\xbd\\xd8\\xf7\\x99\\x0f\\x137\\x84\\x84%\\x9e\\x87\\x16v\\x82\\xe5W\\xe7<\\xe5\\xad\\r\\x8a\\xaf\\x91\\x99iL_M@\\n~\\xcf \\xaaPQ\\x01\\xbbD<\\xad\\xaa\\x1d\\xe3\\xf4\\x1f\\t\\x85\\x1d\\xe9J\\xd59\\r>c+\\xcdQ\\x93\\x84\\xc3-\\xd6\\x03\\xb86\\xd9\\xf6\\x12\\xbc6\\xe3]\\ny\\xa25\\xcc_\\xb9\\xfa\\x16\\x83-\\xaf\\xa1\\xbfp`\\xb7\\xe1UMP\\xf2.\\xef\\xd3x+FL4\\xc8\\x02\\x8f=[|\\xd4\\x9f\\x83sl@\\xe9O~g\\xdeA\\xaf\\xaa\\xb3\\xf8\\xce\\xc3u=\\x87B\\x81\\xbe\\xb9L\\xf7s\\xa9\\x98\\xd0\\xab\\xe8_\\x0fo\\xf5\\xee\\x98\\xbd\\x85^\\xd8\\x8a\\x87\\x89g\\xa5\\x8e\\x85\\xbd\\xd5.\\x94\\xe3wx\\x94\\xf8\\x19\\xabb\\x9b\\xda\\xb5b<\'', 'Varvara'])
+2023-06-05 08:17:57,849 INFO client.py  Message received: 200: ['b\'XQ\\x02\\xbb{\\x17r\\xc3"2r\\xb6}\\xb1(\\x9c\\xa0|\\xe9\\x06\\x8f\\x1bUO\\xea%\\x17K\\xae\\xa6S@|:\\xaa\\xa4\\x19\\xbf\\xb0]\\xbd\\x97\\xd6\\x06\\xc2\\x12\\xa5nZ):<\\xe6\\x90h\\x19\\xf76$\\x94}|\\xcf\\xba~\\x9d|\\xdeX\\x03\\xee\\xef\\xb0Q\\xfb\\xce\\x04\\xbd\\xd8\\xf7\\x99\\x0f\\x137\\x84\\x84%\\x9e\\x87\\x16v\\x82\\xe5W\\xe7<\\xe5\\xad\\r\\x8a\\xaf\\x91\\x99iL_M@\\n~\\xcf \\xaaPQ\\x01\\xbbD<\\xad\\xaa\\x1d\\xe3\\xf4\\x1f\\t\\x85\\x1d\\xe9J\\xd59\\r>c+\\xcdQ\\x93\\x84\\xc3-\\xd6\\x03\\xb86\\xd9\\xf6\\x12\\xbc6\\xe3]\\ny\\xa25\\xcc_\\xb9\\xfa\\x16\\x83-\\xaf\\xa1\\xbfp`\\xb7\\xe1UMP\\xf2.\\xef\\xd3x+FL4\\xc8\\x02\\x8f=[|\\xd4\\x9f\\x83sl@\\xe9O~g\\xdeA\\xaf\\xaa\\xb3\\xf8\\xce\\xc3u=\\x87B\\x81\\xbe\\xb9L\\xf7s\\xa9\\x98\\xd0\\xab\\xe8_\\x0fo\\xf5\\xee\\x98\\xbd\\x85^\\xd8\\x8a\\x87\\x89g\\xa5\\x8e\\x85\\xbd\\xd5.\\x94\\xe3wx\\x94\\xf8\\x19\\xabb\\x9b\\xda\\xb5b<\'', 'Varvara'] 
+2023-06-05 08:18:26,529 INFO client.py  Response status OK
+2023-06-05 08:18:26,567 ERROR client.py  Error malformed node or string: ['b\'XQ\\x02\\xbb{\\x17r\\xc3"2r\\xb6}\\xb1(\\x9c\\xa0|\\xe9\\x06\\x8f\\x1bUO\\xea%\\x17K\\xae\\xa6S@|:\\xaa\\xa4\\x19\\xbf\\xb0]\\xbd\\x97\\xd6\\x06\\xc2\\x12\\xa5nZ):<\\xe6\\x90h\\x19\\xf76$\\x94}|\\xcf\\xba~\\x9d|\\xdeX\\x03\\xee\\xef\\xb0Q\\xfb\\xce\\x04\\xbd\\xd8\\xf7\\x99\\x0f\\x137\\x84\\x84%\\x9e\\x87\\x16v\\x82\\xe5W\\xe7<\\xe5\\xad\\r\\x8a\\xaf\\x91\\x99iL_M@\\n~\\xcf \\xaaPQ\\x01\\xbbD<\\xad\\xaa\\x1d\\xe3\\xf4\\x1f\\t\\x85\\x1d\\xe9J\\xd59\\r>c+\\xcdQ\\x93\\x84\\xc3-\\xd6\\x03\\xb86\\xd9\\xf6\\x12\\xbc6\\xe3]\\ny\\xa25\\xcc_\\xb9\\xfa\\x16\\x83-\\xaf\\xa1\\xbfp`\\xb7\\xe1UMP\\xf2.\\xef\\xd3x+FL4\\xc8\\x02\\x8f=[|\\xd4\\x9f\\x83sl@\\xe9O~g\\xdeA\\xaf\\xaa\\xb3\\xf8\\xce\\xc3u=\\x87B\\x81\\xbe\\xb9L\\xf7s\\xa9\\x98\\xd0\\xab\\xe8_\\x0fo\\xf5\\xee\\x98\\xbd\\x85^\\xd8\\x8a\\x87\\x89g\\xa5\\x8e\\x85\\xbd\\xd5.\\x94\\xe3wx\\x94\\xf8\\x19\\xabb\\x9b\\xda\\xb5b<\'', 'Varvara'])
+2023-06-05 08:18:26,568 INFO client.py  Message received: 200: ['b\'XQ\\x02\\xbb{\\x17r\\xc3"2r\\xb6}\\xb1(\\x9c\\xa0|\\xe9\\x06\\x8f\\x1bUO\\xea%\\x17K\\xae\\xa6S@|:\\xaa\\xa4\\x19\\xbf\\xb0]\\xbd\\x97\\xd6\\x06\\xc2\\x12\\xa5nZ):<\\xe6\\x90h\\x19\\xf76$\\x94}|\\xcf\\xba~\\x9d|\\xdeX\\x03\\xee\\xef\\xb0Q\\xfb\\xce\\x04\\xbd\\xd8\\xf7\\x99\\x0f\\x137\\x84\\x84%\\x9e\\x87\\x16v\\x82\\xe5W\\xe7<\\xe5\\xad\\r\\x8a\\xaf\\x91\\x99iL_M@\\n~\\xcf \\xaaPQ\\x01\\xbbD<\\xad\\xaa\\x1d\\xe3\\xf4\\x1f\\t\\x85\\x1d\\xe9J\\xd59\\r>c+\\xcdQ\\x93\\x84\\xc3-\\xd6\\x03\\xb86\\xd9\\xf6\\x12\\xbc6\\xe3]\\ny\\xa25\\xcc_\\xb9\\xfa\\x16\\x83-\\xaf\\xa1\\xbfp`\\xb7\\xe1UMP\\xf2.\\xef\\xd3x+FL4\\xc8\\x02\\x8f=[|\\xd4\\x9f\\x83sl@\\xe9O~g\\xdeA\\xaf\\xaa\\xb3\\xf8\\xce\\xc3u=\\x87B\\x81\\xbe\\xb9L\\xf7s\\xa9\\x98\\xd0\\xab\\xe8_\\x0fo\\xf5\\xee\\x98\\xbd\\x85^\\xd8\\x8a\\x87\\x89g\\xa5\\x8e\\x85\\xbd\\xd5.\\x94\\xe3wx\\x94\\xf8\\x19\\xabb\\x9b\\xda\\xb5b<\'', 'Varvara'] 
+2023-06-05 08:22:19,932 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:22:19,932 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:22:19,933 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:22:19,933 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:22:26,835 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 08:22:31,540 INFO client.py  client.py start...
+2023-06-05 08:22:31,540 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 08:22:31,542 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 08:22:31,545 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 08:22:31,545 INFO client.py  client Varvara starting...
+2023-06-05 08:22:33,152 INFO client.py  Response status OK
+2023-06-05 08:22:33,159 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 08:22:33,159 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 08:22:34,060 INFO client.py  Presence message sending...
+2023-06-05 08:22:34,060 INFO client.py  Presence message sending...DONE
+2023-06-05 08:22:34,078 INFO client.py  Varvara data base init...
+2023-06-05 08:22:34,666 INFO client.py  Response status OK
+2023-06-05 08:22:34,718 ERROR client.py  Error malformed node or string: 0)
+2023-06-05 08:22:43,141 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 08:22:49,670 INFO client.py  client.py start...
+2023-06-05 08:22:49,670 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 08:22:49,672 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 08:22:49,675 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 08:22:49,675 INFO client.py  client Amelia starting...
+2023-06-05 08:22:51,187 INFO client.py  Response status OK
+2023-06-05 08:22:51,193 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 08:22:51,195 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 08:22:51,483 INFO client.py  Presence message sending...
+2023-06-05 08:22:51,483 INFO client.py  Presence message sending...DONE
+2023-06-05 08:22:51,499 INFO client.py  Amelia data base init...
+2023-06-05 08:22:52,697 INFO client.py  Response status OK
+2023-06-05 08:22:52,738 ERROR client.py  Error malformed node or string: 0)
+2023-06-05 08:22:57,164 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685942577.164793, 'user': {'account_name': 'Amelia'}}
+2023-06-05 08:22:57,225 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 08:22:58,396 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685942578.396863, 'user': {'account_name': 'Varvara'}}
+2023-06-05 08:22:58,740 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 08:23:13,832 INFO client.py  Response status OK
+2023-06-05 08:23:13,884 ERROR client.py  Error malformed node or string: ['b\'\\x1e\\xa2x\\x92\\xb8\\x08\\x94e\\xfaP)3l\\xeeV[\\x80\\xc7}.\\x06\\xb7R\\xa8\\xdd&\\x94\\xc9\\xf7\\x872.\\xc3S6Cy\\x96\\x07\\t5Bu\\xc1\\xe5\\x80\\xa8d!H\\x9a[\\x8e=\\xa0a\\x00{QR}D \\xc0\\xad62\\x97G),s\\xf5G,\\xe0f\\x9d\\xdd[\\xd3\\x9d\\t\\xdb\\x12r\\xd2\\x92\\xdb\\x16"\\x17\\xbb\\xfd\\xdf\\x87\\x91#\\xc2\\x0c\\x95\\xb5\\x97\\xf2\\x80\\x9c\\xc6-\\xac\\x9b\\x13\\x088\\x0eK\\x02rN\\x83\\x9et\\xed\\xed\\x05_<!:\\xe6\\x1e\\x8fO]\\x12\\xd3\\x9b\\xf2\\xa0\\x81Q\\x07\\xda<\\x9a\\xc53\\x99\\x02\\x10\\x08t?J\\xae\\xc0\\x8f\\x1b@\\xb7]Q\\x9a\\x8b8\\xad\\x18\\x08\\xe3\\x91\\x9f\\xa6U\\x19Tr\\xa4A\\x85fB\\xa0\\xb0\\x1e\\x10a\\x13L\\xb2\\x96\\xadH\\xfd\\xae\\xd1\\x82\\xd7o\\xa3\\x05\\xcb\\x04\\xcc]7\\xec4<\\x93\\x8e$"\\x12c\\xea\\xde\\xff\\x18\\xa0\\xd2\\nRG\\x7fh\\xd2\\x9at\\xda2x\\x96\\r\\xab\\xce\\xb7qc\\xe6\\x9b\\xe1\\xf67\\x18\\xcco\\x16(W\\x01\\x87hO%\\xfb\\x9eB\'', 'Amelia'])
+2023-06-05 08:23:13,885 INFO client.py  Message received: 200: ['b\'\\x1e\\xa2x\\x92\\xb8\\x08\\x94e\\xfaP)3l\\xeeV[\\x80\\xc7}.\\x06\\xb7R\\xa8\\xdd&\\x94\\xc9\\xf7\\x872.\\xc3S6Cy\\x96\\x07\\t5Bu\\xc1\\xe5\\x80\\xa8d!H\\x9a[\\x8e=\\xa0a\\x00{QR}D \\xc0\\xad62\\x97G),s\\xf5G,\\xe0f\\x9d\\xdd[\\xd3\\x9d\\t\\xdb\\x12r\\xd2\\x92\\xdb\\x16"\\x17\\xbb\\xfd\\xdf\\x87\\x91#\\xc2\\x0c\\x95\\xb5\\x97\\xf2\\x80\\x9c\\xc6-\\xac\\x9b\\x13\\x088\\x0eK\\x02rN\\x83\\x9et\\xed\\xed\\x05_<!:\\xe6\\x1e\\x8fO]\\x12\\xd3\\x9b\\xf2\\xa0\\x81Q\\x07\\xda<\\x9a\\xc53\\x99\\x02\\x10\\x08t?J\\xae\\xc0\\x8f\\x1b@\\xb7]Q\\x9a\\x8b8\\xad\\x18\\x08\\xe3\\x91\\x9f\\xa6U\\x19Tr\\xa4A\\x85fB\\xa0\\xb0\\x1e\\x10a\\x13L\\xb2\\x96\\xadH\\xfd\\xae\\xd1\\x82\\xd7o\\xa3\\x05\\xcb\\x04\\xcc]7\\xec4<\\x93\\x8e$"\\x12c\\xea\\xde\\xff\\x18\\xa0\\xd2\\nRG\\x7fh\\xd2\\x9at\\xda2x\\x96\\r\\xab\\xce\\xb7qc\\xe6\\x9b\\xe1\\xf67\\x18\\xcco\\x16(W\\x01\\x87hO%\\xfb\\x9eB\'', 'Amelia'] 
+2023-06-05 08:24:09,398 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:24:09,399 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:24:09,399 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:24:22,389 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 08:24:24,194 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 08:24:28,345 INFO client.py  client.py start...
+2023-06-05 08:24:28,345 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 08:24:28,347 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 08:24:28,350 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 08:24:28,350 INFO client.py  client Varvara starting...
+2023-06-05 08:24:29,944 INFO client.py  Response status OK
+2023-06-05 08:24:29,950 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 08:24:29,950 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 08:24:30,630 INFO client.py  Presence message sending...
+2023-06-05 08:24:30,630 INFO client.py  Presence message sending...DONE
+2023-06-05 08:24:30,645 INFO client.py  Varvara data base init...
+2023-06-05 08:24:31,453 INFO client.py  Response status OK
+2023-06-05 08:24:31,499 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 08:24:38,514 INFO client.py  client.py start...
+2023-06-05 08:24:38,514 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 08:24:38,515 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 08:24:38,517 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 08:24:38,518 INFO client.py  client Amelia starting...
+2023-06-05 08:24:40,039 INFO client.py  Response status OK
+2023-06-05 08:24:40,054 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 08:24:40,055 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 08:24:40,488 INFO client.py  Presence message sending...
+2023-06-05 08:24:40,488 INFO client.py  Presence message sending...DONE
+2023-06-05 08:24:40,505 INFO client.py  Amelia data base init...
+2023-06-05 08:24:41,552 INFO client.py  Response status OK
+2023-06-05 08:24:41,593 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 08:24:44,948 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685942684.948368, 'user': {'account_name': 'Varvara'}}
+2023-06-05 08:24:45,876 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685942685.876321, 'user': {'account_name': 'Amelia'}}
+2023-06-05 08:24:46,086 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 08:24:46,090 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 08:25:20,812 INFO client.py  Response status OK
+2023-06-05 08:25:20,861 INFO client.py  Message received: >>>': b 
+2023-06-05 08:25:31,386 INFO client.py  Response status OK
+2023-06-05 08:25:31,434 INFO client.py  Message received: >>>': b 
+2023-06-05 08:25:49,520 INFO client.py  Response status OK
+2023-06-05 08:25:49,580 INFO client.py  Message received: >>>': b 
+2023-06-05 08:31:32,298 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:31:32,299 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:31:32,299 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:31:32,300 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:31:40,835 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 08:31:49,349 INFO client.py  client.py start...
+2023-06-05 08:31:49,349 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 08:31:49,349 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 08:31:49,352 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 08:31:49,352 INFO client.py  client Amelia starting...
+2023-06-05 08:31:50,948 INFO client.py  Response status OK
+2023-06-05 08:31:50,955 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 08:31:50,955 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 08:31:52,173 INFO client.py  Presence message sending...
+2023-06-05 08:31:52,173 INFO client.py  Presence message sending...DONE
+2023-06-05 08:31:52,189 INFO client.py  Amelia data base init...
+2023-06-05 08:31:52,463 INFO client.py  Response status OK
+2023-06-05 08:31:52,501 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 08:31:57,444 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 08:32:04,209 INFO client.py  client.py start...
+2023-06-05 08:32:04,209 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 08:32:04,210 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 08:32:04,212 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 08:32:04,213 INFO client.py  client Varvara starting...
+2023-06-05 08:32:05,730 INFO client.py  Response status OK
+2023-06-05 08:32:05,741 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 08:32:05,742 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 08:32:06,368 INFO client.py  Presence message sending...
+2023-06-05 08:32:06,368 INFO client.py  Presence message sending...DONE
+2023-06-05 08:32:06,383 INFO client.py  Varvara data base init...
+2023-06-05 08:32:07,233 INFO client.py  Response status OK
+2023-06-05 08:32:07,272 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 08:32:15,034 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685943135.034438, 'user': {'account_name': 'Amelia'}}
+2023-06-05 08:32:16,090 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685943136.09037, 'user': {'account_name': 'Varvara'}}
+2023-06-05 08:32:16,322 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 08:32:16,324 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 08:32:25,399 INFO client.py  Response status OK
+2023-06-05 08:32:25,460 INFO client.py  Message received: >>>Amelia: b'Hello' 
+2023-06-05 08:33:42,369 INFO client.py  Response status OK
+2023-06-05 08:33:42,408 ERROR client.py  Error Incorrect decryption.)
+2023-06-05 08:33:42,409 INFO client.py  Message received: 200: ['b\'\\xaa-\\xc6\\x1f\\x8f?o\\x08\\x1b\\x1a\\xa6=j\\xbd3\\xd1\\x11\\x9d\\xa5\\x81\\x88\\xd1(g\\x1dy\\\'\\xd2\\x10\\x8eV!\\x12\\x10p2\\xaf\\x18\\xaaF9\\xb6\\xe8\\x14\\xc5\\x1e\\xf8\\xc4\\x93\\x82z\\x08\\x14\\xa2\\xf9e\\x1es\\xa9\\x1f\\xa4\\xa4!\\\\\\x82\\xe9\\xcaK\\xf7uL\\xba\\x0b\\x16l2\\xe3]&\\x81|_6\\x01\\xf6.S\\xae\\x95\\xd3$\\xb9!\\xde\\xdc\\x0f#\\xa3z&\\xf7\\x88\\x8f\\xc3\\nV\\x90\\xbb\\x0f`\\xf1Njo\\x0b\\xa2R1\\x1a\\r\\xb5\\xec@7\\x8d\\x0e\\xb2\\xc5[\\xc6\\xb4\\xa5\\x9a s3\\x8d\\x1d\\xed\\xd8\\xf7\\x0f\\x17\\x1b\\x18\\xd3\\xf8WcVO\\xe4\\xf3\\xde\\x90Tu\\x18\\xe6\\x15\\x84#\\xc0\\xaf\\xdf\\xbd\\xb1\\xea2vm\\x05\\xec\\xde\\x81\\x93pD\\x11I=\\xd5\\x87\\xba\\xb07\\x08\\x1f\\x9c\\xc0\\x91\\xe9\\xd4\\xb3p6\\xfeO\\x91\\xa4\\n9 \\xb4\\xbd5\\x1d,C\\xb3\\x93\\x93\\xf0\\x8d\\xcf}zo>Pz\\xe6{L\\xef\\xc6\\xfcgN\\x08\\xbdr\\xbfu\\xcf\\xa3L@I@\\xdc\\xe2\\xbd\\x83\\xf7\\xb11"\\xae[\\x19)\\xd8\\x8a\\xdeT\'', 'Amelia'] 
+2023-06-05 08:35:22,028 INFO client.py  Response status OK
+2023-06-05 08:35:22,070 INFO client.py  Message received: >>>Amelia: b'Hello' 
+2023-06-05 08:35:50,753 INFO client.py  Response status OK
+2023-06-05 08:35:50,801 INFO client.py  Message received: >>>Amelia: b'Hello' 
+2023-06-05 08:36:16,218 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:36:16,220 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 08:36:16,404 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:08:22,359 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 09:08:32,523 INFO client.py  client.py start...
+2023-06-05 09:08:32,524 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 09:08:32,524 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 09:08:32,527 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 09:08:32,527 INFO client.py  client Amelia starting...
+2023-06-05 09:08:34,133 INFO client.py  Response status OK
+2023-06-05 09:08:34,139 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 09:08:34,140 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 09:08:35,582 INFO client.py  Presence message sending...
+2023-06-05 09:08:35,582 INFO client.py  Presence message sending...DONE
+2023-06-05 09:08:35,598 INFO client.py  Amelia data base init...
+2023-06-05 09:08:35,646 INFO client.py  Response status OK
+2023-06-05 09:08:35,689 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 09:08:45,152 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 09:08:50,813 INFO client.py  client.py start...
+2023-06-05 09:08:50,814 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 09:08:50,814 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 09:08:50,817 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 09:08:50,817 INFO client.py  client Varvara starting...
+2023-06-05 09:08:50,822 INFO client.py  Response status OK
+2023-06-05 09:08:50,828 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 09:08:50,828 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 09:08:51,171 INFO client.py  Presence message sending...
+2023-06-05 09:08:51,171 INFO client.py  Presence message sending...DONE
+2023-06-05 09:08:51,203 INFO client.py  Varvara data base init...
+2023-06-05 09:08:52,334 INFO client.py  Response status OK
+2023-06-05 09:08:52,374 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 09:08:53,978 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685945333.978801, 'user': {'account_name': 'Amelia'}}
+2023-06-05 09:08:55,377 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 09:08:57,122 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685945337.122073, 'user': {'account_name': 'Varvara'}}
+2023-06-05 09:08:58,398 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 09:09:09,854 ERROR client.py  Some errors in main part chat_w_message: can't concat str to bytes
+2023-06-05 09:09:38,532 ERROR client.py  Some errors in main part chat_w_message: can't concat str to bytes
+2023-06-05 09:10:03,148 ERROR client.py  Some errors in main part chat_w_message: can't concat str to bytes
+2023-06-05 09:10:19,240 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:10:19,240 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:10:19,242 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:10:19,242 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:19:42,864 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 09:19:48,324 INFO client.py  client.py start...
+2023-06-05 09:19:48,324 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 09:19:48,325 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 09:19:48,327 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 09:19:48,327 INFO client.py  client Varvara starting...
+2023-06-05 09:19:49,924 INFO client.py  Response status OK
+2023-06-05 09:19:49,931 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 09:19:49,932 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 09:19:51,264 INFO client.py  Presence message sending...
+2023-06-05 09:19:51,264 INFO client.py  Presence message sending...DONE
+2023-06-05 09:19:51,279 INFO client.py  Varvara data base init...
+2023-06-05 09:19:51,432 INFO client.py  Response status OK
+2023-06-05 09:19:51,473 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 09:19:53,499 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 09:20:00,110 INFO client.py  client.py start...
+2023-06-05 09:20:00,110 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 09:20:00,111 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 09:20:00,113 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 09:20:00,114 INFO client.py  client Amelia starting...
+2023-06-05 09:20:01,627 INFO client.py  Response status OK
+2023-06-05 09:20:01,636 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 09:20:01,636 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 09:20:02,216 INFO client.py  Presence message sending...
+2023-06-05 09:20:02,216 INFO client.py  Presence message sending...DONE
+2023-06-05 09:20:02,233 INFO client.py  Amelia data base init...
+2023-06-05 09:20:03,131 INFO client.py  Response status OK
+2023-06-05 09:20:03,177 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 09:20:09,736 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685946009.735743, 'user': {'account_name': 'Varvara'}}
+2023-06-05 09:20:10,701 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 09:20:12,464 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685946012.464521, 'user': {'account_name': 'Amelia'}}
+2023-06-05 09:20:13,720 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 09:20:59,016 INFO client.py  Response status OK
+2023-06-05 09:20:59,057 INFO client.py  Message received: >>>Varvara: Hi 
+2023-06-05 09:21:06,569 INFO client.py  Response status OK
+2023-06-05 09:21:06,613 INFO client.py  Message received: >>>Varvara: Hi 
+2023-06-05 09:23:02,754 INFO client.py  Response status OK
+2023-06-05 09:23:02,798 ERROR client.py  Error Incorrect decryption.)
+2023-06-05 09:23:02,799 INFO client.py  Message received: 200: ['b\'3\\xd5>\\x1a\\r1\\xcawtL3\\x01"*\\xf0\\xba\\xf3\\x8er@\\xaa\\xf0\\xc4\\xef\\x8d\\x15\\x0eJ|p\\xcb\\xf0\\xcd\\x96\\xe3\\xc5\\x90\\xb8H\\xd1\\x90\\x1e*\\xf4\\x94\\x95\\x06\\x0c\\xf4\\xc8\\x00\\xa5d\\xc4\\xcd\\x88\\xfd\\x9a\\xfa\\x9d\\x18\\xd3\\xa2\\xcc\\xe6d\\xf1\\xdd\\x98\\xb1\\x1d\\x15\\x8e`\\xa8a\\\'UE\\xfe\\x90f\\xb1W2PF\\xfe\\x06*D\\x0fe\\xbc\\xd7\\x93\\xfe\\xec\\x87OQM\\xac\\\\\\x1e\\xf1\\xb30\\xa5\\x97\\x89\\xa7b9M\\xff}W\\xc9\\xee\\x83\\xea\\xcf\\x16}\\xc7\\xddU\\x15\\xc2nkl<\\x99K[\\x94[\\xe6\\xc9\\x06\\x92\\xe0\\xef\\xe6I\\\'?\\xc11\\xcb\\xad\\x01\\xc2Y\\n\\x8a94\\x9cI\\xf4_]q\\x00\\x98%\\x08\\xe5\\x97H\\xa4\\xbaH\\xb3\\x16\\xf9@7]\\xdd\\x15C[lR\\x9c\\x16\\x00|\\xea\\xb9i\\xaf\\xa7{\\\\\\xcc|\\xce\\x91\\x0eN\\x0ef%\\x12\\\'3\\x1d\\xbbT8\\xa2`\\xdc\\x8f\\xd0\\x8e\\x05\\x86\\xcaL\\xd8E\\x9eQ\\x02\\x9eg(\\xc9\\xe7u\\xc6\\xe3\\xd5\\xc7\\x04\\xe0\\x99c\\xc9\\x07e^OX\\xa0N\\xfbUR\\xbc\'', 'Varvara'] 
+2023-06-05 09:24:44,805 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:24:44,805 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:24:44,872 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:24:45,152 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:28:05,616 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 09:28:12,075 INFO client.py  client.py start...
+2023-06-05 09:28:12,075 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 09:28:12,076 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 09:28:12,078 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 09:28:12,078 INFO client.py  client Varvara starting...
+2023-06-05 09:28:13,677 INFO client.py  Response status OK
+2023-06-05 09:28:13,685 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 09:28:13,685 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 09:28:14,195 INFO client.py  Presence message sending...
+2023-06-05 09:28:14,195 INFO client.py  Presence message sending...DONE
+2023-06-05 09:28:14,214 INFO client.py  Varvara data base init...
+2023-06-05 09:28:15,191 INFO client.py  Response status OK
+2023-06-05 09:28:15,237 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 09:28:16,150 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 09:28:22,705 INFO client.py  client.py start...
+2023-06-05 09:28:22,705 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 09:28:22,706 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 09:28:22,709 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 09:28:22,709 INFO client.py  client Amelia starting...
+2023-06-05 09:28:24,222 INFO client.py  Response status OK
+2023-06-05 09:28:24,229 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 09:28:24,230 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 09:28:24,826 INFO client.py  Presence message sending...
+2023-06-05 09:28:24,826 INFO client.py  Presence message sending...DONE
+2023-06-05 09:28:24,842 INFO client.py  Amelia data base init...
+2023-06-05 09:28:25,739 INFO client.py  Response status OK
+2023-06-05 09:28:25,778 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 09:28:36,238 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685946516.238288, 'user': {'account_name': 'Varvara'}}
+2023-06-05 09:28:36,329 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 09:28:40,582 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685946520.582928, 'user': {'account_name': 'Amelia'}}
+2023-06-05 09:28:40,861 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 09:30:03,911 INFO client.py  Response status OK
+2023-06-05 09:30:03,954 INFO client.py  Message received: >>>Amelia: h 
+2023-06-05 09:30:23,543 INFO client.py  Response status OK
+2023-06-05 09:30:23,585 INFO client.py  Message received: >>>Amelia: h 
+2023-06-05 09:30:46,185 INFO client.py  Response status OK
+2023-06-05 09:30:46,225 INFO client.py  Message received: >>>Varvara: h 
+2023-06-05 09:31:01,298 INFO client.py  Response status OK
+2023-06-05 09:31:01,341 INFO client.py  Message received: >>>Varvara: Hello 
+2023-06-05 09:31:16,398 INFO client.py  Response status OK
+2023-06-05 09:31:16,442 INFO client.py  Message received: >>>Amelia: Hi 
+2023-06-05 09:33:02,119 INFO client.py  Response status OK
+2023-06-05 09:33:02,176 INFO client.py  Message received: >>>Varvara: How are you? 
+2023-06-05 09:33:21,762 INFO client.py  Response status OK
+2023-06-05 09:33:21,805 INFO client.py  Message received: >>>Amelia: I am ok 
+2023-06-05 09:33:41,364 INFO client.py  Response status OK
+2023-06-05 09:33:41,408 INFO client.py  Message received: >>>Amelia: Are you ok? 
+2023-06-05 09:34:45,624 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:34:45,625 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:34:45,625 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:34:45,626 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:49:51,084 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 09:49:57,593 INFO client.py  client.py start...
+2023-06-05 09:49:57,593 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 09:49:57,594 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 09:49:57,597 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 09:49:57,597 INFO client.py  client Amelia starting...
+2023-06-05 09:49:59,199 INFO client.py  Response status OK
+2023-06-05 09:49:59,205 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 09:49:59,206 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 09:50:00,134 INFO client.py  Presence message sending...
+2023-06-05 09:50:00,135 INFO client.py  Presence message sending...DONE
+2023-06-05 09:50:00,150 INFO client.py  Amelia data base init...
+2023-06-05 09:50:00,704 INFO client.py  Response status OK
+2023-06-05 09:50:00,745 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 09:50:02,132 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 09:50:07,478 INFO client.py  client.py start...
+2023-06-05 09:50:07,478 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 09:50:07,479 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 09:50:07,483 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 09:50:07,483 INFO client.py  client Varvara starting...
+2023-06-05 09:50:08,992 INFO client.py  Response status OK
+2023-06-05 09:50:08,998 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 09:50:08,999 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 09:50:10,260 INFO client.py  Presence message sending...
+2023-06-05 09:50:10,260 INFO client.py  Presence message sending...DONE
+2023-06-05 09:50:10,275 INFO client.py  Varvara data base init...
+2023-06-05 09:50:10,497 INFO client.py  Response status OK
+2023-06-05 09:50:10,536 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 09:50:14,737 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685947814.737442, 'user': {'account_name': 'Amelia'}}
+2023-06-05 09:50:15,035 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 09:50:17,010 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685947817.010037, 'user': {'account_name': 'Varvara'}}
+2023-06-05 09:50:18,048 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 09:51:20,158 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:51:20,158 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+
+2023-06-05 09:51:20,159 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:54:01,593 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 09:54:06,720 INFO client.py  client.py start...
+2023-06-05 09:54:06,720 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 09:54:06,720 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 09:54:06,723 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 09:54:06,723 INFO client.py  client Varvara starting...
+2023-06-05 09:54:08,326 INFO client.py  Response status OK
+2023-06-05 09:54:08,333 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 09:54:08,334 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 09:54:09,058 INFO client.py  Presence message sending...
+2023-06-05 09:54:09,058 INFO client.py  Presence message sending...DONE
+2023-06-05 09:54:09,073 INFO client.py  Varvara data base init...
+2023-06-05 09:54:09,842 INFO client.py  Response status OK
+2023-06-05 09:54:09,898 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 09:54:11,181 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 09:54:17,000 INFO client.py  client.py start...
+2023-06-05 09:54:17,000 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 09:54:17,002 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 09:54:17,004 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 09:54:17,004 INFO client.py  client Amelia starting...
+2023-06-05 09:54:18,522 INFO client.py  Response status OK
+2023-06-05 09:54:18,529 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 09:54:18,530 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 09:54:19,619 INFO client.py  Presence message sending...
+2023-06-05 09:54:19,619 INFO client.py  Presence message sending...DONE
+2023-06-05 09:54:19,635 INFO client.py  Amelia data base init...
+2023-06-05 09:54:20,027 INFO client.py  Response status OK
+2023-06-05 09:54:20,065 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 09:54:31,153 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685948071.153162, 'user': {'account_name': 'Varvara'}}
+2023-06-05 09:54:32,110 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 09:54:33,329 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685948073.329394, 'user': {'account_name': 'Amelia'}}
+2023-06-05 09:54:33,623 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 09:56:30,451 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:56:30,451 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:56:30,452 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 09:56:30,452 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:17:11,048 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 10:17:16,850 INFO client.py  client.py start...
+2023-06-05 10:17:16,851 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 10:17:16,851 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 10:17:16,854 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 10:17:16,854 INFO client.py  client Amelia starting...
+2023-06-05 10:17:18,456 INFO client.py  Response status OK
+2023-06-05 10:17:18,464 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 10:17:18,464 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 10:17:18,687 INFO client.py  Presence message sending...
+2023-06-05 10:17:18,687 INFO client.py  Presence message sending...DONE
+2023-06-05 10:17:18,703 INFO client.py  Amelia data base init...
+2023-06-05 10:17:19,963 INFO client.py  Response status OK
+2023-06-05 10:17:20,002 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 10:17:22,463 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 10:17:28,718 INFO client.py  client.py start...
+2023-06-05 10:17:28,718 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 10:17:28,719 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 10:17:28,721 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 10:17:28,722 INFO client.py  client Varvara starting...
+2023-06-05 10:17:30,229 INFO client.py  Response status OK
+2023-06-05 10:17:30,234 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 10:17:30,236 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 10:17:31,255 INFO client.py  Presence message sending...
+2023-06-05 10:17:31,255 INFO client.py  Presence message sending...DONE
+2023-06-05 10:17:31,271 INFO client.py  Varvara data base init...
+2023-06-05 10:17:31,732 INFO client.py  Response status OK
+2023-06-05 10:17:31,771 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 10:17:40,938 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685949460.938356, 'user': {'account_name': 'Varvara'}}
+2023-06-05 10:17:41,963 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685949461.963439, 'user': {'account_name': 'Amelia'}}
+2023-06-05 10:17:42,313 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 10:17:42,316 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 10:17:51,380 INFO client.py  Response status OK
+2023-06-05 10:17:51,439 INFO client.py  Message received: >>>Varvara: Hello 
+2023-06-05 10:18:51,724 INFO client.py  Response status OK
+2023-06-05 10:18:51,766 INFO client.py  Message received: >>>Varvara: jjj 
+2023-06-05 10:19:02,291 INFO client.py  Response status OK
+2023-06-05 10:19:02,339 INFO client.py  Message received: >>>Amelia: 11 
+2023-06-05 10:19:17,404 INFO client.py  Response status OK
+2023-06-05 10:19:17,446 INFO client.py  Message received: >>>Amelia: ee 
+2023-06-05 10:19:27,978 INFO client.py  Response status OK
+2023-06-05 10:19:28,036 INFO client.py  Message received: >>>Amelia: ee 
+2023-06-05 10:19:47,622 INFO client.py  Response status OK
+2023-06-05 10:19:47,666 INFO client.py  Message received: >>>Varvara: 1 
+2023-06-05 10:19:52,177 INFO client.py  Response status OK
+2023-06-05 10:19:52,220 INFO client.py  Message received: >>>Varvara: 2 
+2023-06-05 10:20:05,787 INFO client.py  Response status OK
+2023-06-05 10:20:05,828 INFO client.py  Message received: >>>Varvara: 5 
+2023-06-05 10:20:10,320 INFO client.py  Response status OK
+2023-06-05 10:20:10,367 INFO client.py  Message received: >>>Varvara: 4 
+2023-06-05 10:20:16,370 INFO client.py  Response status OK
+2023-06-05 10:20:16,429 INFO client.py  Message received: >>>Amelia: 5 
+2023-06-05 10:20:36,082 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:20:36,083 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:20:36,083 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:20:36,084 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:24:48,252 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 10:24:58,838 INFO client.py  client.py start...
+2023-06-05 10:24:58,838 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 10:24:58,839 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 10:24:58,841 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 10:24:58,842 INFO client.py  client Amelia starting...
+2023-06-05 10:25:01,940 INFO client.py  Response status OK
+2023-06-05 10:25:01,946 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 10:25:01,946 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 10:25:02,848 INFO client.py  Presence message sending...
+2023-06-05 10:25:02,849 INFO client.py  Presence message sending...DONE
+2023-06-05 10:25:02,864 INFO client.py  Amelia data base init...
+2023-06-05 10:25:04,942 INFO client.py  Response status OK
+2023-06-05 10:25:04,981 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 10:25:16,869 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 10:25:23,891 INFO client.py  client.py start...
+2023-06-05 10:25:23,891 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 10:25:23,892 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 10:25:23,894 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 10:25:23,895 INFO client.py  client Varvara starting...
+2023-06-05 10:25:26,914 INFO client.py  Response status OK
+2023-06-05 10:25:26,920 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 10:25:26,920 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 10:25:27,370 INFO client.py  Presence message sending...
+2023-06-05 10:25:27,370 INFO client.py  Presence message sending...DONE
+2023-06-05 10:25:27,386 INFO client.py  Varvara data base init...
+2023-06-05 10:25:29,235 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685949929.234387, 'user': {'account_name': 'Amelia'}}
+2023-06-05 10:25:29,918 INFO client.py  Message received: >>>['Amelia'] 
+2023-06-05 10:25:29,920 INFO client.py  Response status OK
+2023-06-05 10:25:29,962 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 10:25:31,674 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685949931.674281, 'user': {'account_name': 'Varvara'}}
+2023-06-05 10:25:32,938 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 10:25:41,231 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685949941.231981, 'user': {'account_name': 'Amelia'}}
+2023-06-05 10:25:41,973 INFO client.py  Message received: >>>['Amelia', 'Varvara'] 
+2023-06-05 10:25:54,016 INFO client.py  Response status OK
+2023-06-05 10:25:54,057 INFO client.py  Message received: >>>Varvara: Hello 
+2023-06-05 10:26:18,099 INFO client.py  Response status OK
+2023-06-05 10:26:18,141 INFO client.py  Message received: >>>Varvara: How are you? 
+2023-06-05 10:26:42,187 INFO client.py  Response status OK
+2023-06-05 10:26:42,231 INFO client.py  Message received: >>>Amelia: ok 
+2023-06-05 10:27:16,411 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:27:16,412 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:27:16,412 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:27:16,413 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:28:14,873 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 10:28:18,552 INFO client.py  client.py start...
+2023-06-05 10:28:18,552 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 10:28:18,553 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 10:28:18,556 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 10:28:18,556 INFO client.py  client Varvara starting...
+2023-06-05 10:28:23,655 INFO client.py  Response status OK
+2023-06-05 10:28:23,662 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 10:28:23,662 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 10:28:24,071 INFO client.py  Presence message sending...
+2023-06-05 10:28:24,071 INFO client.py  Presence message sending...DONE
+2023-06-05 10:28:24,087 INFO client.py  Varvara data base init...
+2023-06-05 10:28:27,865 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 10:28:28,659 INFO client.py  Response status OK
+2023-06-05 10:28:28,699 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 10:28:34,564 INFO client.py  client.py start...
+2023-06-05 10:28:34,564 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 10:28:34,564 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 10:28:34,567 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 10:28:34,567 INFO client.py  client Amelia starting...
+2023-06-05 10:28:48,745 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:28:48,745 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:28:54,521 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:29:05,204 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 10:29:08,504 INFO client.py  client.py start...
+2023-06-05 10:29:08,504 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Varvara, 2 years
+2023-06-05 10:29:08,505 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 10:29:08,507 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 10:29:08,508 INFO client.py  client Varvara starting...
+2023-06-05 10:29:13,616 INFO client.py  Response status OK
+2023-06-05 10:29:13,623 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 10:29:13,624 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 10:29:14,130 INFO client.py  Presence message sending...
+2023-06-05 10:29:14,130 INFO client.py  Presence message sending...DONE
+2023-06-05 10:29:14,146 INFO client.py  Varvara data base init...
+2023-06-05 10:29:18,623 INFO client.py  Response status OK
+2023-06-05 10:29:18,660 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 10:29:22,225 DEBUG log_decorator.py Функция __main__.get_addr_port вызвана из функции <module>
+2023-06-05 10:29:33,491 INFO client.py  client.py start...
+2023-06-05 10:29:33,493 INFO client.py  Func get_addr_port...DONE, params = localhost, 7777, Amelia, 2 years
+2023-06-05 10:29:33,493 DEBUG log_decorator.py Функция __main__.create_socket_client вызвана из функции main
+2023-06-05 10:29:33,496 DEBUG client.py  Create socket client. Connect to server, localhost, 7777
+2023-06-05 10:29:33,496 INFO client.py  client Amelia starting...
+2023-06-05 10:29:38,516 INFO client.py  Response status OK
+2023-06-05 10:29:38,521 ERROR client.py  Error 'NoneType' object cannot be interpreted as an integer)
+2023-06-05 10:29:38,523 INFO client.py  Message from Server received: 200: 0 
+2023-06-05 10:29:39,118 INFO client.py  Presence message sending...
+2023-06-05 10:29:39,119 INFO client.py  Presence message sending...DONE
+2023-06-05 10:29:39,134 INFO client.py  Amelia data base init...
+2023-06-05 10:29:43,523 INFO client.py  Response status OK
+2023-06-05 10:29:43,567 ERROR client.py  Error 'int' object is not subscriptable)
+2023-06-05 10:29:45,951 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685950185.951736, 'user': {'account_name': 'Varvara'}}
+2023-06-05 10:29:48,551 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 10:29:49,103 INFO client.py  data for contacts: {'action': 'get_contacts', 'time': 1685950189.103568, 'user': {'account_name': 'Amelia'}}
+2023-06-05 10:29:53,573 INFO client.py  Message received: >>>['Varvara', 'Amelia'] 
+2023-06-05 10:30:03,606 INFO client.py  Response status OK
+2023-06-05 10:30:03,655 INFO client.py  Message received: >>>Varvara: 11 
+2023-06-05 10:30:08,637 INFO client.py  Response status OK
+2023-06-05 10:30:08,679 INFO client.py  Message received: >>>Amelia: 11 
+2023-06-05 10:30:23,686 INFO client.py  Response status OK
+2023-06-05 10:30:23,735 INFO client.py  Message received: >>>Varvara: How are you? 
+2023-06-05 10:30:58,364 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:30:58,365 ERROR client.py  Some errors in chat_r_message: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:30:58,367 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2023-06-05 10:30:59,122 ERROR client.py  Some errors in authentification: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение

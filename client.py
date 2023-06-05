@@ -1,5 +1,9 @@
 import argparse
+import ast
+import binascii
+import hashlib
 import logging
+import os
 import queue
 import time
 from socket import *
@@ -7,15 +11,18 @@ from datetime import datetime
 import json
 from threading import Thread
 
+from Crypto.Cipher import PKCS1_OAEP
+from Crypto.PublicKey import RSA
 from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QApplication
 import sys
 import log.client_log_config
-from client_app import MainClientWindow
+from client_app import MainClientWindow, AuthWindow
 from log.log_decorator import log
 from dis import get_instructions
 
 from server import on_clicked
+from settings import SALT
 from store import StoreClient
 
 
@@ -43,17 +50,21 @@ class ClientVerifier(type):
 
 
 class Client(metaclass=ClientVerifier):
-    def __init__(self, s, user, status):
+    def __init__(self, s, user, status, hash_item):
         self.messages_list = []
         self.s = s
         self.user = user
         self.status = status
+        self.hash_item = hash_item
         self.db = None
         self.main_window = None
         self.online = []
         self.timer = QTimer()
         self.chat_arr = []
         self.q = queue.Queue()
+        self.keys = {}  # публичные ключи других клиентов для сквозного шифрования
+        self.privateKey = None
+        self.publicKey = None
 
     def run(self):
         """
@@ -62,58 +73,98 @@ class Client(metaclass=ClientVerifier):
         """
         print(f'client {self.user} starting...')
         client_log.info(f'client {self.user} starting...')
-        self.db = StoreClient(self.user)
-        print(f'{self.user} data base init...')
-        client_log.info(f'{self.user} data base init...')
-        presence_msg = self.presence(self.user, self.status)  # создаем presence-сообщение
-        client_log.info('Presence message sending...')
-        self.send_data(presence_msg, self.s)
-        client_log.info('Presence message sending...DONE')
-
-        client_app = QApplication(sys.argv)
-        self.main_window = MainClientWindow(self.user)
-
-        self.timer.timeout.connect(lambda: self.refresh_table())
-        self.timer.start(2000)
-
-        self.main_window.get_online.triggered.connect(lambda _: self.get_online(self.user, self.s))  # обновить онлайн
-        self.main_window.get_online.triggered.connect(lambda _: self.main_window.write_online(db=self.db, online=self.online, chat_arr=self.chat_arr))
-        self.main_window.all_clients.triggered.connect(lambda _: self.main_window.contact_list(db=self.db, online=self.online, chat_arr=self.chat_arr))  # клиенты-онлайн
-        self.main_window.history.triggered.connect(lambda _: self.main_window.history_table(db=self.db, online=self.online, chat_arr=self.chat_arr))  # история сообщений
-        self.main_window.valueChanged.connect(lambda: self.add_contact(
-            user=self.user, s=self.s, contact=self.main_window.return_new_contact()))
-        self.main_window.valueDelChanged.connect(
-            lambda: self.del_contact(user=self.user, s=self.s, contact=self.main_window.return_new_contact()))
-
-        self.main_window.chat_table.triggered.connect(lambda _: self.main_window.write_chat(db=self.db, online=self.online, chat_arr=self.chat_arr))
-
-        self.main_window.sendChanged.connect(lambda _: self.main_send_message(message=self.main_window.show_message(), user=self.user, s=self.s))
-
-        self.main_window.sendOne.connect(lambda _: self.main_send_message(message=self.main_window.show_message_to_one(), user=self.user, s=self.s))
-
-        self.main_window.statusBar().showMessage('Lets go!')  # статус-бар
-
-        try:
-            data = self.data_from_server(self.s)
-            answer = self.read_answer(data)
-            print(f'Message(answer) from server received: ', answer)
-        except:
-            client_log.error('No messages from server.')
-            exit(1)
-
-        w = Thread(target=self.chat_w_message, args=(self.user, self.s))
-        w.daemon = True
-        w.start()
-
-        r = Thread(target=self.chat_r_message, args=(self.s,))
-        r.daemon = True
-        r.start()
-
-        client_app.exec_()
+        # Блок авторизации, создание ключей для ассиметричного шифрования
+        self.send_data(self.check_password(), self.s)
         while True:
-            time.sleep(1)
-            if not w.is_alive() or not r.is_alive():
-                break
+            try:
+                data = self.data_from_server(self.s)
+                answer = self.read_answer(data)
+                print(answer)
+                client_log.info(f'Message from Server received: {answer} ')
+
+                key = RSA.generate(2048)
+                self.privateKey = key.export_key()
+                self.publicKey = key.publickey().export_key()
+
+                # # save private key to file
+                # with open(f'db/{self.user}_client_private.pem', 'wb') as f:
+                #     f.write(privateKey)
+                #
+                # # save public key to file
+                # with open(f'db/{self.user}_client_public.pem', 'wb') as f:
+                #     f.write(publicKey)
+
+                presence_msg = self.presence(self.user, self.status, self.publicKey.decode('ascii'))  # создаем presence-сообщение
+                print('Presence message sending...')
+                client_log.info('Presence message sending...')
+                self.send_data(presence_msg, self.s)
+                client_log.info('Presence message sending...DONE')
+                print('Presence message sending...DONE')
+            except Exception as err:
+                client_log.error(f'Some errors in authentification: {err}')
+                exit(1)
+            # Авторизация прошла
+
+            self.db = StoreClient(self.user)
+            print(f'{self.user} data base init...')
+            client_log.info(f'{self.user} data base init...')
+
+            client_app = QApplication(sys.argv)
+            self.main_window = MainClientWindow(self.user)
+
+            self.timer.timeout.connect(lambda: self.refresh_table())
+            self.timer.start(2000)
+
+            self.main_window.get_online.triggered.connect(lambda _: self.get_online(self.user, self.s))  # обновить онлайн
+            self.main_window.get_online.triggered.connect(lambda _: self.main_window.write_online(db=self.db, online=self.online, chat_arr=self.chat_arr))
+            self.main_window.all_clients.triggered.connect(lambda _: self.main_window.contact_list(db=self.db, online=self.online, chat_arr=self.chat_arr))  # клиенты-онлайн
+            self.main_window.history.triggered.connect(lambda _: self.main_window.history_table(db=self.db, online=self.online, chat_arr=self.chat_arr))  # история сообщений
+            self.main_window.valueChanged.connect(lambda: self.add_contact(
+                user=self.user, s=self.s, contact=self.main_window.return_new_contact()))
+            self.main_window.valueDelChanged.connect(
+                lambda: self.del_contact(user=self.user, s=self.s, contact=self.main_window.return_new_contact()))
+
+            self.main_window.chat_table.triggered.connect(lambda _: self.main_window.write_chat(db=self.db, online=self.online, chat_arr=self.chat_arr))
+
+            self.main_window.sendChanged.connect(lambda _: self.main_send_message(message=self.main_window.show_message(), user=self.user, s=self.s))
+
+            self.main_window.sendOne.connect(lambda _: self.main_send_message(message=self.main_window.show_message_to_one(), user=self.user, s=self.s))
+
+            self.main_window.statusBar().showMessage('Lets go!')  # статус-бар
+
+            try:
+                data = self.data_from_server(self.s)
+                answer = self.read_answer(data)
+                print(answer)
+            except:
+                client_log.error('No messages from server.')
+                exit(1)
+
+            w = Thread(target=self.chat_w_message, args=(self.user, self.s))
+            w.daemon = True
+            w.start()
+
+            r = Thread(target=self.chat_r_message, args=(self.s,))
+            r.daemon = True
+            r.start()
+
+            client_app.exec_()
+            while True:
+                time.sleep(1)
+                if not w.is_alive() or not r.is_alive():
+                    break
+
+    def check_password(self):
+        data = {
+            "action": "checking",
+            "time": datetime.timestamp(datetime.now()),
+            "user": {
+                "account_name": self.user,
+                "status": self.status,
+                "hash": str(self.hash_item)
+            }
+        }
+        return data
 
     @staticmethod
     def data_from_server(sock):
@@ -144,23 +195,40 @@ class Client(metaclass=ClientVerifier):
                     client_log.info('Response status OK')
                     try:
                         result_msg = dict_from_server.get('text', 0)  # пробуем достать текст сообщения
+                        print('result_msg', result_msg)
+                        rsa_private_key = RSA.importKey(self.privateKey)
+                        rsa_private_key = PKCS1_OAEP.new(rsa_private_key)
+                        decrypted = rsa_private_key.decrypt(ast.literal_eval(result_msg[0]))
+                        print('decrypted', decrypted)
+                        decrypted = decrypted.decode('utf-8')
+
+                        return f'>>>{result_msg[1]}: {decrypted}'  # если есть текст выводим сообщение и автора
+
                     except Exception as err:
                         client_log.error(f'Error {err})')
-                    else:
-                        if result_msg:
-                            return f'>>>{result_msg[1]}: {result_msg[0]}'  # если есть текст выводим сообщение и автора
+                        print(f'error in read_answer: {err}')
 
                     return f'{response_code}: {result_msg}'
 
                 if response_code == 202:
                     try:
                         result_msg = dict_from_server.get('alert')  # пробуем достать сообщение
+                        keys = dict_from_server.get('keys')
                     except Exception as err:
                         client_log.error(f'Error {err})')
                     else:
                         if result_msg:
                             self.online = result_msg  # записываем всех клиентов, полученных с сервера в список
+                            self.keys = keys  # обновляем ключи клиентов для шифрования
                             return f'>>>{result_msg}'
+
+                if response_code == 401:
+                    try:
+                        print('Wrong auth, check username or password')
+                        client_log.info(f'Wrong auth for client{self.user}')
+                        exit(1)
+                    except Exception as err:
+                        client_log.error(f'Error {err})')
 
             client_log.error(f'Data : {dict_from_server}')
 
@@ -224,7 +292,7 @@ class Client(metaclass=ClientVerifier):
                 pass
 
     @staticmethod
-    def presence(account_name, status):
+    def presence(account_name, status, publicKey):
         """ функция(метод) для формирования presence-сообщения
         :params: account_name, status
         :return: dict
@@ -235,7 +303,8 @@ class Client(metaclass=ClientVerifier):
             "type": "status",
             "user": {
                 "account_name": account_name,
-                "status": status
+                "status": status,
+                "pub_key": publicKey
             }
         }
         return data
@@ -249,8 +318,8 @@ class Client(metaclass=ClientVerifier):
         result_data = json.dumps(data).encode('utf-8')
         sock.send(result_data)
 
-    @staticmethod
-    def message_to_server(message, account_name):
+
+    def message_to_server(self, message, author, receiver):
         """ функция(метод) для формирования сообщения
         :params: message: text, account_name
         :return: dict
@@ -258,10 +327,11 @@ class Client(metaclass=ClientVerifier):
         data = {
             "action": "message",
             "time": datetime.timestamp(datetime.now()),
-            "text": message,
+            "receivers": receiver,
             "user": {
-                "account_name": account_name,
-            }
+                "account_name": author,
+            },
+            "text": message,
         }
         return data
 
@@ -273,29 +343,26 @@ class Client(metaclass=ClientVerifier):
         self.messages_list.append(message)
         if self.messages_list != []:
             try:  # стандартный протокол отправки сообщения на сервер
-                self.send_data(self.message_to_server(message, user), s)
                 receivers = self.get_receivers()
-                print('receivers', receivers)
                 for client in receivers:
+
+                    client_pub_key = self.keys[client]
+                    message_prepare = str.encode(message)
+                    rsa_public_key = RSA.importKey(client_pub_key)
+                    rsa_public_key = PKCS1_OAEP.new(rsa_public_key)
+                    encrypted_text = rsa_public_key.encrypt(message_prepare)
+
+                    self.send_data(self.message_to_server(str(encrypted_text), user, client), s)
+
                     if type(message) is list:
                         self.db.add_history(client, message[0])
                     else:
                         self.db.add_history(client, message)
-                self.chat_arr.append(f'>>>YOU({user}): {message}')
+
+                self.chat_arr.append(f'>>>YOU({user}): {message}')  # отобразить свое собственное сообщение в чате
                 del self.messages_list[-1]
             except Exception as err:
                 client_log.error(f'Some errors in main part chat_w_message: {err}')
-
-    # def to_one_message(self, message, user, s, contact):
-    #     try:  # протокол отправки сообщения на сервер для одного клиента (вызов через приложение)
-    #         message = [message, contact]
-    #         self.send_data(self.message_to_server(message, user), s)
-    #         receivers = self.get_receivers()
-    #         for client in receivers:
-    #             self.db.add_history(client, message)
-    #         self.chat_arr.append(f'>>>YOU({user}): {message}')
-    #     except Exception as err:
-    #         client_log.error(f'Some errors in main part chat_w_message: {err}')
 
     def get_online(self, user, s):
         data = {
@@ -307,7 +374,7 @@ class Client(metaclass=ClientVerifier):
         }
         client_log.info(f'data for contacts: {data}')
         try:  # отправляем запрос на сервер и ожидаем ответа, тк такая информация (онлайн клиенты)
-            self.send_data(data, s)  # хранится только на серверной БД
+            self.send_data(data, s)  # хранится только на сервере
         except Exception as err:
             client_log.error(f'Some errors in chat_w_message: {err}')
 
@@ -357,7 +424,7 @@ class Client(metaclass=ClientVerifier):
 
 
 # основная функция включает в себя создание сокета, тк по ТЗ мы не можем создать сокет на уровне класса
-def main(addr, port, user, status):
+def main(addr, port, user, status, password):
     """основная функция для запуска клиента чата
     :param addr: server ip
     :param port: server port
@@ -368,7 +435,7 @@ def main(addr, port, user, status):
     client_log.info('client.py start...')
     client_log.info(f'Func get_addr_port...DONE, params = {addr}, {port}, {user}, {status}')
     s = create_socket_client(addr, port)  # создаем сокет
-    client = Client(s, user, status)  # создаем объект класса клиент с параметрами сокета, порта, адреса
+    client = Client(s, user, status, password)  # создаем объект класса клиент с параметрами сокета, порта, адреса
 
     client.run()  # запускаем клиент с помощью метода run
 
@@ -397,7 +464,7 @@ def get_addr_port():
     parser = argparse.ArgumentParser()
     parser.add_argument("-a", action="store", dest="addr", type=str, default='localhost')
     parser.add_argument("-p", action="store", dest="port", type=int, default=7777)
-    parser.add_argument("-user", action="store", dest="user", type=str, default='Varvara')
+    # parser.add_argument("-user", action="store", dest="user", type=str, default='Varvara')
     parser.add_argument("-status", action="store", dest="status", type=str, default='2 years')
     # parser.add_argument("-c", action="store", dest="contacts", type=str, default='')
     # parser.add_argument("-s", action="store", dest="send", type=int,
@@ -405,14 +472,28 @@ def get_addr_port():
     args = parser.parse_args()
     addr = args.addr
     port = args.port
-    user = args.user
+    # user = args.user
     status = args.status
-    return addr, port, user, status
+    window = AuthWindow()  # запускается окно ввода логина
+    if window.exec():  # при закрытии окна значения полей формируют параметры для дальнейшего запуска клиента
+        user = window.name_field.text()
+        password = window.passw_field.text()
+        salt = password + SALT
+        salt = salt.encode('utf-8')
+        password_bytes = password.encode('utf-8')
+        key = hashlib.pbkdf2_hmac('sha256', password_bytes, salt, 100000)
+        hash_item = binascii.hexlify(key)
+        if window.info.text() != '':
+            status = window.info.text()
+
+        return addr, port, user, status, hash_item
 
 
 if __name__ == '__main__':
     try:
+        app = QApplication(sys.argv)
         main(*get_addr_port())
+        app.exec_()
 
     except Exception:
         import sys

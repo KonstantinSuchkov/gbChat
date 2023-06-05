@@ -1,9 +1,39 @@
+import binascii
+import hashlib
+import json
 import sys
-from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QTableWidget, QDialog, QLabel, QLineEdit, QPushButton,\
-    QSpinBox, QFileDialog, QApplication, QTableView
+import uuid
+from Crypto.PublicKey import RSA
+from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QTableWidget, QDialog, QLabel, QLineEdit, QPushButton, \
+    QSpinBox, QFileDialog, QApplication, QTableView, QVBoxLayout, QWidget, QInputDialog, QDialogButtonBox, QFormLayout, \
+    QMessageBox
 from PyQt5 import QtGui
 
-from settings import DEFAULT_IP, DEFAULT_SERVER_PORT, SERVER_DB_FILE
+from settings import DEFAULT_IP, DEFAULT_SERVER_PORT, SERVER_DB_FILE, SALT
+
+
+class RefistrationForm(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.name_field = QLineEdit(self)
+        self.info = QLineEdit(self)
+        self.passw_field = QLineEdit(self)
+        self.passw_rep = QLineEdit(self)
+        buttonBox = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel, self)
+
+        layout = QFormLayout(self)
+        layout.addRow("Client login/name", self.name_field)
+        layout.addRow("Client info / status", self.info)
+        layout.addRow("Client password", self.passw_field)
+        layout.addRow("Repeat password", self.passw_rep)
+        layout.addWidget(buttonBox)
+
+        buttonBox.accepted.connect(self.accept)
+        buttonBox.rejected.connect(self.reject)
+
+    def getInputs(self):  # возвращает кортеж
+        return self.name_field.text(), self.info.text(), self.passw_field.text(), self.passw_rep.text()
 
 
 # основное окно приложения
@@ -27,12 +57,14 @@ class MainWindow(QMainWindow):
         self.just_button = QAction('Первая кнопка', self)
         self.all_clients = QAction('Клиенты Онлайн', self)
         self.online = QAction('История Клиентов(онлайн)', self)
+        self.reg_form = QAction('Регистрация клиента', self)
 
         # объекты тулбара
         self.toolbar = self.addToolBar('MainBar')
         self.toolbar.addAction(self.just_button)
         self.toolbar.addAction(self.all_clients)
         self.toolbar.addAction(self.online)
+        self.toolbar.addAction(self.reg_form)
         self.toolbar.addAction(exit_action)
 
         self.statusBar()
@@ -84,17 +116,51 @@ class MainWindow(QMainWindow):
         self.main_table.resizeColumnsToContents()
         self.main_table.resizeRowsToContents()
 
+    def registration(self, db):
+        dialog = RefistrationForm()
+        msg_box = QMessageBox()
+        msg_box.setWindowTitle("Error")
+        msg_box.setIcon(QMessageBox.Critical)
+        if dialog.exec():
+            name, info, passw1, passw2 = dialog.getInputs()
 
-# class TableView(QTableWidget):
-#     def __init__(self, data, *args):
-#         QTableWidget.__init__(self, *args)
-#         self.data = data
-#         self.setData()
-#         self.resizeColumnsToContents()
-#         self.resizeRowsToContents()
-#
-#     def setData(self):
-#         return 'Text'
+            if name == '' or name == None:
+                msg_box.setText("Error in name field (5-10 symb)")
+                msg_box.setInformativeText('Field "name" is empty!')
+                msg_box.exec_()
+                self.registration(db)
+
+            elif len(name) < 5 or len(name) > 10:
+                msg_box.setText("Error in name field (5-10 symb)")
+                msg_box.setInformativeText('Name too short or too long')
+                msg_box.exec_()
+                self.registration(db)
+
+            elif passw1 != passw2:
+                msg_box.setText("Error in password logic")
+                msg_box.setInformativeText("Passwords don't match")
+                msg_box.exec_()
+                self.registration(db)
+
+            else:
+                password = passw1.encode('utf-8')
+                salt = passw1 + SALT
+                salt = salt.encode('utf-8')
+                key = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
+                db.registration_from_server(login=name, info=info, online=False, contacts=None, password=str(binascii.hexlify(key)))
+                del name, info, passw1, passw2, key, salt, password
+
+                # new_user = {name: str(key)}
+                # try:
+                #     with open('server_users.json', 'r') as f_r:
+                #         data = json.load(f_r)
+                #
+                #     with open('server_users.json', 'w', encoding='utf-8') as f_w:
+                #         users = data['users']
+                #         users.append(new_user)
+                #         json.dump(data, f_w, indent=4, ensure_ascii=False)
+                # except Exception as e:
+                #     print('Some error in registration', e)
 
 # окно настроек сервера
 class ConfigWindow(QDialog):

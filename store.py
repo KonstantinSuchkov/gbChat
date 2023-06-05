@@ -107,6 +107,7 @@ class StoreServer:
         def __repr__(self):
             return self.login
 
+
     class History:
 
         def __init__(self, clients_id, entry_time, ip):
@@ -142,6 +143,20 @@ class StoreServer:
         def __repr__(self):
             return f"user {self.owner_id}: {self.contacts}"
 
+    class UserAuth:
+        def __init__(self, login, password):
+            self.login = login
+            self.password = password
+
+        def __str__(self):
+            template = '{0.login} {0.password}'
+            return template.format(self)
+
+        def __repr__(self):
+            return f"{self.login}: {self.password}"
+
+
+    # основной класс server db
     def __init__(self, db_name):
         self.db_engine = create_engine(f'sqlite:///{db_name}', echo=False, pool_recycle=7200)
         self.metadata = MetaData()
@@ -151,7 +166,7 @@ class StoreServer:
                         Column('login', String),
                         Column('info', String),
                         Column('online', Boolean, default=False),
-                        Column('contacts', String, default=None)
+                        Column('contacts', String, default=None),
                         )
 
         clients_history = Table('history', self.metadata,
@@ -175,16 +190,35 @@ class StoreServer:
                                 Column('time', DateTime)
                                 )
 
+        users_auth = Table('storage', self.metadata,
+                                Column('id', Integer, primary_key=True),
+                                Column('login', String(96)),
+                                Column('password', String(96)),
+                           )
         self.metadata.create_all(self.db_engine)
         mapper_registry = registry()  # в версии sqlalchemy 2.0+ используется registry map_imperatively, а не mapper
         mapper_registry.map_imperatively(self.User, clients)
         mapper_registry.map_imperatively(self.History, clients_history)
         mapper_registry.map_imperatively(self.ContactList, contacts_list)
         mapper_registry.map_imperatively(self.MessageHistory, message_history)
+        mapper_registry.map_imperatively(self.UserAuth, users_auth)
 
         Session = sessionmaker(bind=self.db_engine)
         self.session = Session()
         self.session.commit()
+
+
+    def registration_from_server(self, login, info, online, contacts, password):
+        user = self.User(login, info, online, contacts)
+        password_rec = self.UserAuth(login, password)
+        self.session.add(user)
+        self.session.add(password_rec)
+        self.session.commit()
+
+    def password_check(self, login):
+        user = self.session.query(self.UserAuth).filter_by(login=login).first()
+        result = str(user)
+        return result.split(' ')
 
     def client_login(self, login, info, ip, online, contacts):
         result = self.session.query(self.User).filter_by(login=login)
@@ -248,9 +282,9 @@ class StoreServer:
         self.session.commit()
 
     def get_contacts(self, login):
-        client = self.session.query(self.User).filter(self.User.login == login)
+        client = self.session.query(self.User.contacts).filter(self.User.login == login)
         try:
-            contacts = client[0].contacts.split(',')
+            contacts = client.all()
             return [contact for contact in contacts]
         except AttributeError:
             return ['']
@@ -275,21 +309,23 @@ class StoreServer:
 
 # testing
 if __name__ == '__main__':
-    # db = StoreServer(SERVER_DB_FILE)
+    db = StoreServer(SERVER_DB_FILE)
+    # print(db.password_check('Varvara'))
+    print(db.get_contacts('Varvara'))
     # history_rec = db.MessageHistory(author='Test1', recipient='Test2', text='test text')
     # db.session.add(history_rec)
     # db.session.commit()
     # print(db.get_messages_history())
-    # # db.client_login('user_1', 'test_user', '7777', online=True, contacts='')
+    # db.client_login('user_1', 'test_user', '7777', online=True, contacts='')
     # # db.client_login('user_4', 'test_user', '7777', online=False)
     # print(db.get_clients())
     # print(db.get_online())
     # print(db.client_disconnect(login='Test1'))
     # print(db.add_contact('Varvara', 'Admin'))
-    # db.add_contact('Amelia', 'Жанна')
+    # db.add_contact('Varvara', 'Amelia')
     # db.add_contact('Varvara', 'Жанна')
     # # print(db.get_contacts('Test1'))
-    # db.del_contacts('Varvara', 'Admin')
+    # db.del_contacts('Varvara', "('Varvara,Varvara',)")
     # print(db.get_contacts('Varvara'))
     # print(db.get_contacts('Varvara'))
     # # print(db.get_contacts('Test1'))
@@ -298,9 +334,9 @@ if __name__ == '__main__':
     # print(db.get_history())
     # print(db.messages_history())
 
-    db_client = StoreClient('Amelia')
+    # db_client = StoreClient('Amelia')
     # # db_client.add_contact('Admin')
     # # db_client.del_contacts('Papa')
-    contacts = db_client.get_contacts()
+    # contacts = db_client.get_contacts()
     # db_client.add_history(recipient='Varvara', text='Hello, Amelia!')
     # print(db_client.get_history())

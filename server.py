@@ -59,6 +59,7 @@ class Server(threading.Thread, metaclass=ServerVerifier):
         self.port = port
         self.db = StoreServer(db_name)
         self.q = queue.Queue()
+        self.keys = {}
         super().__init__()
 
     @staticmethod
@@ -72,7 +73,7 @@ class Server(threading.Thread, metaclass=ServerVerifier):
         s = socket(AF_INET, SOCK_STREAM)  # Создаем сокет TCP
         s.bind((addr, port))  # Присваиваем адрес, порт
         s.listen(5)
-        s.settimeout(1.5)  # Таймаут для операций с сокетом
+        s.settimeout(5)  # Таймаут для операций с сокетом
         return s
 
     def read_requests(self, r_clients, all_clients, users):
@@ -116,30 +117,56 @@ class Server(threading.Thread, metaclass=ServerVerifier):
         """
         for client in w_clients:
             if client in requests:
+                print(requests)
                 resp = requests[client].encode('utf-8')
                 if resp != b'':
+                    print(resp)
                     try:
                         d = json.loads(resp.decode('utf-8'))
                     except:
                         pass
                     try:
+
+                        if d['action'] == 'checking':  # если checking, то проверяем хэш пользователя
+                            try:
+                                login = d['user']['account_name']
+                                check_hash = d['user']['hash']
+                                list_for_check = self.db.password_check(login=login)
+                                if check_hash == list_for_check[1]:
+                                    print(f'auth for client {login} - password correct')
+                                    server_log.info(f'auth for client {login} - password correct')
+                                    data = {
+                                        "response": 200,
+                                        "alert": 'Authorized',
+                                    }
+                                    self.send_data(data, client)
+                                else:
+                                    print(f'auth for client {login} - password incorrect')
+
+                            except Exception as e:
+                                print(f"auth for client {d['user']['account_name']} - some error - {e}")
+                                server_log.info(f"auth for client {d['user']['account_name']} - some error - {e}")
+                                data = {
+                                    "response": 401,
+                                    "alert": 'Unauthorized',
+                                }
+                                self.send_data(data, client)
+
                         if d['action'] == 'presence':  # если сообщение presence, то отправляем соответствующий ответ
                             client.send(self.presence_answer(d))
                             login = d['user']['account_name']
                             info = d['user']['status']
                             self.db.client_login(login=login, info=info, ip=self.port, online=True, contacts=None)
-                            users[d['user']['account_name']] = client  # добавляем клиента в базу
+                            users[login] = client  # добавляем клиента в базу
+                            pub_key = d['user']['pub_key']
+                            self.keys[login] = pub_key  # сохраняем keys клиента {username: pub_key}
 
                         if d['action'] == 'get_contacts':
                             try:
-                                contacts = self.db.get_online()
-                                result = []
-                                for i in contacts:
-                                    for x in i:
-                                        result.append(str(x))
                                 data = {
                                     "response": 202,
-                                    "alert": result,
+                                    "alert": list(users),  # "ключи" словаря users это клиенты онлайн
+                                    "keys": self.keys
                                 }
                                 self.send_data(data, client)
                             except:
@@ -185,29 +212,27 @@ class Server(threading.Thread, metaclass=ServerVerifier):
                                 d['text'].pop()
                                 message = d['text'][0]
                             else:
-                                client_list = self.db.get_contacts(login=login)
+                                client_list = d['receivers']
                                 message = d['text']
-                            # Ниже создаем список получателей из словаря users(клиенты онлайн) и списка client_list
-                            # т.е. сообщение будет отправлено только тем, кто онлайн и в контактах отправителя
-                            receivers = {name: users[name] for name in client_list if name in users}
-
+                            # receivers = {name: users[name] for name in [client_list] if name in users}
                             chat.append([message, login])
-                            for key, value_sock in receivers.items():  # идем циклом по значению словаря (сокетам)
-                                data = {
-                                    "response": 200,
-                                    "action": "message",
-                                    "time": datetime.timestamp(datetime.now()),
-                                    "text": chat[0],
-                                }
-                                try:
-                                    self.send_data(data, value_sock)
-                                    history_rec = self.db.MessageHistory(author=login, recipient=key, text=chat[0][0])
-                                    self.db.session.add(history_rec)
-                                    self.db.session.commit()
-                                except:
-                                    # Сокет недоступен, клиент отключился
-                                    pass
-                            del chat[0]  # удаляем сообщение
+                            for key, value_sock in users.items():  # идем циклом по значению словаря (сокетам)
+                                if key == client_list:
+                                    data = {
+                                        "response": 200,
+                                        "action": "message",
+                                        "time": datetime.timestamp(datetime.now()),
+                                        "text": [message, login],
+                                    }
+                                    try:
+                                        self.send_data(data, value_sock)
+                                        history_rec = self.db.MessageHistory(author=login, recipient=key, text=chat[0][0])
+                                        self.db.session.add(history_rec)
+                                        self.db.session.commit()
+                                    except:
+                                        # Сокет недоступен, клиент отключился
+                                        pass
+                            chat.pop()  # удаляем сообщение
                     except:
                         pass
 
@@ -246,23 +271,20 @@ class Server(threading.Thread, metaclass=ServerVerifier):
                 except:
                     pass  # Ничего не делать, если какой-то клиент отключился
                 requests = self.read_requests(r, clients, users)  # Сохраним запросы клиентов
-                if requests:
-                    self.q.put(requests)
-                    item = self.q.get()
-                    self.write_responses(item, w, clients, chat, users)  # Выполним отправку ответов клиентам
-                    # print(f'Clients online: {self.db.get_online()}')  # вывод находящихся онлайн пользователей
-                    self.q.task_done()
-
+                self.q.put(requests)
+                item = self.q.get()
+                self.write_responses(item, w, clients, chat, users)  # Выполним отправку ответов клиентам
+                # print(f'Clients online: {self.db.get_online()}')  # вывод находящихся онлайн пользователей
+                self.q.task_done()
 
                 # if requests:
                 #     self.write_responses(requests, w, clients, chat, users)  # Выполним отправку ответов клиентам
                 #     print(f'Clients online: {self.db.get_online()}')  # вывод находящихся онлайн пользователей
                 #     requests = {}
 
+
     def worker(self, w, clients, chat, users):
         pass
-
-
 
     def admin_commands(self):  # функция для администрирования серверной части чата, ввода команд
         while True:
@@ -360,6 +382,7 @@ if __name__ == '__main__':
     main_window.just_button.triggered.connect(on_clicked)  # тестовая кнопка
     main_window.all_clients.triggered.connect(lambda: main_window.online_clients(db=server.db))  # клиенты-онлайн
     main_window.online.triggered.connect(lambda _: main_window.history_table(db=server.db))  # история сообщений
+    main_window.reg_form.triggered.connect(lambda _: main_window.registration(db=server.db))
     main_window.statusBar().showMessage('Lets go!')  # статус-бар
 
     server_app.exec_()
