@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>server_app.py &#8212; документация gbChat </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="client.py" href="client.html" />
+    <link rel="prev" title="server.py" href="server.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="server-app-py">
+<h1>server_app.py<a class="headerlink" href="#server-app-py" title="Permalink to this heading">¶</a></h1>
+<p>Серверное приложение, GUI</p>
+<dl class="simple">
+<dt>class RefistrationForm(QDialog):</dt><dd><p>«»» Форма регистрации пользователя, регистрация новых пользователей осуществляется на стороне сервера
+«»»</p>
+</dd>
+</dl>
+<p># основное окно приложения
+class MainWindow(QMainWindow):</p>
+<blockquote>
+<div><blockquote>
+<div><p># Основная таблица
+# Действия</p>
+<p># объекты тулбара</p>
+<p># основная таблица для отображения данных</p>
+<p># Текст в окне - заголовок информации</p>
+</div></blockquote>
+<dl class="simple">
+<dt>def online_clients(self, db):  # метод для отображения таблицы с онлайн-клиентами</dt><dd><p># при вызове метода меняем основную таблицу</p>
+</dd>
+<dt>def history_table(self, db):</dt><dd><p># метод для отображения таблицы с историей переписки
+# при вызове метода меняем основную таблицу</p>
+</dd>
+<dt>def show_table(self, content):</dt><dd><p># функция отображения основной таблицы</p>
+</dd>
+<dt>def registration(self, db):</dt><dd><p># функция регистрации, отлов ошибок и сохранение хэша пароля в БД</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl>
+<dt>class ConfigWindow(QDialog):</dt><dd><p># окно настроек сервера, стартовое окно, в котором выставляются параметры запуска</p>
+<dl class="simple">
+<dt>def set_setting(self, config):</dt><dd><p># функция настроек</p>
+</dd>
+<dt>def setting_dict(self):</dt><dd><p># возврат настроек в виде словаря</p>
+</dd>
+<dt>def open_file_window(self):</dt><dd><p>открытие пути</p>
+</dd>
+</dl>
+</dd>
+<dt>if __name__ == „__main__“:</dt><dd><p>app = QApplication(sys.argv)
+conf = ConfigWindow({})
+app.exec_()</p>
+</dd>
+</dl>
+<hr class="docutils" />
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">gbChat</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="server.html">server.py</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">server_app.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">client.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_app.html">client_app.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store.html">store.py</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="server.html" title="предыдущая глава">server.py</a></li>
+      <li>Next: <a href="client.html" title="следующая глава">client.py</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Admin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/server_app.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

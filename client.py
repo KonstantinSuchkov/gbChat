@@ -68,7 +68,9 @@ class Client(metaclass=ClientVerifier):
 
     def run(self):
         """
-        Основной метод класса с логикой чата
+        Основной метод класса с логикой чата. Отправка хэша пароля для авторизации.
+        Генерация пары ключей для шифрования сообщений. Отправка presence сообщения.
+        Инициализация базы данных клиента, открытие приложения. Потоки на прием и отправку данных. Обработка сигналов
         :return:
         """
         print(f'client {self.user} starting...')
@@ -253,7 +255,7 @@ class Client(metaclass=ClientVerifier):
     def chat_w_message(self, user, s):
         """ функция(метод) отправки сообщений другим пользователям, для работы в режиме "многопоточности".
         Пока клиент запущен будем ожидать ввода сообщения от пользователя
-        :params: sock: socket
+        :params: sock: socket, user: username
         """
         while True:
             message = input(f'>>>{user}\n')
@@ -292,7 +294,7 @@ class Client(metaclass=ClientVerifier):
                 pass
 
     @staticmethod
-    def presence(account_name, status, publicKey):
+    def presence(account_name, status, public_key):
         """ функция(метод) для формирования presence-сообщения
         :params: account_name, status
         :return: dict
@@ -304,7 +306,7 @@ class Client(metaclass=ClientVerifier):
             "user": {
                 "account_name": account_name,
                 "status": status,
-                "pub_key": publicKey
+                "pub_key": public_key
             }
         }
         return data
@@ -318,10 +320,11 @@ class Client(metaclass=ClientVerifier):
         result_data = json.dumps(data).encode('utf-8')
         sock.send(result_data)
 
-
     def message_to_server(self, message, author, receiver):
         """ функция(метод) для формирования сообщения
-        :params: message: text, account_name
+        :param message: str
+        :param author: str
+        :param receiver: str
         :return: dict
         """
         data = {
@@ -430,6 +433,7 @@ def main(addr, port, user, status, password):
     :param port: server port
     :param user: username
     :param status: user status
+    :param password: hash
     :return: client run
     """
     client_log.info('client.py start...')
@@ -481,6 +485,7 @@ def get_addr_port():
         salt = password + SALT
         salt = salt.encode('utf-8')
         password_bytes = password.encode('utf-8')
+        del password
         key = hashlib.pbkdf2_hmac('sha256', password_bytes, salt, 100000)
         hash_item = binascii.hexlify(key)
         if window.info.text() != '':

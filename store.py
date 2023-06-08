@@ -4,13 +4,6 @@ from sqlalchemy.orm import sessionmaker, registry
 from settings import SERVER_DB_FILE
 
 
-# lesson 12
-# b) Реализовать хранение информации в БД на стороне клиента:
-# * список контактов;
-# * история сообщений.
-# класс БД для клиента
-
-
 class StoreClient:
     class Contacts:  # простой класс, который будет содержать контакты клиента
         def __init__(self, client):

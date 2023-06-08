@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>client.py &#8212; документация gbChat </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="client_app.py" href="client_app.html" />
+    <link rel="prev" title="server_app.py" href="server_app.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="client-py">
+<h1>client.py<a class="headerlink" href="#client-py" title="Permalink to this heading">¶</a></h1>
+<p>Основное приложение клиентской части чата.
+Запуск : python client.py.
+Дополнительные параметры при запуске:
+- -a addr, IP, default=“localhost“
+- -p port, default=7777
+Пример запуска: python client.py -p 8888 - запуск клиента со значением addr = localhost, IP = 8888
+После запуска клиенту будет предложено авторизоваться. Регистрация клиентов происходит на сервере.
+После успешной авторизации откроется окно приложения для ввода сообщений.</p>
+<dl>
+<dt>class ClientVerifier(type):</dt><dd><p>«»»
+Метакласс для контроля недопущения создания сокетов на уровне классов
+«»»</p>
+</dd>
+<dt>class Client(metaclass=ClientVerifier):</dt><dd><p>«»»
+Основной класс клиента
+«»»</p>
+<dl>
+<dt>def run(self):</dt><dd><p>«»»
+Основной метод класса с логикой чата. Отправка хэша пароля для авторизации.
+Генерация пары ключей для шифрования сообщений. Отправка presence сообщения.
+Инициализация базы данных клиента, открытие приложения. Потоки на прием и отправку данных. Обработка сигналов
+«»»</p>
+<p># Блок авторизации, создание ключей для ассиметричного шифрования
+self.send_data(self.check_password(), self.s)
+while True:</p>
+<blockquote>
+<div><dl>
+<dt>try:</dt><dd><p>data = self.data_from_server(self.s)
+answer = self.read_answer(data)
+print(answer)
+client_log.info(f’Message from Server received: {answer} „)</p>
+<p>key = RSA.generate(2048)
+self.privateKey = key.export_key()
+self.publicKey = key.publickey().export_key()</p>
+<p>presence_msg = self.presence(self.user, self.status, self.publicKey.decode(„ascii“))  # создаем presence-сообщение
+print(„Presence message sending…“)
+client_log.info(„Presence message sending…“)
+self.send_data(presence_msg, self.s)
+client_log.info(„Presence message sending…DONE“)
+print(„Presence message sending…DONE“)</p>
+</dd>
+<dt>except Exception as err:</dt><dd><p>client_log.error(f’Some errors in authentification: {err}“)
+exit(1)</p>
+</dd>
+</dl>
+<p># Авторизация прошла</p>
+</div></blockquote>
+</dd>
+<dt>def check_password(self):</dt><dd><p>«»» Функция(метод) формирует словарь для отправки на сервер и проверки правильности введненного пароля.
+Словарь содержит ключ «action» со значением «checking», по которому сервер определит назначение словаря.
+Ключ «hash» хранит хэш пароля введенного пользователем для сравнения с хэшом пароля этого же пользователя
+в серверной базе данной.
+«»»</p>
+</dd>
+</dl>
+<p>&#64;staticmethod
+def data_from_server(sock):</p>
+<blockquote>
+<div><p>«»» функция(метод) для преобразования ответа с сервера в словарь
+:params: sock: socket
+:return: dict
+«»»</p>
+</div></blockquote>
+<dl class="simple">
+<dt>def read_answer(self, dict_from_server):</dt><dd><p>«»» Функция(метод) для считывания ответа из данных (словаря), поступивших с сервера.
+Полученные зашифрованные сообщения дешифровываются публичными ключами клиентов, переданных сервером.
+:params: dict
+:return str: username: {text}
+«»»</p>
+</dd>
+<dt>def chat_r_message(self, sock):</dt><dd><p>«»» функция(метод) отображения сообщений других пользователей, для работы в режиме «многопоточности».
+Пока клиент запущен будем ожидать сообщений от других клиентов.
+Строка сообщения выводится по примеру &gt;&gt;&gt;username: TEXT
+:params: sock: socket
+«»»</p>
+</dd>
+<dt>def chat_w_message(self, user, s):</dt><dd><p>«»» функция(метод) отправки сообщений другим пользователям, для работы в режиме «многопоточности».
+Пока клиент запущен будем ожидать ввода сообщения от пользователя.
+Поддерживаемые команды:
+exit - выход
+list - список контактов
+history - история сообщений
+online - клиенты онлайн
+add - добавить клиента
+del - удалить клиента
+:params: sock: socket, user: username
+«»»</p>
+</dd>
+</dl>
+<p>&#64;staticmethod
+def presence(account_name, status, public_key):</p>
+<blockquote>
+<div><p>«»» функция(метод) для формирования presence-сообщения
+:params: account_name, status
+:return: dict
+«»»</p>
+</div></blockquote>
+<p>&#64;staticmethod
+def send_data(data, sock):</p>
+<blockquote>
+<div><p>«»»функция(метод) отправки данных
+:param sock: socket
+:param data: dict
+«»»</p>
+</div></blockquote>
+<dl class="simple">
+<dt>def message_to_server(self, message, author, receiver):</dt><dd><p>«»» функция(метод) для формирования сообщения
+:param message: str
+:param author: str
+:param receiver: str
+:return: dict
+«»»</p>
+</dd>
+</dl>
+<p># GUI and other Functions
+def refresh_table(self):</p>
+<blockquote>
+<div><p>self.main_window.table(db=self.db, online=self.online, chat_arr=self.chat_arr)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>def main_send_message(self, message, user, s):</dt><dd><p># стандартный протокол отправки сообщения на сервер</p>
+</dd>
+<dt>def get_online(self, user, s):</dt><dd><p># формируем запрос по ТЗ к серверу с action «get_contacts»</p>
+</dd>
+</dl>
+<p>def add_contact(self, user, contact, s):</p>
+<p>def del_contact(self, user, s, contact):</p>
+<dl class="simple">
+<dt>def chat_table(self):</dt><dd><p>функция отображения основного окна в приложении чата
+self.main_window.chat_table()</p>
+</dd>
+<dt>def get_receivers(self):</dt><dd><p># список контактов клиента, получаем из клиентской БД</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p># основная функция включает в себя создание сокета, тк по ТЗ мы не можем создать сокет на уровне класса
+def main(addr, port, user, status, password):</p>
+<blockquote>
+<div><p>«»»основная функция для запуска клиента чата
+:param addr: server ip
+:param port: server port
+:param user: username
+:param status: user status
+:param password: hash
+:return: client run
+«»»
+client_log.info(„client.py start…“)
+client_log.info(f’Func get_addr_port…DONE, params = {addr}, {port}, {user}, {status}“)
+s = create_socket_client(addr, port)  # создаем сокет
+client = Client(s, user, status, password)  # создаем объект класса клиент с параметрами сокета, порта, адреса
+client.run()  # запускаем клиент с помощью метода run</p>
+</div></blockquote>
+<p>&#64;log
+def create_socket_client(addr, port):</p>
+<blockquote>
+<div><p>«»» функция для создания сокета
+:params: addr, port
+:return s: socket
+«»»
+s = socket(AF_INET, SOCK_STREAM)  # Создаем сокет TCP
+try:</p>
+<blockquote>
+<div><p>s.connect((addr, port))  # Соединяемся с сервером
+client_log.debug(f’Create socket client. Connect to server, {addr}, {port}“)
+return s</p>
+</div></blockquote>
+<dl class="simple">
+<dt>except ConnectionRefusedError as e:</dt><dd><p>client_log.error(«Can’t connect to server.»)
+exit(1)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>&#64;log
+def get_addr_port():</p>
+<blockquote>
+<div><p>«»» функция для получения параметров из командной строки, запуска окна авторизации.
+Возврат введенных данных в окне авторизации. Пароль возвращается в виде хэша
+«»»
+return addr, port, user, status, hash_item</p>
+</div></blockquote>
+<hr class="docutils" />
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">gbChat</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="server.html">server.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_app.html">server_app.py</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">client.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_app.html">client_app.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store.html">store.py</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="server_app.html" title="предыдущая глава">server_app.py</a></li>
+      <li>Next: <a href="client_app.html" title="следующая глава">client_app.py</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Admin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/client.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
