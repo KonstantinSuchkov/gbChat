@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: gb-chat-ksuchkov
+Version: 0.0.1
+Summary: A chat project package
+Home-page: https://github.com/KonstantinSuchkov/gbChat
+Author: Konstantin Suchkov
+Author-email: konstantinsuchkov@yandex.ru
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+1. server.py
+РЎРµСЂРІРµСЂРЅР°СЏ С‡Р°СЃС‚СЊ С‡Р°С‚Р°. Р—Р°РїСѓСЃРє - python server.py Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РїСЂРё Р·Р°РїСѓСЃРєРµ: - -a addr, IP, default=вЂњlocalhostвЂњ
+- -p port, default=7777 РџСЂРёРјРµСЂ Р·Р°РїСѓСЃРєР°: python server.py -p 8888 - Р·Р°РїСѓСЃРє СЃРѕ Р·РЅР°С‡РµРЅРёРµРј addr = localhost, IP = 8888
+
+2. client.py
+РћСЃРЅРѕРІРЅРѕРµ РїСЂРёР»РѕР¶РµРЅРёРµ РєР»РёРµРЅС‚СЃРєРѕР№ С‡Р°СЃС‚Рё С‡Р°С‚Р°. Р—Р°РїСѓСЃРє : python client.py. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РїСЂРё Р·Р°РїСѓСЃРєРµ: - -a addr,
+IP, default=вЂњlocalhostвЂњ - -p port, default=7777 РџСЂРёРјРµСЂ Р·Р°РїСѓСЃРєР°: python client.py -p 8888 - Р·Р°РїСѓСЃРє РєР»РёРµРЅС‚Р° СЃРѕ 
+addr = localhost, IP = 8888 РџРѕСЃР»Рµ Р·Р°РїСѓСЃРєР° РєР»РёРµРЅС‚Сѓ Р±СѓРґРµС‚ РїСЂРµРґР»РѕР¶РµРЅРѕ Р°РІС‚РѕСЂРёР·РѕРІР°С‚СЊСЃСЏ. Р РµРіРёСЃС‚СЂР°С†РёСЏ РєР»РёРµРЅС‚РѕРІ РїСЂРѕРёСЃС…РѕРґРёС‚
+РЅР° СЃРµСЂРІРµСЂРµ. РџРѕСЃР»Рµ СѓСЃРїРµС€РЅРѕР№ Р°РІС‚РѕСЂРёР·Р°С†РёРё РѕС‚РєСЂРѕРµС‚СЃСЏ РѕРєРЅРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ РґР»СЏ РІРІРѕРґР° СЃРѕРѕР±С‰РµРЅРёР№.
+

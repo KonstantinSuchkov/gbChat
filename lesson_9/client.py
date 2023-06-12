@@ -7,8 +7,7 @@ from datetime import datetime
 import json
 from threading import Thread
 
-import log.client_log_config
-from log.log_decorator import log
+from chat_project.log.log_decorator import log
 
 client_log = logging.getLogger('client')
 

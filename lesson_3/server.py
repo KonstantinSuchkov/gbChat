@@ -3,7 +3,6 @@ import json
 from socket import *
 from datetime import datetime
 import logging
-import log.server_log_config
 
 server_log = logging.getLogger('server')
 

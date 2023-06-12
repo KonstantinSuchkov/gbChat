@@ -4,8 +4,7 @@ import logging
 import select
 from socket import *
 from datetime import datetime
-import log.server_log_config
-from log.log_decorator import log
+from chat_project.log.log_decorator import log
 
 server_log = logging.getLogger('server')
 print(server_log)
